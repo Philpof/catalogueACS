@@ -24,7 +24,7 @@ Base donnée :
 
 Liste des jeux :
 -	Zelda BOTW (Switch)
--	Super Mario World (SNES)
+-	Super Mario Bros (NES)
 -	The Witcher 3 (Multi)
 -	Final Fantasy 7 remake (PS4)
 -	Jedi Fallen Order (Multi)
