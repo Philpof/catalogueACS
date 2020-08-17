@@ -9,13 +9,21 @@ if(!isset($_SESSION['login']))
 {
   // Si inexistante ou nulle, on redirige vers le formulaire de login
   $client = " à vous, visiteur(euse)";
-  $connexion = "Se connecter à mon compte";
+  $connexion = "| Se connecter à mon compte |";
   $goLog = "login";
+  $admin = "";
 }
 else {
   $client = ", " . $_SESSION['prenom'] . " " . $_SESSION['nom'];
-  $connexion = "Me déconnecter";
+  $connexion = "| Me déconnecter |";
   $goLog = "logout";
+
+  if ($_SESSION['admin']) {
+    $admin = "| Page d'administration |";
+  }
+  else {
+    $admin = "";
+  }
 }
 ?>
 
@@ -25,8 +33,9 @@ else {
     <div class="row justify-content-around">
       <a id="logo" ref="index.php">Logo</a>
       <p id="client">Bonjour<?php echo $client ?> !</p>
+      <a id="admin" href="admin.php"><?php echo $admin ?></a>
       <a id="connexion" href="<?php echo $goLog ?>.php"><?php echo $connexion ?></a>
-      <a id="panier" href="panier.php">Panier</a>
+      <a id="panier" href="panier.php">| Panier |</a>
     </div>
   </div>
 </nav>

@@ -19,6 +19,7 @@ if (!empty($_POST['nom_du_compte']))
         define('PASSWORD', $row['mdp']);
         define('NOM', $row['nom']);
         define('PRENOM', $row['prenom']);
+        define('ADMIN', $row['admin']);
 
         // Test champs vide du formulaire : mdp sinon instructions n°3
         if(!empty($_POST['mot_de_passe']))
@@ -39,6 +40,7 @@ if (!empty($_POST['nom_du_compte']))
           $_SESSION['login'] = LOGIN;
           $_SESSION['nom'] = NOM;
           $_SESSION['prenom'] = PRENOM;
+          $_SESSION['admin'] = ADMIN;
 
           // On redirige vers le fichier admin.php
           header('Location: index.php');
