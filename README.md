@@ -8,8 +8,7 @@ Catalogue jeux vidéo
 -	Panier (incrémentation de tout ce qui est sélectionné + bouton payer)
 -	La page produit (information sur le produit + bouton panier)
 
-Prévision :
--	Comptes utilisateurs
+-	Comptes utilisateurs (login)
 
 Base donnée :
 -	Titre
@@ -21,6 +20,7 @@ Base donnée :
 -	Archivage (oui/non)
 -	Bestseller (oui/non)
 -	Nombre de joueur
+- Catégories (Old school, action, aventure,...)
 
 Liste des jeux :
 -	Zelda BOTW (Switch)
