@@ -3,12 +3,11 @@
 Catalogue jeux vidéo
 
 4 pages :
--	Index (catalogue de tous les produits disponibles avec une fonction de recherche par mot clé)
--	Affichage résultats de rechercher (affiche la liste des produits suite à la recherche)
+-	Index (catalogue de tous les produits disponibles avec une fonction de recherche par mot clé + création compte + login compte)
+-	Affichage résultats de rechercher (affiche la liste des produits suite à la recherche) >> ali
 -	Panier (incrémentation de tout ce qui est sélectionné + bouton payer)
--	La page produit (information sur le produit + bouton panier)
-
--	Comptes utilisateurs (login)
+-	La page produit (information sur le produit + bouton panier) >> Robin
+-	Comptes utilisateurs (login) >> Phil
 
 Base donnée :
 -	Titre
