@@ -10,11 +10,9 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 
   <!-- Fontawsome -->
-  <script src="https://kit.fontawesome.com/38609b4032.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/fbdd9c8340.js" crossorigin="anonymous"></script>
 
   <!-- Style CSS -->
   <link rel="stylesheet" href="style.css">
@@ -22,21 +20,42 @@
 </head>
 
 <body>
-
-  <!-- <input type="text" name="names" id="recherche" /> -->
-  <!-- <div id="show_up"></div> -->
-
   <?php
+
+    if (isset($_GET['term'])){
+            $term = htmlentities($_GET['term']);
+            // $return_arr = array();
+
+
+
     try
     {
       // On se connecte à MySQL
       $bdd = new PDO('mysql:host=localhost;dbname=catalogueacs;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+
+      $stmt = $conn->prepare('SELECT * FROM jeux WHERE Titre ="' . $term . '"');
+      // $stmt->execute();
+
+      $stmt->execute();
+
+
+      while($row = $stmt->fetch()) {
+          $return_arr[] =  $row['Titre'];
+      }
+
+
     }
     catch(Exception $e)
     {
       // En cas d'erreur, on affiche un message et on arrête tout
-            die('Erreur : '.$e->getMessage());
+      die('Erreur : '.$e->getMessage());
     }
+
+
+
+
+
+
 
     function debug($var, $style = "")
     {
@@ -44,6 +63,4 @@
       var_dump($var);
       echo "</pre>";
     }
-
-
-    
+    ?>

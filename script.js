@@ -17,12 +17,12 @@
 // )};
 
 
-$(function() {
-
-    //autocomplete
-    $(".auto").autocomplete({
-        source: "recherche.php",
-        minLength: 1
-    });
-
-});
+// $(function() {
+//
+//     //autocomplete
+//     $(".auto").autocomplete({
+//         source: "header.php",
+//         minLength: 1
+//     });
+//
+// });
