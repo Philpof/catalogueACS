@@ -23,9 +23,27 @@
 
 <body>
 
-  <form action='' method='post'>
-          <input type='text' name='jeux' value='' placeholder="Recherche" class='auto'>
-          <button type="submit" name="button" value="submit"></button>
-      </form>
   <!-- <input type="text" name="names" id="recherche" /> -->
   <!-- <div id="show_up"></div> -->
+
+  <?php
+    try
+    {
+      // On se connecte à MySQL
+      $bdd = new PDO('mysql:host=localhost;dbname=catalogueacs;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    }
+    catch(Exception $e)
+    {
+      // En cas d'erreur, on affiche un message et on arrête tout
+            die('Erreur : '.$e->getMessage());
+    }
+
+    function debug($var, $style = "")
+    {
+      echo "<pre style='background-color: white; border: gray 1px solid; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; color: black; width: 95%; padding: 10px; overflow-y: auto;{$style}'>";
+      var_dump($var);
+      echo "</pre>";
+    }
+
+
+    
