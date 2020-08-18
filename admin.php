@@ -34,7 +34,7 @@
 
 
   <!-- Connection serveur -->
-  <p class="font-weight-bold">Connection à la basse de donnée "portfolio" :</p>
+  <p class="font-weight-bold">Connection à la basse de donnée "Catalogueacs" :</p>
   <?php
   if (isset($connOK)) {
     echo $connOK. "<hr>";

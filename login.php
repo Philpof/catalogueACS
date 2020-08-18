@@ -72,10 +72,10 @@ else
   <h1 class="text-center">Connection à mon espace privé</h1>
   <hr>
   <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-    <label for="nom_du_compte" class="col-sm-12 col-lg-3 align-top mt-5">Identifiant du compte (Login) :</label>
+    <label for="nom_du_compte" class="col-sm-12 col-lg-3 align-top mt-5 text-right">Identifiant du compte (Login) :</label>
     <input type="text" name="nom_du_compte" id="nom_du_compte" class="col-sm-12 col-lg-8 align-top border border-info mt-5">
 
-    <label for="mot_de_passe" class="col-sm-12 col-lg-3 align-top mt-2">Mot de passe :</label>
+    <label for="mot_de_passe" class="col-sm-12 col-lg-3 align-top mt-2 text-right">Mot de passe :</label>
     <input type="password" name="mot_de_passe" id="mot_de_passe" class="col-sm-12 col-lg-8 align-top border border-info mt-2">
 
     <input type="submit" name="submit" value="Se connecter à mon compte" class="col-sm-12 offset-lg-4 col-lg-4 mt-3">

@@ -9,17 +9,17 @@ if(!isset($_SESSION['login']))
 {
   // Si inexistante ou nulle, on redirige vers le formulaire de login
   $client = " à vous, visiteur(euse)";
-  $connexion = "| Se connecter à mon compte |";
+  $connexion = "<i class=\"fas fa-headset\"></i> Se connecter à mon compte";
   $goLog = "login";
   $admin = "";
 }
 else {
   $client = ", " . $_SESSION['prenom'] . " " . $_SESSION['nom'];
-  $connexion = "| Me déconnecter |";
+  $connexion = "<i class=\"fas fa-ghost\"></i> Me déconnecter";
   $goLog = "logout";
 
   if ($_SESSION['admin']) {
-    $admin = "| Page d'administration |";
+    $admin = "<i class=\"fas fa-chess-king\"></i> Page d'administration";
   }
   else {
     $admin = "";
@@ -35,7 +35,7 @@ else {
       <p id="client">Bonjour<?php echo $client ?> !</p>
       <a id="admin" href="admin.php"><?php echo $admin ?></a>
       <a id="connexion" href="<?php echo $goLog ?>.php"><?php echo $connexion ?></a>
-      <a id="panier" href="panier.php">| Panier |</a>
+      <a id="panier" href="panier.php"><i class="fas fa-gamepad"></i> Panier</a>
     </div>
   </div>
 </nav>
