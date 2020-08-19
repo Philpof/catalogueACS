@@ -1,0 +1,19 @@
+#productsSection {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  border: 1px solid black;
+}
+
+.information {
+
+}
+
+
+.apercu {
+  display: block;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+}

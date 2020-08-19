@@ -1,10 +1,19 @@
-<?php
-include 'header.php';
+<?php include 'header.php';?>
+<section id="productsSection">
+  <article class="information">
+    <div class="photoProduit">
+      <div class="sideImage">
+        <div class="apercu">
+        </div>
+        <div class="apercu">
+        </div>
+        <div class="apercu">
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
 
 
 
-
-
-
-include 'footer.php';
- ?>
+<?php include 'footer.php';?>
