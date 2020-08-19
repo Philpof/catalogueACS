@@ -22,34 +22,68 @@
 <body>
   <?php
 
-    if (isset($_GET['term'])){
-            $term = htmlentities($_GET['term']);
-            // $return_arr = array();
+
+
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "catalogueacs";
+
+  try {
+    $conn = new PDO('mysql:host=localhost;dbname=catalogueacs;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    // set the PDO error mode to exception
+    // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // echo "Connected successfully";
+  } catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+  }
 
 
 
-    try
-    {
-      // On se connecte à MySQL
-      $bdd = new PDO('mysql:host=localhost;dbname=catalogueacs;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-
-      $stmt = $conn->prepare('SELECT * FROM jeux WHERE Titre ="' . $term . '"');
-      // $stmt->execute();
-
-      $stmt->execute();
+  if (isset($_POST["jeux"])) {
+          $jeux = $_POST["jeux"];
+          $str = $conn->query("SELECT * FROM jeux WHERE Titre LIKE '%{$jeux}%'");
+          if ($str === true) {
 
 
-      while($row = $stmt->fetch()) {
-          $return_arr[] =  $row['Titre'];
-      }
+
+            $str->setFetchmode(PDO:: FETCH_OBJ);
+            ?>  <br>
+              <br><br>
+              <table>
+                  <tr>
+                      <th>Titre</th>
+                      <th>Categorie</th>
+                  </tr><?php
+
+          while($row = $str->fetch())
+          {
+
+              ?>
+
+                  <tr>
+                      <td><?php echo $row->Titre; ?> </td>
+                      <td><?php echo $row->Categorie; ?> </td>
+                  </tr>
 
 
-    }
-    catch(Exception $e)
-    {
-      // En cas d'erreur, on affiche un message et on arrête tout
-      die('Erreur : '.$e->getMessage());
-    }
+        <?php
+
+          }
+        echo  "</table>";
+
+
+
+
+        }
+        else{
+            echo "It Does not exist";
+         }
+
+
+     }
+
+
 
 
 
@@ -63,4 +97,21 @@
       var_dump($var);
       echo "</pre>";
     }
-    ?>
+  ?>
+
+
+
+  <div class="main">
+
+  <form method="post" action="header.php">
+        <label id="clr">Search</label>
+        <input class="search-txt" type="text" name="jeux" placeholder="tapez à rechercher">
+        <button type="submit" class="btn-search"><i class="fas fa-search"></i></button>
+
+
+        <!-- <input type="submit" name="submit"> -->
+        <!-- <a class="search-btn"href="#"></a>
+        <i class="fas fa-search"></i> -->
+  </form>
+
+  </div>
