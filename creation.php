@@ -29,26 +29,34 @@ elseif(!isset($_GET['action']) || $_GET['action'] != "ok"){
       // Vérifie si les 2 mdp sont exactement identique
       if (isset($_POST['mdp']) && isset($_POST['mdpBis']) && $_POST['mdp'] === $_POST['mdpBis']) {
 
+        // Vérifier si le "login" et le "email" existent
         if (isset($_POST['login']) && isset($_POST['email'])) {
+
+          // Stoque les variable POST dans des variables pour traitement
           $login = $_POST['login'];
           $email = $_POST['email'];
+          // Requêtes SQL pour savoir si le "login" ou le "email" existent déjà
           $testLogin = $bdd->query("SELECT id FROM users WHERE login = '$login'");
           $testEmail = $bdd->query("SELECT id FROM users WHERE email = '$email'");
+          //Si l'un et/ou l'autre existent le compteur s'incrément de 1
           $countLogin = $testLogin->rowCount();
           $countEmail = $testEmail->rowCount();
-
+          // Si le compteur de "login" est égale à 1 alors le login existe déjà
           if($countLogin == 1) {
-            // Login déjà utilisé
+            // Message pour avertir que le login est déjà pris
             $instructions = "<div class='alert alert-danger mt-4 text-center' role='alert'>L'identifiant du compte (Login) choisi est déjà attribué, merci d'en choisir un nouveau.</div>";
           }
+          // Si le compteur de "email" est égale à 1 alors l'email existe déjà
           elseif($countEmail == 1) {
-            // Login déjà utilisé
+            // Message pour avertir que l'email est déjà pris + voir si login ou mdp oubliés
             $instructions = "<div class='alert alert-danger mt-4 text-center' role='alert'>L'adresse email choisie est déjà attribuée, merci d'en choisir un nouveau ou de cliquez <a href='mdpoublie.php'>ici</a> si vous avez oublié votre login ou mot de passe.</div>";
           }
           else {
-            // Login libre
+            // les Login et email sont libres donc on valide la création du compte
             try {
+              // Prepare la requête
               $creationCompte = $bdd->prepare('INSERT INTO users (nom, prenom, dateNaissance, numTel, email, adresse, cp, ville, login, mdp) VALUES (:nom, :prenom, :dateNaissance, :numTel, :email, :adresse, :cp, :ville, :login, :mdp)');
+              // Exécute la requête préparée
               $creationCompte->execute(array(
                 ':nom' => htmlspecialchars($_POST['nom']),
                 ':prenom' => htmlspecialchars($_POST['prenom']),
@@ -101,7 +109,7 @@ elseif(!isset($_GET['action']) || $_GET['action'] != "ok"){
   ?>
 
   <!-- Formulaire pour faire une entrée dans la base donnée avec conservation des champs si erreur à corriger après envoi du formulaire-->
-  <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
+  <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 
     <label for="nom" class="col-sm-6 col-xl-3 text-xl-right">Nom :</label>
     <input type="text" name="nom" value="<?php if (isset($_POST['nom'])) {echo htmlspecialchars($_POST['nom']);} ?>" pattern="[a-zA-ZÀ-ÿ' -]{1,}" placeholder="Entrez votre nom en majuscule ou en minuscule" class="col-sm-12 col-xl-8 border border-info mb-3" required>

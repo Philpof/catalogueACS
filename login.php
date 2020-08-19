@@ -4,7 +4,7 @@ include "header.php";
 // Test champs vide du formulaire : login sinon instructions n°1
 if (!empty($_POST['nom_du_compte']))
 {
-  // Test champs c=plein du formulaire : login pour début des vérification avec la base de donnée
+  // Test champs plein du formulaire : login pour début des vérifications avec la base de donnée
   if (isset($_POST['nom_du_compte']))
   {
     // Requête PHP pour vérifier les informations
