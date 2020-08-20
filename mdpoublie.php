@@ -24,7 +24,7 @@ else if (!isset($_GET['envoiMail']) || $_GET['envoiMail'] != "ok" || empty($_POS
       $message = 'Identifiant du compte (Login) : ' . $row['login'] . '<br>Mot de passe :' . $row['mdp'];
       // Envoi de l'email
 
-      
+
       // mail($dest, $sujet, $message, $headers);
         // Refresh de la page que que le message de confirmation s'affiche
         header("Location: mdpoublie.php?envoiMail=ok");
@@ -55,13 +55,13 @@ else if (!isset($_GET['envoiMail']) || $_GET['envoiMail'] != "ok" || empty($_POS
   <h1 class="text-center">Login ou mot de passe oubliés ?</h1>
   <hr>
   <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-    <label for="sosMail" class="col-sm-12 col-lg-3 align-top mt-5 text-right">Adresse mail du compte :</label>
-    <input type="text" name="sosMail" value="<?php if (isset($_POST['sosMail'])) {echo htmlspecialchars($_POST['sosMail']);} ?>" placeholder='Indiquez l&#8217;adresse mail que vous avez utilisée pour créer votre compte' class="col-sm-12 col-lg-8 align-top border border-info mt-5" required>
+    <label for="sosMail" class="col-sm-6 col-xl-3 text-xl-right">Adresse mail du compte :</label>
+    <input type="text" name="sosMail" value="<?php if (isset($_POST['sosMail'])) {echo htmlspecialchars($_POST['sosMail']);} ?>" placeholder='Indiquez l&#8217;adresse mail que vous avez utilisé pour créer votre compte' class="col-sm-12 col-xl-8 border border-info mb-3" required>
 
     <label for="spam" class="col-sm-6 col-xl-3 text-xl-right">Etes-vous un robot ? :</label>
-    <input type="choose" name="spam" pattern="non" placeholder='Tapez le mot "non" ici (sinon, c&#8217;est que vous êtes un robot...)' class="col-sm-12 col-xl-8 col-xl-6 border border-info mb-3" required>
+    <input type="choose" name="spam" pattern="non" placeholder='Tapez le mot "non" ici (sinon, c&#8217;est que vous êtes un robot...)' class="col-sm-12 col-xl-8 border border-info mb-3" required>
 
-    <input type="submit" name="submit" value="Me renvoyer mes informations de connexion par mail" class="btn btn-warning col-sm-12 offset-lg-3 col-lg-6 mt-3">
+    <input type="submit" name="submit" value="Me renvoyer mes informations de connexion par mail" class="col-sm-12 offset-xl-3 col-xl-6 mt-3">
   </form>
 
 

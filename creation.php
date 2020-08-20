@@ -147,9 +147,8 @@ elseif(!isset($_GET['action']) || $_GET['action'] != "ok"){
     <label for="spam" class="col-sm-6 col-xl-3 text-xl-right">Anti-spam :</label>
     <input type="choose" name="spam" pattern="jeux" placeholder='Tapez le mot "jeux" ici' class="col-sm-12 col-xl-8 col-xl-6 border border-info mb-3" required>
 
-    <div class="row justify-content-center">
-      <input type="submit" name="Creer" value="Créer mon compte" class="col-sm-12 col-xl-8 col-xl-6 btn btn-warning mt-1 row justify-content-center">
-    </div>
+    <input type="submit" name="Creer" value="Créer mon compte" class="col-sm-12 offset-xl-3 col-xl-6 mt-3">
+
   </form>
 
   <!-- Liens pour retourner au site -->

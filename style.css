@@ -1,11 +1,11 @@
 *{
-    margin: 0px;
-    padding: 0px;
-    font-family: sans-serif;
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
 }
 
 body{
-    background: #9c82ab;
+  background: #9c82ab;
 }
 
 #navBarre {
@@ -19,30 +19,30 @@ body{
 }
 
 input{
-    border: 3px solid #7E1697;
-    height: 40px;
-    width: 300px;
-    border-radius: 50px;
-    padding: 0px 10px;
-    align: center;
+  border: 3px solid #7E1697;
+  height: 40px;
+  width: 300px;
+  border-radius: 50px;
+  padding: 0px 10px;
+  align: center;
 }
 
 #clr{
-    color: white;
+  color: white;
 }
 
 #bt{
-    color: #851DCB;
+  color: #851DCB;
 }
 
 .btn-search:focus{
-    color: #52147B;
+  color: #52147B;
 }
 
 .btn-search{
-    background-color: inherit;
-    border: none;
-    color: #851DCB;
+  background-color: inherit;
+  border: none;
+  color: #851DCB;
 }
 
 .btn-search:hover{
@@ -50,7 +50,7 @@ input{
 }
 
 .search-txt{
-    color: purple;
+  color: purple;
 }
 
 
