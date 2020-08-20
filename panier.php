@@ -2,7 +2,7 @@
 include "header.php";
 ?>
 
-TEST
+<p>Page panier</p>
 
 
 <?php

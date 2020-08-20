@@ -5,14 +5,17 @@
 }
 
 body{
-    background: #444343;
+    background: #9c82ab;
 }
 
-.main{
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+#navBarre {
+  background: linear-gradient(to left, #851DCB, #7E1697, #A71375);
+  color: white;
+}
+
+#loupe {
+  color: white;
+  font-size: 1.5rem;
 }
 
 input{

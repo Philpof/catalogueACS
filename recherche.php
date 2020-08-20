@@ -1,10 +1,7 @@
 <?php include "header.php" ?>
-<?php
-
-    
 
 
+<p>page de recherche</p>
 
-?>
 
 <?php include "footer.php" ?>
