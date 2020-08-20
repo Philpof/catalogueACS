@@ -75,7 +75,7 @@ else {
 
       <form method="post" action="recherche.php">
             <label id="clr">Recherche</label>
-            <input class="search-txt" type="text" name="jeux" placeholder="Indiquez le jeux recherché">
+            <input class="search-txt" type="search" name="jeux" placeholder="Indiquez le jeux recherché">
             <button type="submit" class="btn-search"><i id="loupe" class="fas fa-search"></i></button>
       </form>
 
