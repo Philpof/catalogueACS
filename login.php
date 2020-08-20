@@ -72,6 +72,15 @@ else
 <main class="container pt-5 pb-5">
   <h1 class="text-center">Connection à mon espace privé</h1>
   <hr>
+
+    <?php
+      // Rencontre-t-on une erreur ? Affichage des différentes instructions selon le cas
+      if(!empty($password_KO))
+      {
+        echo $password_KO;
+      }
+    ?>
+
   <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
     <label for="nom_du_compte" class="col-sm-6 col-xl-3 text-xl-right">Identifiant du compte (Login) :</label>
     <input type="text" name="nom_du_compte" id="nom_du_compte" class="col-sm-12 col-xl-8 border border-info mb-3">
@@ -88,14 +97,6 @@ else
     <p>ou</p>
     <a href="creation.php">créer mon compte privé</a>
   </div>
-
-  <?php
-    // Rencontre-t-on une erreur ? Affichage des différentes instructions selon le cas
-    if(!empty($password_KO))
-    {
-      echo $password_KO;
-    }
-  ?>
 
   <hr>
   <div class="col-sm-12 text-center mt-4">

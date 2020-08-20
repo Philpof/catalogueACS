@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Robin DE MARCH, Ali SYED & Philippe PERECHODOV">
-  <title>Catalogue JV - ACS</title>
+  <title>GRAP.com - Le meilleur du jeux-vidéo !</title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -71,7 +71,7 @@ else {
 
 <nav id="navBarre" class="container-fluid fixed-top">
   <div class="row justify-content-around pt-3 pb-3 align-items-center">
-    <a href="index.php">Logo</a>
+    <a class="font-weight-bold" href="index.php">GRAP.com</a>
     <p class="mb-0">Bonjour<?php echo $client ?> !</p>
     <a href="admin.php"><?php echo $admin ?></a>
     <a href="<?php echo $goLog ?>.php"><?php echo $connexion ?></a>

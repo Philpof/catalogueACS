@@ -54,6 +54,15 @@ else if (!isset($_GET['envoiMail']) || $_GET['envoiMail'] != "ok" || empty($_POS
 <main class="container pt-5 pb-5">
   <h1 class="text-center">Login ou mot de passe oubliés ?</h1>
   <hr>
+
+  <?php
+    // Rencontre-t-on une erreur ? Affichage des différentes instructions selon le cas
+    if(!empty($lostPassword))
+    {
+      echo $lostPassword;
+    }
+  ?>
+
   <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
     <label for="sosMail" class="col-sm-6 col-xl-3 text-xl-right">Adresse mail du compte :</label>
     <input type="text" name="sosMail" value="<?php if (isset($_POST['sosMail'])) {echo htmlspecialchars($_POST['sosMail']);} ?>" placeholder='Indiquez l&#8217;adresse mail que vous avez utilisé pour créer votre compte' class="col-sm-12 col-xl-8 border border-info mb-3" required>
@@ -63,15 +72,6 @@ else if (!isset($_GET['envoiMail']) || $_GET['envoiMail'] != "ok" || empty($_POS
 
     <input type="submit" name="submit" value="Me renvoyer mes informations de connexion par mail" class="col-sm-12 offset-xl-3 col-xl-6 mt-3">
   </form>
-
-
-  <?php
-    // Rencontre-t-on une erreur ? Affichage des différentes instructions selon le cas
-    if(!empty($lostPassword))
-    {
-      echo $lostPassword;
-    }
-  ?>
 
   <hr>
   <div class="col-sm-12 text-center mt-4">
