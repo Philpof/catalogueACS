@@ -105,7 +105,7 @@
 
   <form method="post" action="header.php">
         <label id="clr">Search</label>
-        <input class="search-txt" type="text" name="jeux" placeholder="tapez à rechercher">
+        <input class="search-txt" type="search" name="jeux" placeholder="Tapez à rechercher">
         <button type="submit" class="btn-search"><i class="fas fa-search"></i></button>
 
 
