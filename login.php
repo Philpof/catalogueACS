@@ -28,7 +28,7 @@ if (!empty($_POST['nom_du_compte']))
           if($_POST['mot_de_passe'] !== PASSWORD)
           {
             // Instructions n°4
-            $password_KO = "<div class='alert alert-danger mt-5 text-center' role='alert'>Le mot de passe saisi est incorrect.<br>Mot de passe oublié ? Cliquez <a href='mdpoublie.php'>ici</a> !</div>";
+            $password_KO = "<div class='alert alert-danger mt-5 text-center' role='alert'>Le mot de passe saisi est incorrect.<br>Mot de passe oublié ? Cliquez <a id='ici' href='mdpoublie.php'>ici</a> !</div>";
           }
             // sinon, on ouvre la session
             else
@@ -50,13 +50,13 @@ if (!empty($_POST['nom_du_compte']))
         // Instructions n°3
         else
       {
-        $password_KO = "<div class='alert alert-danger mt-5 text-center' role='alert'>Vous devez saisir votre mot de passe pour accéder à votre espace privé.<br>Mot de passe oublié ? Cliquez <a href='mdpoublie.php'>ici</a> !</div>";;
+        $password_KO = "<div class='alert alert-danger mt-5 text-center' role='alert'>Vous devez saisir votre mot de passe pour accéder à votre espace privé.<br>Mot de passe oublié ? Cliquez <a id='ici' href='mdpoublie.php'>ici</a> !</div>";;
       }
     }
 
     // Instructions n°2
     else {
-      $password_KO = "<div class='alert alert-danger mt-5 text-center' role='alert'>L'identifiant du compte saisi est inexistant.<br>Login oublié ? Cliquez <a href='mdpoublie.php'>ici</a> !</div>";
+      $password_KO = "<div class='alert alert-danger mt-5 text-center' role='alert'>L'identifiant du compte saisi est inexistant.<br>Login oublié ? Cliquez <a id='ici' href='mdpoublie.php'>ici</a> !</div>";
     }
   }
 }
@@ -68,7 +68,8 @@ else
 ?>
 
 <!-- Le HTML -->
-<section class="container bg-light pt-5 pb-5">
+
+<main class="container pt-5 pb-5">
   <h1 class="text-center">Connection à mon espace privé</h1>
   <hr>
   <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
@@ -102,7 +103,7 @@ else
   </div>
   <hr>
 
-</section>
+</main>
 
 <?php
 include "footer.php";

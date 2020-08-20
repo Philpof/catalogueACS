@@ -5,7 +5,7 @@
 
 // Si le compte a bien été créé alors le message de confirmation est créé dans la variable "$instructions"
 if(isset($_GET['action']) && $_GET['action'] == "ok"){
-  $instructions = "<div class='alert alert-success mt-4 text-center' role='alert'>Félicitations, votre compte a bien été créé !<br>Vous pouvez désormais vous connecter à votre compte en cliquant <a href='login.php'>ici</a></div>";
+  $instructions = "<div class='alert alert-success mt-4 text-center' role='alert'>Félicitations, votre compte a bien été créé !<br>Vous pouvez désormais vous connecter à votre compte en cliquant <a id='ici' href='login.php'>ici</a></div>";
 }
 
 // Sinon vérification pour la création du compte
@@ -49,7 +49,7 @@ elseif(!isset($_GET['action']) || $_GET['action'] != "ok"){
           // Si le compteur de "email" est égale à 1 alors l'email existe déjà
           elseif($countEmail == 1) {
             // Message pour avertir que l'email est déjà pris + voir si login ou mdp oubliés
-            $instructions = "<div class='alert alert-danger mt-4 text-center' role='alert'>L'adresse email choisie est déjà attribuée, merci d'en choisir une nouvelle ou de cliquer <a href='mdpoublie.php'>ici</a> si vous avez oublié votre login ou mot de passe.</div>";
+            $instructions = "<div class='alert alert-danger mt-4 text-center' role='alert'>L'adresse email choisie est déjà attribuée, merci d'en choisir une nouvelle ou de cliquer <a id='ici' href='mdpoublie.php'>ici</a> si vous avez oublié votre login ou mot de passe.</div>";
           }
           else {
             // les Login et email sont libres donc on valide la création du compte
@@ -98,7 +98,8 @@ elseif(!isset($_GET['action']) || $_GET['action'] != "ok"){
 ?>
 
 <!-- Le HTML -->
-<section class="container bg-light pt-5 pb-5">
+
+<main class="container pt-5 pb-5">
 
   <h1 class="text-center">Création d'un compte</h1>
   <hr>
@@ -158,7 +159,7 @@ elseif(!isset($_GET['action']) || $_GET['action'] != "ok"){
   </div>
   <hr>
 
-</section>
+</main>
 
 <?php
   include "footer.php";

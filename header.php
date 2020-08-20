@@ -19,6 +19,7 @@
 
 </head>
 
+
 <body>
 
 <!-- Connection à la base de donnée -->
@@ -67,21 +68,20 @@ else {
 ?>
 
 <!-- Le HTML -->
-<nav>
-  <div id="navBarre" class="container-fluid">
-    <div class="row justify-content-around pt-3 pb-3 align-items-center">
-      <a id="logo" href="index.php">Logo</a>
-      <p id="client" class="mb-0">Bonjour<?php echo $client ?> !</p>
 
-      <form method="post" action="recherche.php">
-            <label id="clr">Recherche</label>
-            <input class="search-txt" type="search" name="jeux" placeholder="Indiquez le jeux recherché">
-            <button type="submit" class="btn-search"><i id="loupe" class="fas fa-search"></i></button>
-      </form>
+<nav id="navBarre" class="container-fluid fixed-top">
+  <div class="row justify-content-around pt-3 pb-3 align-items-center">
+    <a href="index.php">Logo</a>
+    <p class="mb-0">Bonjour<?php echo $client ?> !</p>
+    <a href="admin.php"><?php echo $admin ?></a>
+    <a href="<?php echo $goLog ?>.php"><?php echo $connexion ?></a>
 
-      <a id="admin" href="admin.php"><?php echo $admin ?></a>
-      <a id="connexion" href="<?php echo $goLog ?>.php"><?php echo $connexion ?></a>
-      <a id="panier" href="panier.php"><i class="fas fa-gamepad"></i> Panier</a>
-    </div>
+    <form method="post" action="recherche.php">
+          <!-- <label id="clr">Recherche</label> -->
+          <input class="search-txt" type="search" name="jeux" placeholder="Indiquez le jeux recherché">
+          <button type="submit" class="btn-search"><i id="loupe" class="fas fa-search"></i></button>
+    </form>
+
+    <a href="panier.php"><i class="fas fa-gamepad"></i> Mon Panier</a>
   </div>
 </nav>

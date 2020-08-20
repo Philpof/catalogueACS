@@ -39,7 +39,7 @@ else if (!isset($_GET['envoiMail']) || $_GET['envoiMail'] != "ok" || empty($_POS
     }
     // Instructions n°2
     else {
-      $lostPassword = "<div class='alert alert-danger mt-5 text-center' role='alert'>L'adresse mail saisie est inexistante.<br>Vous voulez créer un compte personnel ? Cliquez <a href='creation.php'>ici</a> !</div>";
+      $lostPassword = "<div class='alert alert-danger mt-5 text-center' role='alert'>L'adresse mail saisie est inexistante.<br>Vous voulez créer un compte personnel ? Cliquez <a id='ici' href='creation.php'>ici</a> !</div>";
     }
   }
   // Message d'instructions n°1 qui s'affiche par défaut
@@ -47,11 +47,11 @@ else if (!isset($_GET['envoiMail']) || $_GET['envoiMail'] != "ok" || empty($_POS
     $lostPassword = "<div class='alert alert-info mt-5 text-center' role='alert'>Indiquez votre adresse email afin de recevoir vos identifiant de connexion et mot de passe par courriel.</div>";;
   }
 }
-
 ?>
 
 <!-- Le HTML -->
-<section class="container bg-light pt-5 pb-5">
+
+<main class="container pt-5 pb-5">
   <h1 class="text-center">Login ou mot de passe oubliés ?</h1>
   <hr>
   <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
@@ -79,7 +79,7 @@ else if (!isset($_GET['envoiMail']) || $_GET['envoiMail'] != "ok" || empty($_POS
   </div>
   <hr>
 
-</section>
+</main>
 
 <?php
 include "footer.php";
