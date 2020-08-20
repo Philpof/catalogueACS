@@ -98,6 +98,12 @@ input {
   border-color: black;
 }
 
+#boutonEnvoi:hover {
+  background-color: white;
+  color: purple;
+  border-color: black;
+}
+
 #bt{
   color: #851DCB;
 }
