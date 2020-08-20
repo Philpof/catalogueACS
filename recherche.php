@@ -34,5 +34,12 @@ echo  "</table>";
       echo "It Does not exist";
   }
 }
+?>
 
-include "footer.php" ?>
+<!-- Le HTML -->
+
+
+
+
+
+<?php include "footer.php" ?>
