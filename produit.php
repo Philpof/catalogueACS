@@ -18,30 +18,15 @@
         <p class="description"><?= $donnees['Description'] ?></p>
       </div>
       <div class="cadreImage">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <div class="sideImage">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active apercu"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1" class="apercu"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2" class="apercu"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="3" class="apercu"></li>
-    </div>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active photoProduit">
-      <img class="d-block w-100" src="<?= $donnees['LienImage'] ?>" alt="First slide">
-    </div>
-    <div class="carousel-item photoProduit">
-      <img class="d-block w-100" src="..." alt="Second slide">
-    </div>
-    <div class="carousel-item photoProduit">
-      <img class="d-block w-100" src="..." alt="Third slide">
-    </div>
-    <div class="carousel-item photoProduit">
-      <img class="d-block w-100" src="..." alt="Fourth slide">
-    </div>
-  </div>
-
+        <div class="sideImage">
+          <img class="apercu d-block" src="image/un_contenu.png">
+          <img class="apercu d-block" src="image/un_contenu.png">
+          <img class="apercu d-block" src="image/un_contenu.png">
+          <img class="apercu d-block" src="image/un_contenu.png">
+        </div>
+        <div class="photoProduit active" >
+          <img class="" src="" alt="First slide" id="photo">
+        </div>
       </div>
     </article>
     <?php
