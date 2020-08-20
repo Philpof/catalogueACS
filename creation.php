@@ -49,7 +49,7 @@ elseif(!isset($_GET['action']) || $_GET['action'] != "ok"){
           // Si le compteur de "email" est égale à 1 alors l'email existe déjà
           elseif($countEmail == 1) {
             // Message pour avertir que l'email est déjà pris + voir si login ou mdp oubliés
-            $instructions = "<div class='alert alert-danger mt-4 text-center' role='alert'>L'adresse email choisie est déjà attribuée, merci d'en choisir un nouveau ou de cliquez <a href='mdpoublie.php'>ici</a> si vous avez oublié votre login ou mot de passe.</div>";
+            $instructions = "<div class='alert alert-danger mt-4 text-center' role='alert'>L'adresse email choisie est déjà attribuée, merci d'en choisir une nouvelle ou de cliquer <a href='mdpoublie.php'>ici</a> si vous avez oublié votre login ou mot de passe.</div>";
           }
           else {
             // les Login et email sont libres donc on valide la création du compte
