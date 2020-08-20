@@ -21,21 +21,70 @@
 
 <body>
   <?php
-    try
-    {
-      // On se connecte à MySQL
+    try {
       $bdd = new PDO('mysql:host=localhost;dbname=catalogueacs;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    }
-    catch(Exception $e)
+    } catch(PDOException $e)
     {
-      // En cas d'erreur, on affiche un message et on arrête tout
-      die('Erreur : '.$e->getMessage());
+      die('Ereur : '.$e->getMessage());
     }
-
     function debug($var, $style = "")
     {
       echo "<pre style='background-color: white; border: gray 1px solid; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; color: black; width: 95%; padding: 10px; overflow-y: auto;{$style}'>";
       var_dump($var);
       echo "</pre>";
     }
-?>
+
+
+  if (isset($_POST["jeux"])) {
+          $jeux = $_POST["jeux"];
+          $str = $bdd->query("SELECT * FROM jeux WHERE Titre LIKE '%{$jeux}%'");
+          if ($str === true) {
+
+
+
+            $str->setFetchmode(PDO:: FETCH_OBJ);
+            ?>  <br>
+              <br><br>
+              <table>
+                  <tr>
+                      <th>Titre</th>
+                      <th>Categorie</th>
+                  </tr><?php
+
+          while($row = $str->fetch())
+          {
+
+              ?>
+
+                  <tr>
+                      <td><?php echo $row->Titre; ?> </td>
+                      <td><?php echo $row->Categorie; ?> </td>
+                  </tr>
+        <?php
+
+          }
+        echo  "</table>";
+        }
+        else{
+            echo "It Does not exist";
+         }
+     }
+
+  ?>
+
+
+
+  <div class="main">
+
+  <form method="post" action="header.php">
+        <label id="clr">Search</label>
+        <input class="search-txt" type="search" name="jeux" placeholder="Tapez à rechercher">
+        <button type="submit" class="btn-search"><i class="fas fa-search"></i></button>
+
+
+        <!-- <input type="submit" name="submit"> -->
+        <!-- <a class="search-btn"href="#"></a>
+        <i class="fas fa-search"></i> -->
+  </form>
+
+  </div>
