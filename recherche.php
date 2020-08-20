@@ -1,7 +1,38 @@
-<?php include "header.php" ?>
+<?php include "header.php";
 
+// fonction de recherche d'Ali
 
-<p>page de recherche</p>
+if (isset($_POST["jeux"])) {
+  $jeux = $_POST["jeux"];
+  $str = $bdd->query("SELECT id FROM jeux WHERE Titre LIKE '%{$jeux}%'");
 
+  foreach ($str as $row) {
+  }
 
-<?php include "footer.php" ?>
+  if (isset($row['id'])) {
+    $result = $bdd->query("SELECT * FROM jeux WHERE Titre LIKE '%{$jeux}%'");
+    ?>  <br>
+      <br><br>
+      <table>
+          <tr>
+              <th>Titre</th>
+              <th>Categorie</th>
+          </tr><?php
+
+    while($row = $result->fetch())
+    {
+      ?>
+      <tr>
+          <td><?php echo $row['Titre']; ?> </td>
+          <td><?php echo $row['Categorie']; ?> </td>
+      </tr>
+      <?php
+  }
+echo  "</table>";
+  }
+  else {
+      echo "It Does not exist";
+  }
+}
+
+include "footer.php" ?>

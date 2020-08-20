@@ -23,6 +23,8 @@ else if (!isset($_GET['envoiMail']) || $_GET['envoiMail'] != "ok" || empty($_POS
       $headers = 'From: Ne pas répondre';
       $message = 'Identifiant du compte (Login) : ' . $row['login'] . '<br>Mot de passe :' . $row['mdp'];
       // Envoi de l'email
+
+      
       // mail($dest, $sujet, $message, $headers);
         // Refresh de la page que que le message de confirmation s'affiche
         header("Location: mdpoublie.php?envoiMail=ok");
@@ -31,6 +33,9 @@ else if (!isset($_GET['envoiMail']) || $_GET['envoiMail'] != "ok" || empty($_POS
       //   // Message d'erreur si le mail n'a pas pu être envoyé
       //   $lostPassword = "<div class='alert alert-danger mt-5 text-center' role='alert'>Echec de l'envoie du message, veuillez réessayer ultérieurement.</div>";
       // }
+
+
+
     }
     // Instructions n°2
     else {
