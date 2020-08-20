@@ -64,18 +64,21 @@ else if (!isset($_GET['envoiMail']) || $_GET['envoiMail'] != "ok" || empty($_POS
   ?>
 
   <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+
     <label for="sosMail" class="col-sm-6 col-xl-3 text-xl-right">Adresse mail du compte :</label>
     <input type="text" name="sosMail" value="<?php if (isset($_POST['sosMail'])) {echo htmlspecialchars($_POST['sosMail']);} ?>" placeholder='Indiquez l&#8217;adresse mail que vous avez utilisé pour créer votre compte' class="col-sm-12 col-xl-8 border border-info mb-3" required>
 
     <label for="spam" class="col-sm-6 col-xl-3 text-xl-right">Etes-vous un robot ? :</label>
     <input type="choose" name="spam" pattern="non" placeholder='Tapez le mot "non" ici (sinon, c&#8217;est que vous êtes un robot...)' class="col-sm-12 col-xl-8 border border-info mb-3" required>
 
-    <input type="submit" name="submit" value="Me renvoyer mes informations de connexion par mail" class="col-sm-12 offset-xl-3 col-xl-6 mt-3">
+    <input id="boutonEnvoi" type="submit" name="submit" value="Me renvoyer mes informations de connexion par mail" class="col-sm-12 offset-xl-3 col-xl-6 mt-3">
+
   </form>
 
+  <!-- Liens pour retourner au site -->
   <hr>
   <div class="col-sm-12 text-center mt-4">
-    <a href="index.php" class="align-item-center">Revenir au site</a>
+    <a id="retour" href="index.php" class="align-item-center">Revenir à l'accueil</a>
   </div>
   <hr>
 

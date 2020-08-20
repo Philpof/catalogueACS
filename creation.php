@@ -5,7 +5,7 @@
 
 // Si le compte a bien été créé alors le message de confirmation est créé dans la variable "$instructions"
 if(isset($_GET['action']) && $_GET['action'] == "ok"){
-  $instructions = "<div class='alert alert-success mt-4 text-center' role='alert'>Félicitations, votre compte a bien été créé !<br>Vous pouvez désormais vous connecter à votre compte en cliquant <a id='ici' href='login.php'>ici</a></div>";
+  $instructions = "<div class='alert alert-success mt-5 text-center' role='alert'>Félicitations, votre compte a bien été créé !<br>Vous pouvez désormais vous connecter à votre compte en cliquant <a id='ici' href='login.php'>ici</a></div>";
 }
 
 // Sinon vérification pour la création du compte
@@ -44,12 +44,12 @@ elseif(!isset($_GET['action']) || $_GET['action'] != "ok"){
           // Si le compteur de "login" est égale à 1 alors le login existe déjà
           if($countLogin == 1) {
             // Message pour avertir que le login est déjà pris
-            $instructions = "<div class='alert alert-danger mt-4 text-center' role='alert'>L'identifiant du compte (Login) choisi est déjà attribué, merci d'en choisir un nouveau.</div>";
+            $instructions = "<div class='alert alert-danger mt-5 text-center' role='alert'>L'identifiant du compte (Login) choisi est déjà attribué, merci d'en choisir un nouveau.</div>";
           }
           // Si le compteur de "email" est égale à 1 alors l'email existe déjà
           elseif($countEmail == 1) {
             // Message pour avertir que l'email est déjà pris + voir si login ou mdp oubliés
-            $instructions = "<div class='alert alert-danger mt-4 text-center' role='alert'>L'adresse email choisie est déjà attribuée, merci d'en choisir une nouvelle ou de cliquer <a id='ici' href='mdpoublie.php'>ici</a> si vous avez oublié votre login ou mot de passe.</div>";
+            $instructions = "<div class='alert alert-danger mt-5 text-center' role='alert'>L'adresse email choisie est déjà attribuée, merci d'en choisir une nouvelle ou de cliquer <a id='ici' href='mdpoublie.php'>ici</a> si vous avez oublié votre login ou mot de passe.</div>";
           }
           else {
             // les Login et email sont libres donc on valide la création du compte
@@ -82,17 +82,17 @@ elseif(!isset($_GET['action']) || $_GET['action'] != "ok"){
       }
       // Si les deux mdp saisis ne sont pas striictement identique alors le message d'instructions est créé dans la variable "$instructions"
       else {
-        $instructions = "<div class='alert alert-danger text-center' role='alert'>Le mot de passe saisi et sa confirmation sont différents.</div>";
+        $instructions = "<div class='alert alert-danger mt-5 text-center' role='alert'>Le mot de passe saisi et sa confirmation sont différents.</div>";
       }
     }
     // Si les champs ne sont pas remplis alors le message d'instructions est créé dans la variable "$instructions"
     else {
-      $instructions = "<div class='alert alert-info text-center' role='alert'>Veuillez compléter les différents champs suivants :</div>";
+      $instructions = "<div class='alert alert-info mt-5 text-center' role='alert'>Veuillez compléter les différents champs suivants :</div>";
     }
   }
   // Si les champs ne sont pas remplis alors le message d'instructions est créé dans la variable "$instructions"
   else {
-    $instructions = "<div class='alert alert-info text-center' role='alert'>Veuillez compléter les différents champs suivants :</div>";
+    $instructions = "<div class='alert alert-info mt-5 text-center' role='alert'>Veuillez compléter les différents champs suivants :</div>";
   }
 }
 ?>
@@ -147,14 +147,14 @@ elseif(!isset($_GET['action']) || $_GET['action'] != "ok"){
     <label for="spam" class="col-sm-6 col-xl-3 text-xl-right">Anti-spam :</label>
     <input type="choose" name="spam" pattern="jeux" placeholder='Tapez le mot "jeux" ici' class="col-sm-12 col-xl-8 col-xl-6 border border-info mb-3" required>
 
-    <input type="submit" name="Creer" value="Créer mon compte" class="col-sm-12 offset-xl-3 col-xl-6 mt-3">
+    <input id="boutonEnvoi" type="submit" name="Creer" value="Créer mon compte" class="col-sm-12 offset-xl-3 col-xl-6 mt-3">
 
   </form>
 
   <!-- Liens pour retourner au site -->
   <hr>
-  <div class="px-5 row justify-content-center">
-    <a href="index.php">Revenir au site</a>
+  <div class="col-sm-12 text-center mt-4">
+    <a id="retour" href="index.php" class="align-item-center">Revenir à l'accueil</a>
   </div>
   <hr>
 

@@ -1,8 +1,8 @@
-<footer id="footer" class="border-top border-bottom rounded-bottom container text-center text-light pt-3 pb-3">
+<footer id="footer" class="rounded-bottom container text-center text-light pt-3 pb-3">
 
-    <a class="font-weight-bold" href="index.php">GRAP.com</a>
+    <a class="font-weight-bold" href="index.php">GRAP.fr</a>
     <p class="mt-4 font-italic">Site réalisé en HTML - CSS - PHP - MySQL - javascript</p>
-    <p class="m-3">Ali SYED | Robin DE MARCH | Philippe PERECHODOV</p>
+    <p class="m-3">Robin DE MARCH | Ali SYED | Philippe PERECHODOV</p>
     <p class="m-3">Aout 2020</p>
 
 </footer>

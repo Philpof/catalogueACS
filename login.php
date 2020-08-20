@@ -89,18 +89,19 @@ else
     <label for="mot_de_passe" class="col-sm-6 col-xl-3 text-xl-right">Mot de passe :</label>
     <input type="password" name="mot_de_passe" id="mot_de_passe" class="col-sm-12 col-xl-8 border border-info mb-3">
 
-    <input type="submit" name="submit" value="Se connecter à mon compte" class="col-sm-12 offset-xl-3 col-xl-6 mt-3">
+    <input id="boutonEnvoi" type="submit" name="submit" value="Se connecter à mon compte" class="col-sm-12 offset-xl-3 col-xl-6 mt-3">
 
   </form>
 
   <div class="col-sm-12 text-center mt-4">
     <p>ou</p>
-    <a href="creation.php">créer mon compte privé</a>
+    <a id="comptePrive" href="creation.php">>>> créer mon compte privé <<<</a>
   </div>
 
+  <!-- Liens pour retourner au site -->
   <hr>
   <div class="col-sm-12 text-center mt-4">
-    <a href="index.php" class="align-item-center">Revenir au site</a>
+    <a id="retour" href="index.php" class="align-item-center">Revenir à l'accueil</a>
   </div>
   <hr>
 
