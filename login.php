@@ -72,6 +72,15 @@ else
 <main class="container pt-5 pb-5">
   <h1 class="text-center">Connection à mon espace privé</h1>
   <hr>
+
+    <?php
+      // Rencontre-t-on une erreur ? Affichage des différentes instructions selon le cas
+      if(!empty($password_KO))
+      {
+        echo $password_KO;
+      }
+    ?>
+
   <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
     <label for="nom_du_compte" class="col-sm-6 col-xl-3 text-xl-right">Identifiant du compte (Login) :</label>
     <input type="text" name="nom_du_compte" id="nom_du_compte" class="col-sm-12 col-xl-8 border border-info mb-3">
@@ -80,26 +89,19 @@ else
     <label for="mot_de_passe" class="col-sm-6 col-xl-3 text-xl-right">Mot de passe :</label>
     <input type="password" name="mot_de_passe" id="mot_de_passe" class="col-sm-12 col-xl-8 border border-info mb-3">
 
-    <input type="submit" name="submit" value="Se connecter à mon compte" class="col-sm-12 offset-xl-3 col-xl-6 mt-3">
+    <input id="boutonEnvoi" type="submit" name="submit" value="Se connecter à mon compte" class="col-sm-12 offset-xl-3 col-xl-6 mt-3">
 
   </form>
 
   <div class="col-sm-12 text-center mt-4">
     <p>ou</p>
-    <a href="creation.php">créer mon compte privé</a>
+    <a id="comptePrive" href="creation.php">>>> créer mon compte privé <<<</a>
   </div>
 
-  <?php
-    // Rencontre-t-on une erreur ? Affichage des différentes instructions selon le cas
-    if(!empty($password_KO))
-    {
-      echo $password_KO;
-    }
-  ?>
-
+  <!-- Liens pour retourner au site -->
   <hr>
   <div class="col-sm-12 text-center mt-4">
-    <a href="index.php" class="align-item-center">Revenir au site</a>
+    <a id="retour" href="index.php" class="align-item-center">Revenir à l'accueil</a>
   </div>
   <hr>
 

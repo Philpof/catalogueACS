@@ -313,8 +313,7 @@ include "header.php";
 
 </main>
 
-<footer>
-</footer>
+
 
 
 
