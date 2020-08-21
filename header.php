@@ -68,7 +68,7 @@ else {
 
 <!-- fonction pour le changement de background du "body" (Début) -->
 <?php
-$numero = rand(1, 11);
+$numero = rand(1, 19);
 ?>
 
 <style type="text/css">
