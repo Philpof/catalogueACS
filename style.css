@@ -16,13 +16,13 @@ body {
 }
 
 .layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(234, 213, 245, 0.2);
-    width: 100%;
-    height: auto;
-    min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(234, 213, 245, 0.2);
+  width: 100%;
+  height: auto;
+  min-height: 100%;
 }
 
 main {
@@ -223,6 +223,7 @@ a:hover {
   color: white;
   font-size: 1.5rem;
 }
+
 #loupe:hover {
   color: black;
 }
@@ -231,6 +232,7 @@ a:hover {
   color: black;
   font-size: 1.5rem;
 }
+
 #loupeInfo:hover {
   color: purple;
 }
@@ -271,7 +273,6 @@ input {
 .btn-search{
   background-color: inherit;
   border: none;
-
 }
 
 .search-txt{
@@ -293,9 +294,21 @@ tr:hover {
 }
 
 #footer {
-  margin: auto;
-  background: linear-gradient(to left, #851DCB, #7E1697, #A71375);
+  padding: 0px;
+}
+
+#realisation {
+  background-color: black;
+  color: grey;
+  text-shadow: 1px 4px 2px purple;
+}
+
+#lienLinkedIn {
+  background-color: purple;
   color: white;
-  border-top: 2px solid;
-  border-color: black !important;
+}
+
+#copyright {
+  background-color: white;
+  color: purple;
 }

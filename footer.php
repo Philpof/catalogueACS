@@ -1,9 +1,9 @@
-<footer id="footer" class="rounded-bottom container text-center text-light pt-3 pb-3">
+<footer id="footer" class="container text-center">
 
-    <a class="font-weight-bold" href="index.php">GRAP.fr</a>
-    <p class="mt-4 font-italic">Site réalisé en HTML - CSS - PHP - MySQL - javascript</p>
-    <p class="m-3">Robin DE MARCH | Ali SYED | Philippe PERECHODOV</p>
-    <p class="m-3">Aout 2020</p>
+
+    <div id="realisation" class="p-2">Site réalisé en HTML - CSS - PHP - MySQL - javascript</div>
+    <div id="lienLinkedIn" class="p-2"><a href="https://www.linkedin.com/in/robin-de-march/">Robin DE MARCH</a> | <a href="index.php">Ali SYED</a> | <a href="https://www.linkedin.com/in/philippe-perechodov/">Philippe PERECHODOV</a></div>
+    <div id="copyright" class="p-2">Copyright © 2020 GRAP.fr - All rights reserved</div>
 
 </footer>
 </div>
