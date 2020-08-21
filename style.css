@@ -320,6 +320,12 @@ tr:hover {
   text-shadow: 1px 4px 2px purple;
 }
 
+#copyright:hover {
+  background-color: black;
+  color: purple;
+  text-shadow: 1px 4px 2px white;
+}
+
 .jaquettes {
   width: 250px;
   height: auto;

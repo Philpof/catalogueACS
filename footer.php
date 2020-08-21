@@ -1,24 +1,24 @@
 <?php
-
 if (stripos($_SERVER['PHP_SELF'], 'produit.php')) {
   $fluid = '-fluid';
 }
 else {
   $fluid = null;
 }
-
 ?>
-
 
 <footer id="footer" class="container<?php echo $fluid ?> text-center">
 
-
     <div id="realisation" class="p-2">Site réalisé en HTML - CSS - PHP - MySQL - javascript</div>
-    <div id="lienLinkedIn" class="p-2"><a href="https://www.linkedin.com/in/robin-de-march/" target="_blank">Robin DE MARCH</a> | <a href="404.php" target="_blank">Ali SYED</a> | <a href="https://www.linkedin.com/in/philippe-perechodov/" target="_blank">Philippe PERECHODOV</a></div>
-    <div id="copyright" class="p-2">Copyright © 2020 GRAP.fr - All rights reserved</div>
+    <div id="lienLinkedIn" class="p-2">
+      <a href="https://www.linkedin.com/in/robin-de-march/" target="_blank">Robin DE MARCH</a> | <a href="404.php" target="_blank">Ali SYED</a> | <a href="https://www.linkedin.com/in/philippe-perechodov/" target="_blank">Philippe PERECHODOV</a>
+    </div>
+    <div id="copyright" class"p-2">
+      <a>Copyright © 2020 GRAP.fr - All rights reserved</a>
+      <a id="github" href="https://github.com/Philpof/catalogueACS" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
 
 </footer>
-</div>
 
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
