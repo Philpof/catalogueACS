@@ -1,3 +1,8 @@
+
+:root {
+  font-size: 16px;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -7,7 +12,147 @@
 body {
   /* background-image: cf. header.php */
   background-attachment: fixed;
+  background-color: #9c82ab;
 }
+
+
+#productsSection {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  border: 1px solid black;
+  padding-top: 250px;
+  padding-bottom: 100px;
+  padding-left: 75px;
+  padding-right: 75px;
+}
+
+.produit {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+}
+
+.boutonPanier {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 10px;;
+  width: 100px;
+  height: 75px;
+  margin-left: 50px;
+  margin-top: 250px;
+  background-color: #48459A;
+  border-radius: 20px;
+  color: white;
+}
+
+.information {
+  width: 920px;
+  height: 100%;
+  margin-left: 250px;
+
+  border-radius: 20px;
+}
+
+.titreJeux {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  background: linear-gradient(to left, #851DCB, #7E1697, #A71375);
+  color: white;
+  height: auto;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.subInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  color: white;
+}
+
+.categorie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 40px;
+  background-color: #A71375;
+  text-align: center;
+  border-radius: 20px;
+}
+.plateforme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 40px;
+  background-color: #7E1697;
+  text-align: center;
+  border-radius: 20px;
+}
+.prix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 40px;
+  background-color: #782CAB;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.description {
+  display: block;
+  height: 350px;
+  margin-top: 15px;
+  background: linear-gradient(to left, #851DCB, #7E1697, #A71375);
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  overflow: auto;
+}
+/* Hide scrollbar for Chorme, Opera and Safari */
+.description::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.description {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.cadreImage {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.photoProduit {
+  width: 300px;
+  height: 450px;
+  border: 1px solid black;
+}
+
+.sideImage {
+  margin-top: 50px;
+}
+
+.apercu {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+
+
 
 main {
   opacity: 0.9;
