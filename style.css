@@ -299,3 +299,8 @@ tr:hover {
   border-top: 2px solid;
   border-color: black !important;
 }
+
+.jaquettes {
+  width: 250px;
+  height: auto;
+}
