@@ -36,7 +36,7 @@ if (isset($_POST["jeux"])) {
     {
 ?>
     <tr>
-      <td><img class="jaquettes" src="<?= $row['LienImage'] ?>">;</td>
+      <td><img class="jaquettes" src="<?= $row['LienImage'] ?>"></td>
       <td><?php echo $row['Titre']; ?></td>
       <td><?php echo $row['Categorie']; ?></td>
       <td><?php echo $row['Plateforme']; ?></td>
