@@ -312,3 +312,8 @@ tr:hover {
   background-color: white;
   color: purple;
 }
+
+.jaquettes {
+  width: 250px;
+  height: auto;
+}
