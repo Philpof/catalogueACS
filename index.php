@@ -4,7 +4,7 @@ include "header.php";
 
 <!-- Le HTML -->
 
-<main class="container pt-5 pb-5">
+<main class="container">
 
   <div class="slider">
     <div id="slider" class="carousel slide carousel-fade" data-ride="carousel">

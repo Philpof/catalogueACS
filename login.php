@@ -69,7 +69,7 @@ else
 
 <!-- Le HTML -->
 
-<main class="container pt-5 pb-5">
+<main class="container">
   <h1 class="text-center">Connection à mon espace privé</h1>
   <hr>
 
