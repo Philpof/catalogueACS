@@ -15,7 +15,7 @@
   <script src="https://kit.fontawesome.com/fbdd9c8340.js" crossorigin="anonymous"></script>
 
   <!-- Style CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 
@@ -31,10 +31,13 @@
   {
     die('Ereur : '.$e->getMessage());
   }
-    function debug($var, $style = "")
-
+  function debug($var, $style = "")
+  {
+    echo "<pre style='background-color: white; border: gray 1px solid; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; color: black; width: 95%; padding: 10px; overflow-y: auto;{$style}'>";
+    var_dump($var);
+    echo "</pre>";
+  }
 ?>
-
 <!-- Fonction de connexion avec login -->
 <?php
 // On prolonge la session

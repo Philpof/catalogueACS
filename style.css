@@ -1,4 +1,3 @@
-
 :root {
   font-size: 16px;
 }
@@ -12,9 +11,13 @@
 body {
   /* background-image: cf. header.php */
   background-attachment: fixed;
-  background-color: #9c82ab;
 }
 
+main {
+  opacity: 0.9;
+  background-color: #ead5f5;
+  margin-top: 4rem;
+}
 
 #productsSection {
   width: 100%;
@@ -151,14 +154,8 @@ body {
   width: 40px;
   height: 40px;
   margin-bottom: 20px;
-
-
-
-main {
-  opacity: 0.9;
-  background-color: #ead5f5;
-  margin-top: 4rem;
 }
+
 
 #navBarre {
   background: linear-gradient(to left, #851DCB, #7E1697, #A71375);
