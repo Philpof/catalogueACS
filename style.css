@@ -319,9 +319,6 @@ tr:hover {
 #copyright {
   background-color: black;
   color: grey;
-}
-
-#copyright span{
   text-shadow: 1px 4px 2px purple;
 }
 

@@ -66,19 +66,29 @@ else {
 }
 ?>
 
-<!-- Pour le changement de background du "body" (Début) -->
+<!-- Pour le changement de background du "body" à partir des lien d'image dans la base de donnée (Début) -->
 <?php
-$numero = rand(1, 19);
+// Pour avoir le nombre d'entrée dans la table "background"
+$nbrIdBG = $bdd->query("SELECT COUNT(id) AS nbrId FROM background");
+$resultat = $nbrIdBG->fetch();
+$nbMax = $resultat['nbrId'];
+
+// Le random avec, en nombre max, le nombre d'entrée déterminée
+$numero = rand(1, $nbMax);
+
+$imageSelected = $bdd->query("SELECT lien AS lienBG FROM background WHERE id='{$numero}'");
+$imageResultat = $imageSelected->fetch();
+$lienImage = $imageResultat['lienBG'];
 ?>
 
 <style type="text/css">
   body {
-   background-image: url("img/BG/<?php echo $numero ?>.webp");
+   background-image: url("<?php echo $lienImage ?>");
    background-size: cover;
    background-position: center;
   }
 </style>
-<!-- Pour le changement de background du "body" (Fin) -->
+<!-- Pour le changement de background du "body" à partir des lien d'image dans la base de donnée (Fin) -->
 
 <!-- Pour l'affichage du message de bienvenue sur l'index.php uniquement (Début) -->
 <?php
