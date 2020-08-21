@@ -68,17 +68,26 @@ else {
 
 <!-- Pour le changement de background du "body" à partir des lien d'image dans la base de donnée (Début) -->
 <?php
-// Pour avoir le nombre d'entrée dans la table "background"
-$nbrIdBG = $bdd->query("SELECT COUNT(id) AS nbrId FROM background");
-$resultat = $nbrIdBG->fetch();
-$nbMax = $resultat['nbrId'];
+if (stripos($_SERVER['PHP_SELF'], 'produit.php')) {
+  $produitBG = htmlentities($_GET['idSelect']);
 
-// Le random avec, en nombre max, le nombre d'entrée déterminée
-$numero = rand(1, $nbMax);
+  $imageSelected = $bdd->query('SELECT lien AS lienBG FROM background WHERE id_jeu ="' . $produitBG . '"');
+  $imageResultat = $imageSelected->fetch();
+  $lienImage = $imageResultat['lienBG'];
+}
+else {
+  // Pour avoir le nombre d'entrée dans la table "background"
+  $nbrIdBG = $bdd->query("SELECT COUNT(id) AS nbrId FROM background");
+  $resultat = $nbrIdBG->fetch();
+  $nbMax = $resultat['nbrId'];
 
-$imageSelected = $bdd->query("SELECT lien AS lienBG FROM background WHERE id='{$numero}'");
-$imageResultat = $imageSelected->fetch();
-$lienImage = $imageResultat['lienBG'];
+  // Le random avec, en nombre max, le nombre d'entrée déterminée
+  $numero = rand(1, $nbMax);
+
+  $imageSelected = $bdd->query("SELECT lien AS lienBG FROM background WHERE id='{$numero}'");
+  $imageResultat = $imageSelected->fetch();
+  $lienImage = $imageResultat['lienBG'];
+}
 ?>
 
 <style type="text/css">
