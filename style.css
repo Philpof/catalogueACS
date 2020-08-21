@@ -11,7 +11,7 @@
 body {
   /* background-image: cf. header.php */
   background-attachment: fixed;
-  width: 100%;
+  width: 100vh;
   height: 100%;
 }
 
@@ -34,12 +34,13 @@ main {
 
 #productsSection {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: block;
   padding-top: 175px;
   padding-bottom: 100px;
   padding-left: 75px;
   padding-right: 75px;
+  margin-bottom: 26px;
 }
 
 .produit {
@@ -161,6 +162,8 @@ main {
 }
 
 .sideImage {
+  display: flex;
+  flex-direction: column;
   margin-top: 50px;
 }
 
@@ -437,7 +440,50 @@ tr:hover {
   font-size: 10px;
 }
 
-.product-bottom h"{
+.product-bottom {
   font-size: 15px;
   padding-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+  .produit {
+    flex-direction: column !important;
+  }
+  #productsSection {
+    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .information {
+    width: 100%;
+    margin: 0;
+    margin-top: 150px;
+  }
+  .cadreImage {
+    width: 100%;
+    flex-direction: column-reverse;
+    margin: auto;
+  }
+  .photoProduit {
+    text-align: center;
+    width: auto;
+    height: auto;
+    margin: auto;
+  }
+  .photoActive {
+    width: 75%;
+    height: auto;
+    margin: auto;
+  }
+  .sideImage {
+    width: auto;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .boutonPanier {
+    margin: auto;
+    order: 3;
+  }
 }
