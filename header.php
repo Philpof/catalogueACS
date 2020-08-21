@@ -93,7 +93,7 @@ $numero = rand(1, 19);
           <button type="submit" class="btn-search"><i id="loupe" class="fas fa-search"></i></button>
     </form>
     <a href="<?php echo $goLog ?>.php"><?php echo $connexion ?></a>
-    <a href="panier.php"><i class="fas fa-gamepad"></i> Mon Panier</a>
+    <a href="panier.php"><i class="fas fa-cart-arrow-down"></i> Mon Panier</a>
   </div>
   <div id="realisation" class="row justify-content-around py-2 align-items-center">
     <p class="mb-0"><i class="far fa-grin-alt"></i> Bienvenue sur GRAP.fr, <?php echo $client ?> !</p>

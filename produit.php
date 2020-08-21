@@ -9,7 +9,9 @@
     while ($donnees = $produit->fetch()) {
     ?>
     <article class="produit">
-      <div class="boutonPanier"><p>Ajouter au panier</p></div>
+      <div class="boutonPanier">
+        <i class="fas fa-cart-arrow-down"></i>
+      </div>
       <div class="information">
         <h1 class="titreJeux"><?= $donnees['Titre'] ?></h1>
         <div class="subInfo"><p class="categorie"><?= $donnees['Categorie'] ?></p>
