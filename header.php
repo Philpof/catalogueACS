@@ -21,7 +21,7 @@
 
 
 <body>
-
+<div class="layer">
 <!-- Connection à la base de donnée -->
 <?php
   try {
