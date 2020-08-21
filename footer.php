@@ -1,4 +1,16 @@
-<footer id="footer" class="container text-center">
+<?php
+
+if (stripos($_SERVER['PHP_SELF'], 'produit.php')) {
+  $fluid = '-fluid';
+}
+else {
+  $fluid = null;
+}
+
+?>
+
+
+<footer id="footer" class="container<?php echo $fluid ?> text-center">
 
 
     <div id="realisation" class="p-2">Site réalisé en HTML - CSS - PHP - MySQL - javascript</div>

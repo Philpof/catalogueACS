@@ -14,7 +14,7 @@
         <h1 class="titreJeux"><?= $donnees['Titre'] ?></h1>
         <div class="subInfo"><p class="categorie"><?= $donnees['Categorie'] ?></p>
         <p class="plateforme"><?= $donnees['Plateforme'] ?></p>
-        <p class="prix"><?= $donnees['Prix'] ?>€</p></div>
+        <p class="prix"><?= $donnees['Prix'] ?> €</p></div>
         <p class="description"><?= $donnees['Description'] ?></p>
       </div>
       <div class="cadreImage">

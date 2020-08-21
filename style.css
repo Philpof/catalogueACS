@@ -295,12 +295,13 @@ tr:hover {
 
 #footer {
   padding: 0px;
+  border-top: 1px solid black;
+  
 }
 
 #realisation {
-  background-color: black;
-  color: grey;
-  text-shadow: 1px 4px 2px purple;
+  background-color: white;
+  color: purple;
 }
 
 #lienLinkedIn {
@@ -309,8 +310,9 @@ tr:hover {
 }
 
 #copyright {
-  background-color: white;
-  color: purple;
+  background-color: black;
+  color: grey;
+  text-shadow: 1px 4px 2px purple;
 }
 
 .jaquettes {
