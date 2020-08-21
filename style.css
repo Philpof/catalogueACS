@@ -31,8 +31,7 @@ body {
 }
 
 main {
-  opacity: 0.9;
-  background-color: #ead5f5;
+  background-color: rgba(234, 213, 245, 0.8);
   margin-top: 4rem;
   min-height: 100%;
 }
@@ -137,11 +136,12 @@ main {
   display: block;
   height: 350px;
   margin-top: 15px;
-  background: linear-gradient(to left, #851DCB, #7E1697, #A71375);
-  color: white;
-  padding: 10px;
+  background-color: rgba(234, 213, 245, 0.8);
+  color: black;
   border-radius: 20px;
   overflow: auto;
+  border: 1px solid purple;
+
 }
 /* Hide scrollbar for Chorme, Opera and Safari */
 .description::-webkit-scrollbar {
@@ -272,7 +272,6 @@ input {
 #boutonEnvoi:hover {
   background-color: white;
   color: purple;
-  border-color: black;
 }
 
 #bt{
@@ -320,13 +319,19 @@ tr:hover {
 #copyright {
   background-color: black;
   color: grey;
+}
+
+#copyright span{
   text-shadow: 1px 4px 2px purple;
 }
 
-#copyright:hover {
-  background-color: black;
+#github {
   color: purple;
-  text-shadow: 1px 4px 2px white;
+  font-size: 1.5rem;
+}
+
+#github:hover {
+  color: black;
 }
 
 .jaquettes {

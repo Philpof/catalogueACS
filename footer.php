@@ -9,14 +9,11 @@ else {
 
 <footer id="footer" class="container<?php echo $fluid ?> text-center">
 
-    <div id="realisation" class="p-2">Site réalisé en HTML - CSS - PHP - MySQL - javascript</div>
+    <div id="realisation" class="p-2"><a id="github" href="https://github.com/Philpof/catalogueACS" target="_blank"><i class="fab fa-github"></i></a> | Site réalisé en HTML - CSS - PHP - MySQL - javascript</div>
     <div id="lienLinkedIn" class="p-2">
       <a href="https://www.linkedin.com/in/robin-de-march/" target="_blank">Robin DE MARCH</a> | <a href="404.php" target="_blank">Ali SYED</a> | <a href="https://www.linkedin.com/in/philippe-perechodov/" target="_blank">Philippe PERECHODOV</a>
     </div>
-    <div id="copyright" class"p-2">
-      <a>Copyright © 2020 GRAP.fr - All rights reserved</a>
-      <a id="github" href="https://github.com/Philpof/catalogueACS" target="_blank"><i class="fab fa-github"></i></a>
-    </div>
+    <div id="copyright" class="py-2 m-0 row justify-content-around ">Copyright © 2020 GRAP.fr - All rights reserved</div>
 
 </footer>
 

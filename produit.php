@@ -17,7 +17,7 @@
         <div class="subInfo"><p class="categorie"><?= $donnees['Categorie'] ?></p>
         <p class="plateforme"><?= $donnees['Plateforme'] ?></p>
         <p class="prix"><?= $donnees['Prix'] ?> €</p></div>
-        <p class="description"><?= $donnees['Description'] ?></p>
+        <p class="description p-3"><?= nl2br($donnees['Description']) ?></p>
       </div>
       <div class="cadreImage">
         <div class="sideImage">

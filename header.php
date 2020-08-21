@@ -53,7 +53,7 @@ if(!isset($_SESSION['login']))
   $admin = "";
 }
 else {
-  $client = ", " . $_SESSION['prenom'] . " " . $_SESSION['nom'];
+  $client = $_SESSION['prenom'] . " " . $_SESSION['nom'];
   $connexion = "<i class=\"fas fa-ghost\"></i> Me déconnecter";
   $goLog = "logout";
 
@@ -66,7 +66,7 @@ else {
 }
 ?>
 
-<!-- fonction pour le changement de background du "body" (Début) -->
+<!-- Pour le changement de background du "body" (Début) -->
 <?php
 $numero = rand(1, 19);
 ?>
@@ -78,8 +78,20 @@ $numero = rand(1, 19);
    background-position: center;
   }
 </style>
-<!-- fonction pour le changement de background du "body" (Fin) -->
+<!-- Pour le changement de background du "body" (Fin) -->
 
+<!-- Pour l'affichage du message de bienvenue sur l'index.php uniquement (Début) -->
+<?php
+if (stripos($_SERVER['PHP_SELF'], 'index.php')) {
+  $bienvenue = '<div id="realisation" class="row justify-content-around py-2 align-items-center">
+      <p class="mb-0"><i class="far fa-grin-alt"></i> Bienvenue sur GRAP.fr, ' . $client . ' !</p>
+    </div>';
+}
+else {
+  $bienvenue = null;
+}
+?>
+<!-- Pour l'affichage du message de bienvenue sur l'index.php uniquement (Fin) -->
 
 <!-- Le HTML -->
 
@@ -88,14 +100,14 @@ $numero = rand(1, 19);
     <a class="" href="admin.php"><?php echo $admin ?></a>
     <a class="font-weight-bold" href="index.php">GRAP.fr</a>
     <form method="post" action="recherche.php">
-          <!-- <label id="clr">Recherche</label> -->
-          <input class="pl-3 search-txt" type="search" name="jeux" placeholder="Indiquez le jeux recherché">
-          <button type="submit" class="btn-search"><i id="loupe" class="fas fa-search"></i></button>
+      <input class="pl-3 search-txt" type="search" name="jeux" placeholder="Indiquez le jeux recherché">
+      <button type="submit" class="btn-search"><i id="loupe" class="fas fa-search"></i></button>
     </form>
     <a href="<?php echo $goLog ?>.php"><?php echo $connexion ?></a>
     <a href="panier.php"><i class="fas fa-cart-arrow-down"></i> Mon Panier</a>
   </div>
-  <div id="realisation" class="row justify-content-around py-2 align-items-center">
-    <p class="mb-0"><i class="far fa-grin-alt"></i> Bienvenue sur GRAP.fr, <?php echo $client ?> !</p>
-  </div>
+  <?php
+  echo $bienvenue;
+  ?>
+
 </nav>
