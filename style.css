@@ -1,10 +1,20 @@
+
 :root {
   font-size: 16px;
 }
 
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Gill Sans", sans-serif;
+}
+
 body {
+  /* background-image: cf. header.php */
+  background-attachment: fixed;
   background-color: #9c82ab;
 }
+
 
 #productsSection {
   width: 100%;
@@ -141,4 +151,135 @@ body {
   width: 40px;
   height: 40px;
   margin-bottom: 20px;
+
+
+
+main {
+  opacity: 0.9;
+  background-color: #ead5f5;
+  margin-top: 4rem;
+}
+
+#navBarre {
+  background: linear-gradient(to left, #851DCB, #7E1697, #A71375);
+  color: white;
+}
+
+#navBarre a {
+  color: white;
+}
+
+#navBarre a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+#retour {
+  color:purple;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#retour:hover {
+  text-decoration: none;
+  color: black;
+}
+
+#ici {
+  color: purple;
+  font-weight: bold;
+}
+
+#ici:hover {
+  text-decoration: none;
+  color: black;
+}
+
+#loupe {
+  color: white;
+  font-size: 1.5rem;
+}
+#loupe:hover {
+  color: black;
+}
+
+#loupeInfo {
+  color: black;
+  font-size: 1.5rem;
+}
+#loupeInfo:hover {
+  color: purple;
+}
+
+input {
+  border: 2px solid #7E1697;
+  height: 2.2rem;
+  width: 20rem;
+  border-radius: 50px;
+}
+
+#comptePrive {
+  color: black;
+  text-shadow: 1.5px 2px 3px purple;
+}
+
+#comptePrive:hover {
+  text-decoration: none;
+  color: white;
+}
+
+#boutonEnvoi {
+  background-color: purple;
+  color: white;
+  border-color: black;
+}
+
+#boutonEnvoi:hover {
+  background-color: white;
+  color: purple;
+  border-color: black;
+}
+
+#bt{
+  color: #851DCB;
+}
+
+.btn-search{
+  background-color: inherit;
+  border: none;
+
+}
+
+.search-txt{
+  color: purple;
+}
+
+th {
+  color: white;
+  font-size: 1.2rem;
+  background-color: purple;
+}
+
+tr {
+  color: black;
+}
+
+tr:hover {
+  color: purple !important;
+}
+
+#footer {
+  background: linear-gradient(to left, #851DCB, #7E1697, #A71375);
+  color: white;
+  border-top: 2px solid;
+  border-color: black !important;
 }
