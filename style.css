@@ -304,6 +304,22 @@ tr:hover {
   color: purple;
 }
 
+#lienLinkedIn {
+  background-color: purple;
+  color: white;
+}
+
+#copyright {
+  background-color: black;
+  color: grey;
+  text-shadow: 1px 4px 2px purple;
+}
+
+.jaquettes {
+  width: 250px;
+  height: auto;
+}
+
 .bcolor{
   background-color: white;
 }
@@ -424,20 +440,4 @@ tr:hover {
 .product-bottom h"{
   font-size: 15px;
   padding-bottom: 10px;
-}
-
-  #lienLinkedIn {
-    background-color: purple;
-    color: white;
-  }
-
-  #copyright {
-    background-color: black;
-    color: grey;
-    text-shadow: 1px 4px 2px purple;
-  }
-
-  .jaquettes {
-    width: 250px;
-    height: auto;
 }
