@@ -1,9 +1,8 @@
 <?php include 'header.php';?>
 <section id="productsSection">
   <?php
-  $_GET['jeux'] = 1;
-  if (isset($_GET['jeux'])) {
-    $jeux = htmlentities($_GET['jeux']);
+  if (isset($_GET['idSelect'])) {
+    $jeux = htmlentities($_GET['idSelect']);
 
     $produit = $bdd->query('SELECT * FROM jeux WHERE id ="' . $jeux . '"');
     while ($donnees = $produit->fetch()) {
