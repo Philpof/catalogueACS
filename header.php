@@ -86,7 +86,7 @@ $numero = rand(1, 19);
 <nav id="navBarre" class="container-fluid fixed-top">
   <div class="row justify-content-around pt-3 pb-3 align-items-center">
     <a class="font-weight-bold" href="index.php">GRAP.fr</a>
-    <p class="mb-0">Bonjour<?php echo $client ?> !</p>
+    <p class="mb-0"><i class="far fa-grin-alt"></i> Bonjour<?php echo $client ?> !</p>
     <a href="admin.php"><?php echo $admin ?></a>
     <a href="<?php echo $goLog ?>.php"><?php echo $connexion ?></a>
 
