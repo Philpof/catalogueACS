@@ -69,7 +69,7 @@ else {
 
 <!-- fonction pour le changement de background du "body" (Début) -->
 <?php
-$numero = rand(1, 5);
+$numero = rand(1, 11);
 ?>
 
 <style type="text/css">
@@ -79,7 +79,7 @@ $numero = rand(1, 5);
    background-position: center;
   }
 </style>
-<!-- fonction pour le changement de background de la page "single" (Fin) -->
+<!-- fonction pour le changement de background du "body" (Fin) -->
 
 
 <!-- Le HTML -->
