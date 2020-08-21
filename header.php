@@ -67,6 +67,21 @@ else {
 }
 ?>
 
+<!-- fonction pour le changement de background du "body" (Début) -->
+<?php
+$numero = rand(1, 5);
+?>
+
+<style type="text/css">
+  body {
+   background-image: url("img/BG/<?php echo $numero ?>.webp");
+   background-size: cover;
+   background-position: center;
+  }
+</style>
+<!-- fonction pour le changement de background de la page "single" (Fin) -->
+
+
 <!-- Le HTML -->
 
 <nav id="navBarre" class="container-fluid fixed-top">

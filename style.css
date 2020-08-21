@@ -5,12 +5,12 @@
 }
 
 body {
-  background-image: url("img/FF7R.jpeg");
+  /* background-image: cf. header.php */
   background-attachment: fixed;
 }
 
 main {
-  opacity: 0.93;
+  opacity: 0.9;
   background-color: #ead5f5;
   margin-top: 4rem;
 }
