@@ -21,7 +21,7 @@
         <div class="sideImage">
           <?php
             $a = 1;
-            $files = glob("image/" . $donnees['id'] . "/*.*");/* $files pour "lister" les fichiers - Mise en place de *.* pour dire que ce dossier contient une extension (par exemple .jpg, .php, etc... */
+            $files = glob("img/" . $donnees['id'] . "/*.*");/* $files pour "lister" les fichiers - Mise en place de *.* pour dire que ce dossier contient une extension (par exemple .jpg, .php, etc... */
             $compteur = count($files);/* Variable $compteur pour compter (count) les fichiers lister ($files) dans le dossier */
             while ($a <= $compteur) {
               // code...
