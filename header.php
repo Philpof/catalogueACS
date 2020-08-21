@@ -47,7 +47,7 @@ session_start();
 if(!isset($_SESSION['login']))
 {
   // Si inexistante ou nulle, on redirige vers le formulaire de login
-  $client = " à vous, visiteur(euse)";
+  $client = " visiteur(euse)";
   $connexion = "<i class=\"fas fa-headset\"></i> Se connecter à mon compte";
   $goLog = "login";
   $admin = "";
@@ -58,7 +58,7 @@ else {
   $goLog = "logout";
 
   if ($_SESSION['admin']) {
-    $admin = "<i class=\"fas fa-chess-king\"></i> Page d'administration";
+    $admin = "<i class=\"fas fa-chess-king\"></i> Administration";
   }
   else {
     $admin = "";
@@ -84,18 +84,18 @@ $numero = rand(1, 19);
 <!-- Le HTML -->
 
 <nav id="navBarre" class="container-fluid fixed-top">
-  <div class="row justify-content-around pt-3 pb-3 align-items-center">
+  <div class="row justify-content-around py-3 align-items-center">
+    <a class="" href="admin.php"><?php echo $admin ?></a>
     <a class="font-weight-bold" href="index.php">GRAP.fr</a>
-    <p class="mb-0"><i class="far fa-grin-alt"></i> Bonjour<?php echo $client ?> !</p>
-    <a href="admin.php"><?php echo $admin ?></a>
-    <a href="<?php echo $goLog ?>.php"><?php echo $connexion ?></a>
-
     <form method="post" action="recherche.php">
           <!-- <label id="clr">Recherche</label> -->
           <input class="pl-3 search-txt" type="search" name="jeux" placeholder="Indiquez le jeux recherché">
           <button type="submit" class="btn-search"><i id="loupe" class="fas fa-search"></i></button>
     </form>
-
+    <a href="<?php echo $goLog ?>.php"><?php echo $connexion ?></a>
     <a href="panier.php"><i class="fas fa-gamepad"></i> Mon Panier</a>
+  </div>
+  <div id="realisation" class="row justify-content-around py-2 align-items-center">
+    <p class="mb-0"><i class="far fa-grin-alt"></i> Bienvenue sur GRAP.fr, <?php echo $client ?> !</p>
   </div>
 </nav>

@@ -51,7 +51,7 @@ else if (!isset($_GET['envoiMail']) || $_GET['envoiMail'] != "ok" || empty($_POS
 
 <!-- Le HTML -->
 
-<main class="container pt-5 pb-5">
+<main class="container">
   <h1 class="text-center">Login ou mot de passe oubliés ?</h1>
   <hr>
 

@@ -2,7 +2,7 @@
 include "header.php";
 ?>
 
-<main class="container pt-5 pb-5">
+<main class="container">
   <h1 class="text-center">Résultats de la recherche</h1>
   <hr>
 
@@ -35,13 +35,13 @@ if (isset($_POST["jeux"])) {
     while($row = $result->fetch())
     {
 ?>
-    <tr>
-      <td><img class="jaquettes" src="<?= $row['LienImage'] ?>"></td>
-      <td><?php echo $row['Titre']; ?></td>
-      <td><?php echo $row['Categorie']; ?></td>
-      <td><?php echo $row['Plateforme']; ?></td>
-      <td><?php echo $row['Prix']; ?> €</td>
-      <td><a href='produit.php?idSelect=<?php echo $row['id']; ?>' class='btn'><i id="loupeInfo" class="fas fa-search-plus"></i></a></td>
+    <tr class="align-center">
+      <td class="col-sm-1 align-middle"><img class="jaquettes" src="<?= $row['LienImage'] ?>"></td>
+      <td class="col-sm-3 align-middle"><?php echo $row['Titre']; ?></td>
+      <td class="col-sm-2 align-middle"><?php echo $row['Categorie']; ?></td>
+      <td class="col-sm-2 align-middle"><?php echo $row['Plateforme']; ?></td>
+      <td class="col-sm-2 align-middle"><?php echo $row['Prix']; ?> €</td>
+      <td class="col-sm-2 align-middle"><a href='produit.php?idSelect=<?php echo $row['id']; ?>' class='btn'><i id="loupeInfo" class="fas fa-search-plus"></i></a></td>
     </tr>
 <?php
     }
