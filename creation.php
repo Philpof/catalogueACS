@@ -99,7 +99,7 @@ elseif(!isset($_GET['action']) || $_GET['action'] != "ok"){
 
 <!-- Le HTML -->
 
-<main class="container pt-5 pb-5">
+<main class="container">
   <h1 class="text-center">Création d'un compte</h1>
   <hr>
 

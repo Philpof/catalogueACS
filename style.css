@@ -15,6 +15,11 @@ body {
   height: 100%;
 }
 
+.container {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+}
+
 .layer {
   position: absolute;
   top: 0;
@@ -181,6 +186,7 @@ main {
 #navBarre {
   background: linear-gradient(to left, #851DCB, #7E1697, #A71375);
   color: white;
+  border-bottom: 1px solid black;
 }
 
 #navBarre a {
@@ -299,7 +305,6 @@ tr:hover {
 #footer {
   padding: 0px;
   border-top: 1px solid black;
-
 }
 
 #realisation {
