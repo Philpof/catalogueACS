@@ -22,7 +22,7 @@ if (isset($_POST["jeux"])) {
       <table class='table table-hover table-striped text-center align-middle'>
         <thead>
           <tr>
-            <th>Screenshot</th>
+            <th></th>
             <th>Titre</th>
             <th>Categorie</th>
             <th>Plateforme</th>
@@ -36,7 +36,7 @@ if (isset($_POST["jeux"])) {
     {
 ?>
     <tr class="align-center">
-      <td class="col-sm-1 align-middle"><img class="jaquettes" src="<?= $row['LienImage'] ?>"></td>
+      <td class="col-sm-1 align-middle"><img class="cover" src="<?= $row['LienCover'] ?>"></td>
       <td class="col-sm-3 align-middle"><?php echo $row['Titre']; ?></td>
       <td class="col-sm-2 align-middle"><?php echo $row['Categorie']; ?></td>
       <td class="col-sm-2 align-middle"><?php echo $row['Plateforme']; ?></td>
