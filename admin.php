@@ -4,16 +4,22 @@
   // On teste si la variable de session existe et contient une valeur
   if(!isset($_SESSION['login']))
   {
-  // Si inexistante ou nulle, on redirige vers le formulaire de login
+  // Si inexistante ou nulle, on redirige vers la page d'accueil
   header('Location: index.php');
   exit();
   }
+  elseif (!$_SESSION['admin']) {
+    header('Location: index.php');
+    exit();
+  }
   else {
-  include "header.php";
+    include "header.php";
+
 ?>
 
 <!-- Le HTML -->
-<section class="container bg-light pt-5 pb-5">
+
+<main class="container-fluid">
 
   <h1 class="text-center">Page d'administration du site</h1>
   <hr>
@@ -173,7 +179,7 @@
     echo "</tbody></table><hr>";
   ?>
 
-</section>
+</main>
 
 <?php
 } // fermeture du "else" en haut de page

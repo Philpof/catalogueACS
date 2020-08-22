@@ -46,18 +46,20 @@ session_start();
 // On teste si la variable de session existe et contient une valeur
 if(!isset($_SESSION['login']))
 {
-  // Si inexistante ou nulle, on redirige vers le formulaire de login
+  // Si inexistante ou nulle, affiche message de base + lien pour la page de login avec le message "Se connecter"
   $client = " visiteur(euse)";
   $connexion = "<i class=\"fas fa-headset\"></i> Se connecter à mon compte";
   $goLog = "login";
   $admin = "";
 }
 else {
+  // Si existante, affiche message personnalisé + lien pour la page de logout avec le message "Se déconnecter"
   $client = $_SESSION['prenom'] . " " . $_SESSION['nom'];
   $connexion = "<i class=\"fas fa-ghost\"></i> Me déconnecter";
   $goLog = "logout";
 
   if ($_SESSION['admin']) {
+    // Affiche le lien vers la page d'administration
     $admin = "<i class=\"fas fa-chess-king\"></i> Administration";
   }
   else {

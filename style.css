@@ -141,8 +141,8 @@ main {
   border-radius: 20px;
   overflow: auto;
   border: 1px solid purple;
-
 }
+
 /* Hide scrollbar for Chorme, Opera and Safari */
 .description::-webkit-scrollbar {
     display: none;
@@ -334,6 +334,7 @@ tr:hover {
 .cover {
   width: 150px;
   height: auto;
+  border: 1px solid purple;
 }
 
 .bcolor{
