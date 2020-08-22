@@ -17,7 +17,7 @@ if (isset($_POST["jeux"])) {
   }
 
   if (isset($row['id'])) {
-    $result = $bdd->query("SELECT * FROM jeux WHERE Archivage = '0' AND Titre LIKE '%{$jeux}%'");
+    $result = $bdd->query("SELECT * FROM jeux WHERE Archivage = '0' AND Titre LIKE '%{$jeux}%' ORDER BY Titre ASC");
 ?>
       <table class='table table-hover table-striped text-center align-middle'>
         <thead>

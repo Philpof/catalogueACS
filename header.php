@@ -22,23 +22,31 @@
 
 <body>
 <div class="layer">
-<!-- Connection à la base de donnée -->
+
+<!-- Connection à la base de donnée (Début)-->
 <?php
-  try {
-    $bdd = new PDO('mysql:host=localhost;dbname=catalogueacs;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-  }
-    catch(PDOException $e)
-  {
-    die('Ereur : '.$e->getMessage());
-  }
-  function debug($var, $style = "")
-  {
-    echo "<pre style='background-color: white; border: gray 1px solid; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; color: black; width: 95%; padding: 10px; overflow-y: auto;{$style}'>";
-    var_dump($var);
-    echo "</pre>";
-  }
+// Ici, on inclue select.php qui inclu lui-même connexion.php lequel permet la connexion à la base de donnée
+include "select.php";
+
+// Fonction de connexion à la base de donnée qui est maintenant dans connexion.php (je la laisse ici pour information)
+
+  // try {
+  //   $bdd = new PDO('mysql:host=localhost;dbname=catalogueacs;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+  // }
+  //   catch(PDOException $e)
+  // {
+  //   die('Ereur : '.$e->getMessage());
+  // }
+  // function debug($var, $style = "")
+  // {
+  //   echo "<pre style='background-color: white; border: gray 1px solid; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; color: black; width: 95%; padding: 10px; overflow-y: auto;{$style}'>";
+  //   var_dump($var);
+  //   echo "</pre>";
+  // }
 ?>
-<!-- Fonction de connexion avec login -->
+<!-- Connection à la base de donnée (Fin)-->
+
+<!-- Fonction de connexion avec login (Début) -->
 <?php
 // On prolonge la session sauf sur la page admin.php car la vérif de la session se fait avant l'include du header.php
 if (!stripos($_SERVER['PHP_SELF'], 'admin.php')) {
@@ -70,6 +78,7 @@ else {
   }
 }
 ?>
+<!-- Fonction de connexion avec login (Fin) -->
 
 <!-- Pour le changement de background du "body" à partir des lien d'image dans la base de donnée (Début) -->
 <?php
@@ -116,6 +125,7 @@ else {
 }
 ?>
 <!-- Pour l'affichage du message de bienvenue sur l'index.php uniquement (Fin) -->
+
 
 <!-- Le HTML -->
 

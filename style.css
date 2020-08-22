@@ -252,6 +252,10 @@ input {
   width: 20rem;
   border-radius: 50px;
 }
+textarea {
+  border: 2px solid #7E1697;
+  border-radius: 20px;
+}
 
 #comptePrive {
   color: black;
@@ -334,10 +338,12 @@ tr:hover {
 /* Admin.php */
 
 #adminDescription {
-  /* vertical-align: middle; */
-  /* width: auto; */
-  /* height: 10%; */
-  /* overflow: ellipsis; */
+  table-layout: auto;
+  width: 100%;
+}
+
+#adminDescription td{
+  vertical-align: middle;
 }
 
 /* Produits */
