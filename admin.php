@@ -148,7 +148,7 @@
       echo "<td>" . $row['Categorie'] . "</td>";
       echo "<td>" . $row['Special'] . "</td>";
 
-      // Bouton "Modifier", voir la page "select.php"
+      // Bouton pour modifier une entrée de la table "jeux"
       echo "<td><a href='admin.php?idSelect=" . $row['id'] . "' class='btn btn-info'>Détail / Modifier</a></td>";
       // Bouton "Archiver", voir la page "archive.php"
       echo "<td><a href='archive.php?idArchive=" . $row['id'] . "' class='btn btn-warning'>Archiver</a></td>";
