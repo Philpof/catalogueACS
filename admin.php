@@ -19,51 +19,37 @@
 
 <!-- Le HTML -->
 
-<main class="container-fluid">
+<main class="container-fluid py-5">
 
   <h1 class="text-center">Page d'administration du site</h1>
   <hr>
-
 
   <!-- Afficher le message de bienvenu -->
   <?php
     echo "<div class='alert alert-info text-center' role='alert'>Bonjour, " . $_SESSION['prenom'] . " " . $_SESSION['nom'] . " !</div>";
   ?>
 
-<!-- Liens pour retourner au site et pour se déconnecter de la session -->
+  <!-- Liens pour retourner au site et pour se déconnecter de la session -->
   <hr>
   <div class="px-5 row justify-content-between">
-    <a href="index.php">Revenir au site</a>
+    <a id="retour" href="index.php">Revenir au site</a>
     <a href="logout.php" class="text-danger">Déconnexion</a>
   </div>
   <hr>
 
-
-  <!-- Connection serveur -->
-  <p class="font-weight-bold">Connection à la basse de donnée "Catalogueacs" :</p>
-  <?php
-  if (isset($connOK)) {
-    echo $connOK. "<hr>";
-  }
-  elseif (isset($connKO)) {
-    echo $connKO;
-  }
-  ?>
-
-
   <!-- Pour faire une entrée dans la base donnée ou en modifier déjà une -->
-  <p class="font-weight-bold">Effectuer une nouvelle entrée dans la table "propos" ou modifier une entrée existante :</p>
+  <p class="font-weight-bold">Effectuer une nouvelle entrée dans la table "jeux" ou modifier une entrée existante :</p>
 
   <?php
     // Pour faire une entrée dans la base donnée
-    if (!isset($_GET['idSelect']) && !isset($row_idSelect) && !empty($_POST['titre']) && !empty($_POST['contenu']) && !isset($_POST['Annuler'])) {
+    if (!isset($_GET['idSelect']) && !isset($row_idSelect) && !isset($_POST['Annuler']) && !empty($_POST['Titre']) && !empty($_POST['Description']) && !isset($_POST['Prix']) && !isset($_POST['LienCover'])) {
       try {
-        $nvl_Ent_Prop = $bdd->prepare('INSERT INTO propos (titre, contenu) VALUES (:titre, :contenu)');
-        $nvl_Ent_Prop->execute(array(
-          ':titre' => $_POST['titre'],
-          ':contenu' => nl2br($_POST['contenu'])
+        $nvl_Ent_Jeux = $bdd->prepare('INSERT INTO jeux (Titre, Description) VALUES (:Titre, :Description)');
+        $nvl_Ent_Jeux->execute(array(
+          ':Titre' => $_POST['Titre'],
+          ':Description' => nl2br($_POST['Description'])
         ));
-        header('Location: adminSQL.php');
+        header('Location: admin.php');
         exit();
       } catch (\Exception $e) {
         echo $e->getMessage();
@@ -93,7 +79,7 @@
     <?php
       if (!isset($row_idSelect) || isset($_POST['Annuler'])) {
         echo $echo_nvl_Ent_Prop;
-        echo '<label for="titre" class="col-sm-2 col-lg-1 align-top">Titre</label>
+        echo '<label for="Titre" class="col-sm-2 col-lg-1 align-top">Titre</label>
             <input type="text" name="titre" value="" class="col-sm-4 align-top border border-info" required>
             <br>
             <label for="contenu" class="col-sm-2 col-lg-1 align-top">Contenu</label>
@@ -119,62 +105,87 @@
   </form>
   <hr>
 
-
-  <!-- Pour afficher la dernière entrée du champ "contenu" de la base de données -->
-  <p class="font-weight-bold">Dernière entrée du champ "contenu" de la table "propos" :</p>
-  <?php
-    echo $lastPropos['contenu']. '<hr>';
-  ?>
-
-
   <!-- Pour afficher toutes les entrées et les champs de la base de données -->
-  <p class="font-weight-bold">Contenu de la table "propos" non archivé :</p>
+  <p class="font-weight-bold">Contenu de la table "jeux" non archivé :</p>
   <?php
-    $sql = "SELECT * FROM propos WHERE archive='0' ORDER BY id DESC";
+    $sql = "SELECT * FROM jeux WHERE Archivage='0' ORDER BY id ASC";
     echo "<table class='table table-hover table-striped'>
             <thead>
               <tr>
                 <th>id.</th>
                 <th>Titre</th>
-                <th>Date</th>
-                <th>Contenu</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>LienCover</th>
+                <th>Plateforme</th>
+                <th>DateSortie</th>
+                <th>BestSeller</th>
+                <th>NbrJoueur</th>
+                <th>Categorie</th>
+                <th>Special</th>
+                <th>Modifier</th>
+                <th>Archiver</th>
+                <th>Supprimer</th>
               </tr>
             </thead>
             <tbody>";
     foreach ($bdd -> query($sql) as $row) {
+      // Permet d'afficher "Non" au lieu de "0" et Oui au lieu de "1"
+      if ($row['BestSeller']) {
+        $bestSeller = "Oui";
+      }
+      else {
+        $bestSeller = "Non";
+      }
+
       echo "<tr>";
       echo "<td>" . $row['id'] . "</td>";
-      echo "<td>" . $row['titre'] . "</td>";
-      echo "<td>" . $row['date'] . "</td>";
-      echo "<td>" . $row['contenu'] . "</td>";
-      echo "<td><a href='adminSQL.php?idSelect=" . $row['id'] . "' class='btn btn-info'>Modifier</a></td>"; // Bouton "Modifier", voir la page "select.php"
-      echo "<td><a href='archive.php?idArchive=" . $row['id'] . "' class='btn btn-warning'>Archiver</a></td>"; // Bouton "Archiver", voir la page "archive.php"
-      echo "<td><a href='suppr.php?idSuppr=" . $row['id'] . "' class='btn btn-danger'>Supprimer</a></td></tr>"; // Bouton "Supprimer", voir la page "suppr.php"
+      echo "<td>" . $row['Titre'] . "</td>";
+      echo "<td  id='adminDescription'>" . $row['Titre'] . "</td>"; // Description > trouver le moyen de ne pas tout afficher
+      echo "<td>" . $row['Prix'] . " €</td>";
+      echo "<td>" . $row['LienCover'] . "</td>";
+      echo "<td>" . $row['Plateforme'] . "</td>";
+      echo "<td>" . $row['DateSortie'] . "</td>";
+      echo "<td>" . $bestSeller . "</td>";
+      echo "<td>" . $row['NbrJoueur'] . "</td>";
+      echo "<td>" . $row['Categorie'] . "</td>";
+      echo "<td>" . $row['Special'] . "</td>";
+
+      // Bouton "Modifier", voir la page "select.php"
+      echo "<td><a href='admin.php?idSelect=" . $row['id'] . "' class='btn btn-info'>Modifier</a></td>";
+      // Bouton "Archiver", voir la page "archive.php"
+      echo "<td><a href='archive.php?idArchive=" . $row['id'] . "' class='btn btn-warning'>Archiver</a></td>";
+      // Bouton "Supprimer", voir la page "suppr.php"
+      echo "<td><a href='suppr.php?idSuppr=" . $row['id'] . "' class='btn btn-danger'>Supprimer</a></td>";
     }
-    echo "</tbody></table><hr>";
+    echo "</tr></tbody></table><hr>";
   ?>
 
   <!-- Pour afficher toutes les entrées de la base de données archivées -->
-  <p class="font-weight-bold">Contenu de la table "propos" archivé :</p>
+  <p class="font-weight-bold">Contenu de la table "jeux" archivé :</p>
   <?php
-    $sql = "SELECT * FROM propos WHERE archive='1' ORDER BY id DESC";
+    $sql = "SELECT * FROM jeux WHERE Archivage='1' ORDER BY id ASC";
     echo "<table class='table table-hover table-striped'>
             <thead>
               <tr>
                 <th>id.</th>
                 <th>Titre</th>
-                <th>Date</th>
-                <th>Contenu</th>
+                <th>LienCover</th>
+                <th>Plateforme</th>
+                <th>Categorie</th>
+                <th>Désarchiver</th>
               </tr>
             </thead>
             <tbody>";
     foreach ($bdd -> query($sql) as $row) {
       echo "<tr>";
       echo "<td>" . $row['id'] . "</td>";
-      echo "<td>" . $row['titre'] . "</td>";
-      echo "<td>" . $row['date'] . "</td>";
-      echo "<td>" . $row['contenu'] . "</td>";
-      echo "<td><a href='desarchive.php?idDesarchive=" . $row['id'] . "' class='btn btn-dark'>Désarchiver</a></td></tr>"; // Bouton "Désarchiver", voir la page "archive.php"
+      echo "<td>" . $row['Titre'] . "</td>";
+      echo "<td>" . $row['LienCover'] . "</td>";
+      echo "<td>" . $row['Plateforme'] . "</td>";
+      echo "<td>" . $row['Categorie'] . "</td>";
+      // Bouton "Désarchiver", voir la page "archive.php"
+      echo "<td><a href='desarchive.php?idDesarchive=" . $row['id'] . "' class='btn btn-dark'>Désarchiver</a></td></tr>";
     }
     echo "</tbody></table><hr>";
   ?>

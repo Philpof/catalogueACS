@@ -1,5 +1,5 @@
 <?php
-if (stripos($_SERVER['PHP_SELF'], 'produit.php')) {
+if (stripos($_SERVER['PHP_SELF'], 'produit.php') || stripos($_SERVER['PHP_SELF'], 'admin.php')) {
   $fluid = '-fluid';
 }
 else {

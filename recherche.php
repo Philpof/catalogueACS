@@ -11,13 +11,13 @@ include "header.php";
 
 if (isset($_POST["jeux"])) {
   $jeux = $_POST["jeux"];
-  $str = $bdd->query("SELECT id FROM jeux WHERE Titre LIKE '%{$jeux}%'");
+  $str = $bdd->query("SELECT id FROM jeux WHERE Archivage = '0' AND Titre LIKE '%{$jeux}%'");
 
   foreach ($str as $row) {
   }
 
   if (isset($row['id'])) {
-    $result = $bdd->query("SELECT * FROM jeux WHERE Titre LIKE '%{$jeux}%'");
+    $result = $bdd->query("SELECT * FROM jeux WHERE Archivage = '0' AND Titre LIKE '%{$jeux}%'");
 ?>
       <table class='table table-hover table-striped text-center align-middle'>
         <thead>

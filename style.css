@@ -331,6 +331,16 @@ tr:hover {
   color: black;
 }
 
+/* Admin.php */
+
+#adminDescription {
+  /* vertical-align: middle; */
+  /* width: auto; */
+  /* height: 10%; */
+  /* overflow: ellipsis; */
+}
+
+/* Produits */
 .cover {
   width: 150px;
   height: auto;
