@@ -137,13 +137,12 @@ while ($donnees = $query->fetch()) {
     }
      ?>
       </div>
-
     </div>
 
   </section>
 <section class="new-product">
 
-</section>
+
 <div class="container">
   <div class="title-box">
     <h2>PS4</h2>
@@ -181,20 +180,8 @@ while ($donnees = $query->fetch()) {
     }
      ?>
       </div>
-
-
     </div>
-
-  </div>
-
   </section>
-
-
-
-
-
-</div>
-
 <div class="col-4 border-2 bcolor sidebar">
   <div class="w-100 text-center p-4">
     <h5 class="p-2 border-bt text-danger"></h5>
@@ -202,7 +189,6 @@ while ($donnees = $query->fetch()) {
   </div>
 </div>
 
-</div>
   <!-- website features -->
 
    <section class="website-features">
@@ -212,54 +198,28 @@ while ($donnees = $query->fetch()) {
           <img src="img/garant.jfif">
           <div class="feature-text">
             <p><b>100% Original items </b>are available at company</p>
-
           </div>
-
         </div>
         <div class="col-md-3 feature-box">
           <img src="img/return1.jpg">
           <div class="feature-text">
             <p><b>Return within 30 days </b>of receiving your order.</p>
-
           </div>
-
         </div>
         <div class="col-md-3 feature-box">
           <img src="img/free.webp">
           <div class="feature-text">
             <p><b>Get free delivery for every </b>order on more than price.</p>
-
           </div>
-
         </div>
         <div class="col-md-3 feature-box">
           <img src="img/pay.png">
           <div class="feature-text">
             <p><b>Pay Online through multiple</b>options (card/Net banking)</p>
-
           </div>
-
-
         </div>
-
       </div>
-
     </div>
-
     </section>
-
-
-
-
 </main>
-
-
-
-
-
-
-
-
-
-
 <?php include "footer.php" ?>
