@@ -15,14 +15,17 @@ $nbMax = $resultat['nbrId'];
 
 // Le random avec, en nombre max, le nombre d'entrée déterminée
 $numeroPre = 0;
+$idTest = 0;
 for ($cnt = 0; $cnt < 3; $cnt++) {
-  $numero = rand(1, $nbMax);
-  $testPoss = $bdd->query("SELECT id_jeu FROM background WHERE id='{$numero}'");
-  $idTest = $testPoss->fetch();
   while ($idTest == $numeroPre) {
     $numero = rand(1, $nbMax);
+    $testPoss = $bdd->query("SELECT id_jeu FROM background WHERE id='{$numero}'");
+    $testRecup = $testPoss->fetch();
+    $idTest = $testRecup['id_jeu'];
   }
+
   $imageCarousel = $bdd->query("SELECT * FROM background WHERE id='{$numero}'");
+
   while($imageFinal = $imageCarousel->fetch()){
     $lienImage = $imageFinal['lien'];
     $idJeu = $imageFinal['id_jeu'];
@@ -54,15 +57,16 @@ for ($cnt = 0; $cnt < 3; $cnt++) {
     <div class="title-box">
       <h2>Best Seller</h2>
     </div>
+    <div class="row">
 <?php
 
-  
-
+  $bestSeller = $bdd->query('SELECT id, Titre, Prix, LienCover FROM jeux WHERE BestSeller = 1');
+  while ($donnees = $bestSeller->fetch()) {
 ?>
-    <div class="row">
+
       <div class="col-md-3">
         <div class="product-top">
-          <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="img/days.jpeg"></a>
+          <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
             <div class="overlay-right">
               <button type="button" class="btn btn-secondary" title="game shop">
                 <i class="fa fa-eye"></i>
@@ -81,14 +85,15 @@ for ($cnt = 0; $cnt < 3; $cnt++) {
               <i class="fa fa-star"></i>
               <i class="fa fa-star"></i>
               <i class="fa fa-star-half-o"></i>
-                <h3>Days Gone</h3>
-                <h5>$50.00</h5>
+                <h3><?= $donnees['Titre'] ?></h3>
+                <h5><?= $donnees['Prix'] ?> €</h5>
               </div>
             </div>
+<?php
+  }
+ ?>
         </div>
-
       </div>
-
   </section>
 
 <!-- deuxième row -->
@@ -100,14 +105,22 @@ for ($cnt = 0; $cnt < 3; $cnt++) {
     <h2>Action</h2>
   </div>
   <div class="row">
+
+<?php
+
+
+$query = $bdd->query("SELECT * FROM jeux WHERE Categorie LIKE '%Action%'");
+while ($donnees = $query->fetch()) {
+
+?>
     <div class="col-md-3">
       <div class="product-top">
-        <a href="#"><img src="img/days.jpeg"></a>
+        <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
           <div class="overlay-right">
             <button type="button" class="btn btn-secondary" title="game shop">
               <i class="fa fa-eye"></i>
             </button>
-            <button type="button" class="btn btn-secondary" title="Ad to wishlist">
+            <button type="button" class="btn btn-secondary" title="Add to wishlist">
               <i class="fa fa-heart-o"></i>
             </button>
             <button type="button" class="btn btn-secondary" title="game shop">
@@ -116,77 +129,42 @@ for ($cnt = 0; $cnt < 3; $cnt++) {
           </div>
           </div>
           <div class="product-bottom text-center">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-              <h3>Days Gone</h3>
-              <h5>$50.00</h5>
+            <h3><?= $donnees['Titre'] ?></h3>
+            <h5><?= $donnees['Prix'] ?> €</h5>
             </div>
           </div>
-
-<div class="col-md-3">
-  <div class="product-top">
-    <a href="#"><img src="img/zelda1.jpg"></a>
-      <div class="overlay-right">
-        <button type="button" class="btn btn-secondary" title="game shop">
-          <i class="fa fa-eye"></i>
-        </button>
-        <button type="button" class="btn btn-secondary" title="Ad to wishlist">
-          <i class="fa fa-heart-o"></i>
-        </button>
-        <button type="button" class="btn btn-secondary" title="game shop">
-          <i class="fa fa-shopping-cart"></i>
-        </button>
-      </div>
-      </div>
-      <div class="product-bottom text-center">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-          <h3>Zelda</h3>
-          <h5>$100.00</h5>
-        </div>
+    <?php
+    }
+     ?>
       </div>
 
-<div class="col-md-3">
-<div class="product-top">
-  <a href="#"><img src="img/assissin.jpg"></a>
-    <div class="overlay-right">
-      <button type="button" class="btn btn-secondary" title="game shop">
-        <i class="fa fa-eye"></i>
-      </button>
-      <button type="button" class="btn btn-secondary" title="Ad to wishlist">
-        <i class="fa fa-heart-o"></i>
-      </button>
-      <button type="button" class="btn btn-secondary" title="game shop">
-        <i class="fa fa-shopping-cart"></i>
-      </button>
-    </div>
-    </div>
-    <div class="product-bottom text-center">
-      <i class="fa fa-star"></i>
-      <i class="fa fa-star"></i>
-      <i class="fa fa-star"></i>
-      <i class="fa fa-star"></i>
-      <i class="fa fa-star"></i>
-        <h3>Assissin</h3>
-        <h5>$1000</h5>
-      </div>
     </div>
 
+  </section>
+<section class="new-product">
 
+</section>
+<div class="container">
+  <div class="title-box">
+    <h2>PS4</h2>
+  </div>
+  <div class="row">
+
+<?php
+
+
+$query = $bdd->query("SELECT * FROM jeux WHERE Plateforme LIKE '%PS4%'");
+while ($donnees = $query->fetch()) {
+
+?>
     <div class="col-md-3">
       <div class="product-top">
-        <a href="#"><img src="img/link.jpg"></a>
+        <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
           <div class="overlay-right">
             <button type="button" class="btn btn-secondary" title="game shop">
               <i class="fa fa-eye"></i>
             </button>
-            <button type="button" class="btn btn-secondary" title="Ad to wishlist">
+            <button type="button" class="btn btn-secondary" title="Add to wishlist">
               <i class="fa fa-heart-o"></i>
             </button>
             <button type="button" class="btn btn-secondary" title="game shop">
@@ -195,123 +173,13 @@ for ($cnt = 0; $cnt < 3; $cnt++) {
           </div>
           </div>
           <div class="product-bottom text-center">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-            <i class="fa fa-star-o"></i>
-              <h3>Link to the past</h3>
-              <h5>$100</h5>
+            <h3><?= $donnees['Titre'] ?></h3>
+            <h5><?= $donnees['Prix'] ?> €</h5>
             </div>
           </div>
-
-
-          <div class="col-md-3">
-            <div class="product-top">
-              <a href="#"><img src="img/days.jpeg"></a>
-                <div class="overlay-right">
-                  <button type="button" class="btn btn-secondary" title="game shop">
-                    <i class="fa fa-eye"></i>
-                  </button>
-                  <button type="button" class="btn btn-secondary" title="Ad to wishlist">
-                    <i class="fa fa-heart-o"></i>
-                  </button>
-                  <button type="button" class="btn btn-secondary" title="game shop">
-                    <i class="fa fa-shopping-cart"></i>
-                  </button>
-                </div>
-                </div>
-                <div class="product-bottom text-center">
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-half-o"></i>
-                    <h3>Days Gone</h3>
-                    <h5>$50.00</h5>
-                  </div>
-                </div>
-
-      <div class="col-md-3">
-        <div class="product-top">
-          <a href="#"><img src="img/zelda1.jpg"></a>
-            <div class="overlay-right">
-              <button type="button" class="btn btn-secondary" title="game shop">
-                <i class="fa fa-eye"></i>
-              </button>
-              <button type="button" class="btn btn-secondary" title="Ad to wishlist">
-                <i class="fa fa-heart-o"></i>
-              </button>
-              <button type="button" class="btn btn-secondary" title="game shop">
-                <i class="fa fa-shopping-cart"></i>
-              </button>
-            </div>
-            </div>
-            <div class="product-bottom text-center">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-                <h3>Zelda</h3>
-                <h5>$100.00</h5>
-              </div>
-            </div>
-
-      <div class="col-md-3">
-      <div class="product-top">
-        <a href="#"><img src="img/assissin.jpg"></a>
-          <div class="overlay-right">
-            <button type="button" class="btn btn-secondary" title="game shop">
-              <i class="fa fa-eye"></i>
-            </button>
-            <button type="button" class="btn btn-secondary" title="Ad to wishlist">
-              <i class="fa fa-heart-o"></i>
-            </button>
-            <button type="button" class="btn btn-secondary" title="game shop">
-              <i class="fa fa-shopping-cart"></i>
-            </button>
-          </div>
-          </div>
-          <div class="product-bottom text-center">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-              <h3>Assissin</h3>
-              <h5>$1000</h5>
-            </div>
-          </div>
-
-
-          <div class="col-md-3">
-            <div class="product-top">
-              <a href="index.php"><img src="img/link.jpg"></a>
-                <div class="overlay-right">
-                  <button type="button" class="btn btn-secondary" title="game shop">
-                    <i class="fa fa-eye"></i>
-                  </button>
-                  <button type="button" class="btn btn-secondary" title="Ad to wishlist">
-                    <i class="fa fa-heart-o"></i>
-                  </button>
-                  <button type="button" class="btn btn-secondary" title="game shop">
-                    <i class="fa fa-shopping-cart"></i>
-                  </button>
-                </div>
-                </div>
-                <div class="product-bottom text-center">
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-half-o"></i>
-                  <i class="fa fa-star-o"></i>
-                    <h3>Link to the past</h3>
-                    <h5>$100</h5>
-                  </div>
-                </div>
-
-
+    <?php
+    }
+     ?>
       </div>
 
     </div>
