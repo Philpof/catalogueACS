@@ -80,7 +80,7 @@ elseif(!isset($_GET['action']) || $_GET['action'] != "ok"){
           }
         }
       }
-      // Si les deux mdp saisis ne sont pas striictement identique alors le message d'instructions est créé dans la variable "$instructions"
+      // Si les deux mdp saisis ne sont pas strictement identique alors le message d'instructions est créé dans la variable "$instructions"
       else {
         $instructions = "<div class='alert alert-danger mt-5 text-center' role='alert'>Le mot de passe saisi et sa confirmation sont différents.</div>";
       }
@@ -95,6 +95,11 @@ elseif(!isset($_GET['action']) || $_GET['action'] != "ok"){
     $instructions = "<div class='alert alert-info mt-5 text-center' role='alert'>Veuillez compléter les différents champs suivants :</div>";
   }
 }
+
+  $antiRobot1 = rand(1, 100);
+  $antiRobot2 = rand(1, 100);
+  $antiRobot3 = rand(1, 100);
+
 ?>
 
 <!-- Le HTML -->
@@ -144,8 +149,8 @@ elseif(!isset($_GET['action']) || $_GET['action'] != "ok"){
     <label for="mdpBis" class="col-sm-6 col-xl-3 text-xl-right">Confirmation du mot de passe :</label>
     <input type="text" name="mdpBis" value="<?php if (isset($_POST['mdpBis'])) {echo htmlspecialchars($_POST['mdpBis']);} ?>" placeholder="Recopiez votre mot de passe à l'identique" class="col-sm-12 col-xl-8 border border-info mb-3" required>
 
-    <label for="spam" class="col-sm-6 col-xl-3 text-xl-right">Anti-spam :</label>
-    <input type="choose" name="spam" pattern="jeux" placeholder='Tapez le mot "jeux" ici' class="col-sm-12 col-xl-8 col-xl-6 border border-info mb-3" required>
+    <label for="spam" class="col-sm-6 col-xl-3 text-xl-right">Code anti-robot : <span id="robot"><?php echo $antiRobot1 . $antiRobot2 . $antiRobot3?></span></label>
+    <input type="choose" name="spam" pattern="<?php echo $antiRobot1 . $antiRobot2 . $antiRobot3?>" placeholder='Recopier le code ici' class="col-sm-12 col-xl-8 col-xl-6 border border-info mb-3" required>
 
     <input id="boutonEnvoi" type="submit" name="Creer" value="Créer mon compte" class="col-sm-12 offset-xl-3 col-xl-6 mt-3">
 
