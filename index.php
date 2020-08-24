@@ -17,11 +17,13 @@ $nbMax = $resultat['nbrId'];
 // Le random avec, en nombre max, le nombre d'entrée déterminée
 $numeroPre = 0;
 $idTest = 0;
+$idTest2 = 0;
 for ($cnt = 0; $cnt < 3; $cnt++) {
-  while ($idTest == $numeroPre) {
+  while ($idTest == $numeroPre || $idTest2 == $numeroPre) {
     $numero = rand(1, $nbMax);
     $testPoss = $bdd->query("SELECT id_jeu FROM background WHERE id='{$numero}'");
     $testRecup = $testPoss->fetch();
+    $idTest2 = $idTest;
     $idTest = $testRecup['id_jeu'];
   }
 

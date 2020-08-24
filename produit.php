@@ -22,7 +22,11 @@
       <div class="cadreImage">
         <div class="sideImage">
           <?php
-            $image = $bdd->query('SELECT lien FROM background WHERE id_jeu ="' . $donnees['id'] . '"');
+            $image = $bdd->query('SELECT lien
+                                  FROM background
+                                  WHERE id_jeu ="' . $donnees['id'] . '"
+                                  LIMIT 500
+                                  OFFSET 1');
             while ($lien = $image->fetch()) {
               // code...
           ?>
