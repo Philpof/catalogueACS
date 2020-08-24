@@ -95,6 +95,10 @@
     $imageResultat = $imageSelected->fetch();
     $lienImage = $imageResultat['lienBG'];
   }
+  elseif (stripos($_SERVER['PHP_SELF'], '404.php')) {
+
+    $lienImage = "";
+  }
   else {
     // Pour avoir le nombre d'entrée dans la table "background"
     $nbrIdBG = $bdd->query("SELECT COUNT(id) AS nbrId FROM background");
@@ -138,7 +142,9 @@
   <nav id="navBarre" class="container-fluid fixed-top">
     <div class="row justify-content-around py-3 align-items-center">
       <a class="" href="admin.php"><?php echo $admin ?></a>
-      <a class="font-weight-bold" href="index.php">GRAP.fr</a>
+
+      <a class="font-weight-bold" href="index.php"><img id="logo" src="img\icones\GRAP.fr.png" alt="Logo"><span>GR</span>AP.fr</a>
+      
       <form method="post" action="recherche.php">
         <input class="pl-3 search-txt" type="search" name="jeux" placeholder="Indiquez le jeux recherché">
         <button type="submit" class="btn-search"><i id="loupe" class="fas fa-search"></i></button>
