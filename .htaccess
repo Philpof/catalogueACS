@@ -1,1 +1,1 @@
-ErrorDocument 404 http://pperechodov/catalogueACS/error.php?code=404
+ErrorDocument 404 /catalogueACS/error.php?code=404
