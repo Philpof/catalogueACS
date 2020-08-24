@@ -246,6 +246,10 @@ a:hover {
   color: purple;
 }
 
+#robot {
+  color: purple;
+}
+
 input {
   border: 2px solid #7E1697;
   height: 2.2rem;
@@ -344,6 +348,12 @@ tr:hover {
 
 #adminDescription td{
   vertical-align: middle;
+}
+
+/* 404 */
+#page404 {
+  background-color: #ffffff;
+  padding-top: 7em;
 }
 
 /* Produits */
