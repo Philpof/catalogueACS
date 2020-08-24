@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 24 août 2020 à 07:01
+-- Généré le :  lun. 24 août 2020 à 12:39
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `background` (
   `lien` varchar(255) NOT NULL,
   `id_jeu` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `background`
@@ -64,7 +64,8 @@ INSERT INTO `background` (`id`, `jeu`, `lien`, `id_jeu`) VALUES
 (18, 'Assassin’s Creed Odyssey', 'img/background/AC_Odyssey_1.webp', 10),
 (19, 'Assassin’s Creed Odyssey', 'img/background/AC_Odyssey_2.webp', 10),
 (20, 'The Legend of Zelda : A Link to the Past', 'img/background/Zelda_ALTTP_1.webp', 7),
-(21, 'Super Mario Bros', 'img/background/Super_Mario_Bros_1.webp', 2);
+(21, 'Super Mario Bros', 'img/background/Super_Mario_Bros_1.webp', 2),
+(22, 'Halo Infinite', 'img/background/Halo_Infinite.webp', 8);
 
 -- --------------------------------------------------------
 
@@ -126,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `login` varchar(12) NOT NULL,
   `mdp` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `users`
@@ -142,7 +143,8 @@ INSERT INTO `users` (`id`, `nom`, `prenom`, `dateNaissance`, `numTel`, `email`, 
 (7, 'TEST', 'Test', '0454-05-04', '0123456789', 'g@g.g', '01 rue du Hachoir', '01234', 'FF', 0, 'Gnouf', 'Azerty12'),
 (8, 'FFFF', 'Sggs', '1651-03-12', '0123456789', 'g@g.j', '01 rue du Hachoir', '01234', 'GID', 0, 'bobb', 'Azerty12'),
 (9, 'KENT', 'Clark', '0515-12-12', '0609080705', 'superman@krypton.kp', '558 rue de la Kryptonite', '75015', 'PARIS', 0, 'superman', 'Azerty12'),
-(10, 'TESTÉ', 'Testé', '4615-05-16', '0609080705', 'g@g.a', '1 rue de blabla', '75001', 'JGHTT', 0, 'Boby', 'Azerty12');
+(10, 'TESTÉ', 'Testé', '4615-05-16', '0609080705', 'g@g.a', '1 rue de blabla', '75001', 'JGHTT', 0, 'Boby', 'Azerty12'),
+(11, 'FER', 'Luci', '0001-01-01', '0666666666', 'lucifer@hell.enf', 'Trône des Enfers, 666 Avenue du Feu Eternel', '66666', 'HELL', 0, 'luci', 'Azerty12');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
