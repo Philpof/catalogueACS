@@ -246,6 +246,10 @@ a:hover {
   color: purple;
 }
 
+#robot {
+  color: purple;
+}
+
 input {
   border: 2px solid #7E1697;
   height: 2.2rem;
