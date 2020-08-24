@@ -95,6 +95,10 @@
     $imageResultat = $imageSelected->fetch();
     $lienImage = $imageResultat['lienBG'];
   }
+  elseif (stripos($_SERVER['PHP_SELF'], '404.php')) {
+
+    $lienImage = "";
+  }
   else {
     // Pour avoir le nombre d'entrée dans la table "background"
     $nbrIdBG = $bdd->query("SELECT COUNT(id) AS nbrId FROM background");

@@ -96,10 +96,11 @@ elseif(!isset($_GET['action']) || $_GET['action'] != "ok"){
   }
 }
 
+// Pour générer un code aléatoire pour un contrôle simple (Début)
   $antiRobot1 = rand(1, 100);
   $antiRobot2 = rand(1, 100);
   $antiRobot3 = rand(1, 100);
-
+// Pour générer un code aléatoire pour un contrôle simple (Fin)
 ?>
 
 <!-- Le HTML -->

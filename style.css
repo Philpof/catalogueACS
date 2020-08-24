@@ -350,6 +350,13 @@ tr:hover {
   vertical-align: middle;
 }
 
+/* 404 */
+#page404 {
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+}
+
 /* Produits */
 .cover {
   width: 150px;
