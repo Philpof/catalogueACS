@@ -8,6 +8,7 @@ include "header.php";
   <div class="slider">
     <div id="slider" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
+
 <?php
 $nbrIdBG = $bdd->query("SELECT COUNT(id) AS nbrId FROM background");
 $resultat = $nbrIdBG->fetch();
@@ -186,12 +187,16 @@ while ($donnees = $query->fetch()) {
   <div class="w-100 text-center p-4">
     <h5 class="p-2 border-bt text-danger"></h5>
 
+  <div class="col-4 border-2 bcolor sidebar">
+    <div class="w-100 text-center p-4">
+      <h5 class="p-2 border-bt text-danger"></h5>
+    </div>
   </div>
-</div>
 
   <!-- website features -->
 
-   <section class="website-features">
+  <!-- website features -->
+  <section class="website-features">
     <div class="container">
       <div class="row">
         <div class="col-md-3 feature-box">
