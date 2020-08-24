@@ -28,7 +28,7 @@
             while ($a <= $compteur) {
               // code...
           ?>
-          <img class="apercu" src="img/<?= $donnees['id'] ?>/apercu<?= $a ?>.jpg">
+          <img class="apercu" src="img/<?= $donnees['id'] ?>/apercu<?= $a ?>.webp">
       <?php
       $a++;
         }
