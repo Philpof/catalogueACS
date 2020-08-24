@@ -138,16 +138,16 @@ while ($donnees = $query->fetch()) {
     }
      ?>
       </div>
-
     </div>
 
   </section>
 <section class="new-product">
 
-  <div class="container">
-    <div class="title-box">
-      <h2>PS4</h2>
-    </div>
+
+<div class="container">
+  <div class="title-box">
+    <h2>PS4</h2>
+  </div>
   <div class="row">
 
 <?php
@@ -181,10 +181,11 @@ while ($donnees = $query->fetch()) {
     }
      ?>
       </div>
-
     </div>
-
-</section>
+  </section>
+<div class="col-4 border-2 bcolor sidebar">
+  <div class="w-100 text-center p-4">
+    <h5 class="p-2 border-bt text-danger"></h5>
 
   <div class="col-4 border-2 bcolor sidebar">
     <div class="w-100 text-center p-4">
@@ -192,6 +193,7 @@ while ($donnees = $query->fetch()) {
     </div>
   </div>
 
+  <!-- website features -->
 
   <!-- website features -->
   <section class="website-features">
@@ -223,9 +225,6 @@ while ($donnees = $query->fetch()) {
         </div>
       </div>
     </div>
-  </section>
-
+    </section>
 </main>
-
-
 <?php include "footer.php" ?>
