@@ -364,7 +364,7 @@ tr:hover {
 }
 
 .bcolor{
-  background-color: white;
+  background-color: rgba(234, 213, 245, 0.8);
 }
 
 
@@ -563,3 +563,14 @@ tr:hover {
 
     transform: scale(1.1);
 } */
+
+
+.bcolor li{
+  list-style: none;
+  color: purple;
+
+}
+
+.bg-secondary{
+  background-color: #48459A;
+}
