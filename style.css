@@ -547,49 +547,6 @@ tr:hover {
   padding-bottom: 10px;
 }
 
-@media (max-width: 1200px) {
-  .produit {
-    flex-direction: column !important;
-  }
-
-  #productsSection {
-    padding: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  .information {
-    width: 100%;
-    margin: 0;
-    margin-top: 150px;
-  }
-  .cadreImage {
-    width: 100%;
-    flex-direction: column-reverse;
-    margin: auto;
-  }
-  .photoProduit {
-    text-align: center;
-    width: auto;
-    height: auto;
-    margin: auto;
-  }
-  .photoActive {
-    width: 75%;
-    height: auto;
-    margin: auto;
-  }
-  .sideImage {
-    width: auto;
-    justify-content: space-between;
-    flex-direction: row;
-    margin: auto;
-    margin-top: 20px;
-  }
-  .boutonPanier {
-    margin: auto;
-    order: 3;
-  }
-}
 
 .website-features{
   margin: 60px 0;
@@ -636,4 +593,57 @@ tr:hover {
 
 .bg-secondary{
   background-color: #48459A;
+}
+
+@media (max-width: 1200px) {
+  .produit {
+    flex-direction: column !important;
+  }
+
+  #productsSection {
+    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .information {
+    width: 100%;
+    margin: 0;
+    margin-top: 150px;
+  }
+  .cadreImage {
+    width: 100%;
+    flex-direction: column-reverse;
+    margin: auto;
+  }
+  .photoProduit {
+    text-align: center;
+    width: auto;
+    height: auto;
+    margin: auto;
+  }
+  .photoActive {
+    width: 75%;
+    height: auto;
+    margin: auto;
+  }
+  .sideImage {
+    width: auto;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .boutonPanier {
+    margin: auto;
+    order: 3;
+  }
+}
+
+.sideBarCheckbox {
+  width: auto;
+  height: auto;
+}
+.sideBarFiltre {
+  width: 150px;
+  height: auto;
 }
