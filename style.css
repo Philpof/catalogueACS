@@ -89,7 +89,7 @@ main {
   text-decoration: none;
 }
 
-#products {
+#products ul{
   text-align: left;
 }
 
@@ -108,8 +108,9 @@ main {
   margin-bottom: 42px;
 }
 
-#filtrer {
-
+#filtrer:hover {
+  color: white;
+  background-color: purple;
 }
 
 .produit {
