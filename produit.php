@@ -50,5 +50,12 @@
     ?>
   </section>
 
+  <!-- Liens pour retourner au site -->
+  <hr>
+  <div class="col-sm-12 text-center">
+    <a id="retour2" href="index.php" class="align-item-center">Revenir à l'accueil</a>
+  </div>
+  <hr>
+
 
 <?php include 'footer.php';?>

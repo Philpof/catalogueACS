@@ -75,15 +75,15 @@ include "header.php";
                 <div class="product-top">
                   <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
                   <div class="overlay-right">
-                    <button type="button" class="btn btn-secondary" title="game shop">
+                    <a type="button" class="btn btn-secondary" title="Voir la page du jeu" href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>">
                       <i class="fa fa-eye"></i>
-                    </button>
-                    <button type="button" class="btn btn-secondary" title="Ad to wishlist">
+                    </a>
+                    <a type="button" class="btn btn-secondary" title="Ajouter à la liste de souhait" href="404.php">
                       <i class="fa fa-heart-o"></i>
-                    </button>
-                    <button type="button" class="btn btn-secondary" title="game shop">
+                    </a>
+                    <a type="button" class="btn btn-secondary" title="Ajouter au panier" href="404.php">
                       <i class="fa fa-shopping-cart"></i>
-                    </button>
+                    </a>
                   </div>
                 </div>
                 <div class="product-bottom text-center">
@@ -131,15 +131,15 @@ include "header.php";
                 <div class="product-top">
                   <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
                   <div class="overlay-right">
-                    <button type="button" class="btn btn-secondary" title="game shop">
+                    <a type="button" class="btn btn-secondary" title="Voir la page du jeu" href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>">
                       <i class="fa fa-eye"></i>
-                    </button>
-                    <button type="button" class="btn btn-secondary" title="Add to wishlist">
+                    </a>
+                    <a type="button" class="btn btn-secondary" title="Ajouter à la liste de souhait" href="404.php">
                       <i class="fa fa-heart-o"></i>
-                    </button>
-                    <button type="button" class="btn btn-secondary" title="game shop">
+                    </a>
+                    <a type="button" class="btn btn-secondary" title="Ajouter au panier" href="404.php">
                       <i class="fa fa-shopping-cart"></i>
-                    </button>
+                    </a>
                   </div>
                 </div>
                 <div class="product-bottom text-center">
@@ -155,12 +155,6 @@ include "header.php";
             </div>
           </div>
         </section>
-
-        <hr>
-        <div class="text-center">
-          <a id="haut" href="index.php">Retour en haut de la page</a>
-        </div>
-        <hr>
 
         <section id="plateforme" class="">
 
@@ -188,15 +182,15 @@ include "header.php";
                 <div class="product-top">
                   <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
                   <div class="overlay-right">
-                    <button type="button" class="btn btn-secondary" title="game shop">
+                    <a type="button" class="btn btn-secondary" title="Voir la page du jeu" href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>">
                       <i class="fa fa-eye"></i>
-                    </button>
-                    <button type="button" class="btn btn-secondary" title="Add to wishlist">
+                    </a>
+                    <a type="button" class="btn btn-secondary" title="Ajouter à la liste de souhait" href="404.php">
                       <i class="fa fa-heart-o"></i>
-                    </button>
-                    <button type="button" class="btn btn-secondary" title="game shop">
+                    </a>
+                    <a type="button" class="btn btn-secondary" title="Ajouter au panier" href="404.php">
                       <i class="fa fa-shopping-cart"></i>
-                    </button>
+                    </a>
                   </div>
                 </div>
                 <div class="product-bottom text-center">
@@ -248,22 +242,24 @@ include "header.php";
           </li>
           <ul>
             <li><input class="sideBarCheckbox" type="checkbox" id="switch" name="plateformeSelect[]" value="Swicth">
-             <label for="switch">Switch</label></li>
+              <label for="switch">Switch</label></li>
             <li><input class="sideBarCheckbox" type="checkbox" id="wiiU" name="plateformeSelect[]" value="Wii U">
-             <label for="wiiU">Wii U</label></li>
+              <label for="wiiU">Wii U</label></li>
             <li><input class="sideBarCheckbox" type="checkbox" id="PS4" name="plateformeSelect[]" value="PS4">
-             <label for="PS4">PS4</label></li>
+              <label for="PS4">PS4</label></li>
             <li><input class="sideBarCheckbox" type="checkbox" id="PC" name="plateformeSelect[]" value="PC">
-             <label for="PC">PC</label></li>
+              <label for="PC">PC</label></li>
             <li><input class="sideBarCheckbox" type="checkbox" id="xboxOne" name="plateformeSelect[]" value="Xbox One">
-             <label for="xboxOne">Xbox One</label></li>
+              <label for="xboxOne">Xbox One</label></li>
             <li><input class="sideBarCheckbox" type="checkbox" id="xboxSeriesX" name="plateformeSelect[]" value="Xbox Series X">
-             <label for="xboxSeriesX">Xbox Series X</label></li>
+              <label for="xboxSeriesX">Xbox Series X</label></li>
             <li><input class="sideBarCheckbox" type="checkbox" id="NES" name="plateformeSelect[]" value="NES">
-             <label for="NES">NES</label></li>
+              <label for="NES">NES</label></li>
             <li><input class="sideBarCheckbox" type="checkbox" id="SNES" name="plateformeSelect[]" value="SNES">
-             <label for="SNES">SNES</label></li>
-             <input class="sideBarFiltre" type="Submit" name="filtre" id="filtrer" value="Filtrer">
+              <label for="SNES">SNES</label></li>
+            <div class="text-center">
+              <input class="sideBarFiltre" type="Submit" name="filtre" value="Filtrer">
+            </div>
            </ul>
           <hr>
           <li class="productsTitle">
