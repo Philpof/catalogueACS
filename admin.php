@@ -65,10 +65,19 @@
     // Pour valider la modification dans la base de donnée de l'entrée sélectionnée
     elseif (isset($_GET['idSelect']) && isset($row_idSelect) && !isset($_POST['Annuler']) && !empty($_POST['Titre'])) {
       try {
-        $modif_Ent_Jeux = $bdd->prepare('UPDATE jeux SET Titre = :Titre, Description = :Description WHERE id = :idSelect');
+        // $modif_Ent_Jeux = $bdd->prepare('UPDATE jeux SET Titre = :Titre, Description = :Description WHERE id = :idSelect');
+        $modif_Ent_Jeux = $bdd->prepare('UPDATE jeux SET Titre = :Titre, Description = :Description, Prix = :Prix, LienCover = :LienCover, Plateforme = :Plateforme, DateSortie = :DateSortie, BestSeller = :BestSeller, NbrJoueur = :NbrJoueur, Categorie = :Categorie, Special = :Special WHERE id = :idSelect');
         $modif_Ent_Jeux->execute(array(
           ':Titre' => $_POST['Titre'],
           ':Description' => nl2br($_POST['Description']),
+          ':Prix' => $_POST['Prix'],
+          ':LienCover' => $_POST['LienCover'],
+          ':Plateforme' => $_POST['Plateforme'],
+          ':DateSortie' => $_POST['DateSortie'],
+          ':BestSeller' => $_POST['BestSeller'],
+          ':NbrJoueur' => $_POST['NbrJoueur'],
+          ':Categorie' => $_POST['Categorie'],
+          ':Special' => $_POST['Special'],
           ':idSelect'=>$_GET['idSelect']
         ));
         header('Location: admin.php');
@@ -77,6 +86,11 @@
         echo $e->getMessage();
       }
     }
+    // Si annuler, alors refresh de la page admin.php et suppr le "idSelect"
+    elseif (isset($_POST['Annuler'])) {
+        header('Location: admin.php');
+        exit();
+      }
     else {
       $echo_nvl_Ent_Jeux = "<p>Compléter tous les champs suivants pour créer une nouvelle entrée :</p>";
     }
@@ -107,7 +121,7 @@
             <input type="text" name="Plateforme" value="" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
 
             <label for="DateSortie" class="col-sm-6 col-xl-2 text-xl-right">DateSortie :</label>
-            <input type="text" name="DateSortie" value="" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+            <input type="date" name="DateSortie" value="" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
 
             <label for="BestSeller" class="col-sm-6 col-xl-2 text-xl-right">BestSeller :</label>
             <input type="text" name="BestSeller" placeholder="0 = NON (par défaut) & 1 = OUI" value="" class="col-sm-12 col-xl-9 align-top border border-info mb-3">

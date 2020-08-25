@@ -4,254 +4,258 @@ include "header.php";
 
 <!-- Le HTML -->
 
-
-<main class="container">
+<main id="main" class="container">
   <div class="slider">
     <div id="slider" class="carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
 
         <?php
-$nbrIdBG = $bdd->query("SELECT COUNT(id) AS nbrId FROM background");
-$resultat = $nbrIdBG->fetch();
-$nbMax = $resultat['nbrId'];
+          $nbrIdBG = $bdd->query("SELECT COUNT(id) AS nbrId FROM background");
+          $resultat = $nbrIdBG->fetch();
+          $nbMax = $resultat['nbrId'];
 
-// Le random avec, en nombre max, le nombre d'entrée déterminée
-$numeroPre = 0;
-$idTest = 0;
-for ($cnt = 0; $cnt < 3; $cnt++) {
-  while ($idTest == $numeroPre) {
-    $numero = rand(1, $nbMax);
-    $testPoss = $bdd->query("SELECT id_jeu FROM background WHERE id='{$numero}'");
-    $testRecup = $testPoss->fetch();
-    $idTest = $testRecup['id_jeu'];
-  }
+          // Le random avec, en nombre max, le nombre d'entrée déterminée
+          $numeroPre = 0;
+          $idTest = 0;
+          $idTest2 = 0;
+          for ($cnt = 0; $cnt < 3; $cnt++) {
+            while ($idTest == $numeroPre || $idTest2 == $numeroPre) {
+              $numero = rand(1, $nbMax);
+              $testPoss = $bdd->query("SELECT id_jeu FROM background WHERE id='{$numero}'");
+              $testRecup = $testPoss->fetch();
+              $idTest2 = $idTest;
+              $idTest = $testRecup['id_jeu'];
+            }
 
-  $imageCarousel = $bdd->query("SELECT * FROM background WHERE id='{$numero}'");
+            $imageCarousel = $bdd->query("SELECT * FROM background WHERE id='{$numero}'");
 
-  while($imageFinal = $imageCarousel->fetch()){
-    $lienImage = $imageFinal['lien'];
-    $idJeu = $imageFinal['id_jeu'];
-  }
-?>
+            while($imageFinal = $imageCarousel->fetch()){
+              $lienImage = $imageFinal['lien'];
+              $idJeu = $imageFinal['id_jeu'];
+            }
+        ?>
+
         <div class="carousel-item <?php if($cnt < 1 ) echo "active";?>">
-          <a href="/catalogueACS/produit.php?idSelect=<?= $idJeu ?>"><img src="<?= $lienImage ?>" class="d-block w-100"></a>
+          <a href="/catalogueACS/produit.php?idSelect=<?= $idJeu ?>">
+            <img src="<?= $lienImage ?>" class="d-block w-100">
+          </a>
         </div>
-        <?php
- $numeroPre = $idJeu;
-}
 
- ?>
+        <?php
+         $numeroPre = $idJeu;
+        }
+        ?>
+
         <ol class="carousel-indicators">
           <li data-target="#slider" data-slide-to="0" class="active"></li>
           <li data-target="#slider" data-slide-to="1"></li>
           <li data-target="#slider" data-slide-to="2"></li>
         </ol>
-
       </div>
     </div>
   </div>
-  <?php
 
-?>
   <div class="container main-content">
     <div class="row">
+      <div class="col-8">
+        <section class="">
+          <div class="container">
+            <div class="title-box">
+              <h2>Best Seller</h2>
+            </div>
+            <div class="row">
+              <?php
 
+                $bestSeller = $bdd->query('SELECT id, Titre, Prix, LienCover FROM jeux WHERE BestSeller = 1');
+                while ($donnees = $bestSeller->fetch()) {
 
+              ?>
 
-    <div class="col-8 games">
-      <section class="on-sale">
-
-        <div class="container">
-          <div class="title-box">
-            <h2>Best Seller</h2>
-          </div>
-          <div class="row">
-            <?php
-
-  $bestSeller = $bdd->query('SELECT id, Titre, Prix, LienCover FROM jeux WHERE BestSeller = 1');
-  while ($donnees = $bestSeller->fetch()) {
-?>
-
-            <div class="col-md-3">
-              <div class="product-top">
-                <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
-                <div class="overlay-right">
-                  <button type="button" class="btn btn-secondary" title="game shop">
-                    <i class="fa fa-eye"></i>
-                  </button>
-                  <button type="button" class="btn btn-secondary" title="Ad to wishlist">
-                    <i class="fa fa-heart-o"></i>
-                  </button>
-                  <button type="button" class="btn btn-secondary" title="game shop">
-                    <i class="fa fa-shopping-cart"></i>
-                  </button>
+              <div class="col-md-4">
+                <div class="product-top">
+                  <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
+                  <div class="overlay-right">
+                    <button type="button" class="btn btn-secondary" title="game shop">
+                      <i class="fa fa-eye"></i>
+                    </button>
+                    <button type="button" class="btn btn-secondary" title="Ad to wishlist">
+                      <i class="fa fa-heart-o"></i>
+                    </button>
+                    <button type="button" class="btn btn-secondary" title="game shop">
+                      <i class="fa fa-shopping-cart"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-bottom text-center">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half-o"></i>
+                  <h5><?= $donnees['Titre'] ?></h5>
+                  <h5><?= $donnees['Prix'] ?> €</h5>
                 </div>
               </div>
-              <div class="product-bottom text-center">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <h3><?= $donnees['Titre'] ?></h3>
-                <h5><?= $donnees['Prix'] ?> €</h5>
-              </div>
+
+              <?php
+                }
+              ?>
+
             </div>
-            <?php
-  }
- ?>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- deuxième row -->
-      <section class="new-product">
+        <!-- deuxième row -->
+        <section id="categorie" class="">
 
-        <div class="container">
-          <div class="title-box">
-            <h2>Action</h2>
-          </div>
-          <div class="row">
+          <?php
+            if (!isset($_GET['categorieSelect'])) {
+            $categorie = 'Action';
+            }
+            else {
+            $categorie = htmlspecialchars($_GET['categorieSelect']);
+            }
+            $query = $bdd->query("SELECT * FROM jeux WHERE Categorie LIKE '%" . $categorie ."%'");
+          ?>
 
-            <?php
+          <div class="container">
+            <div class="title-box">
+              <h2><?= $categorie ?></h2>
+            </div>
+            <div class="row">
 
+              <?php
+                while ($donnees = $query->fetch()) {
+              ?>
 
-$query = $bdd->query("SELECT * FROM jeux WHERE Categorie LIKE '%Action%'");
-while ($donnees = $query->fetch()) {
-
-?>
-            <div class="col-md-3">
-              <div class="product-top">
-                <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
-                <div class="overlay-right">
-                  <button type="button" class="btn btn-secondary" title="game shop">
-                    <i class="fa fa-eye"></i>
-                  </button>
-                  <button type="button" class="btn btn-secondary" title="Add to wishlist">
-                    <i class="fa fa-heart-o"></i>
-                  </button>
-                  <button type="button" class="btn btn-secondary" title="game shop">
-                    <i class="fa fa-shopping-cart"></i>
-                  </button>
+              <div class="col-md-3">
+                <div class="product-top">
+                  <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
+                  <div class="overlay-right">
+                    <button type="button" class="btn btn-secondary" title="game shop">
+                      <i class="fa fa-eye"></i>
+                    </button>
+                    <button type="button" class="btn btn-secondary" title="Add to wishlist">
+                      <i class="fa fa-heart-o"></i>
+                    </button>
+                    <button type="button" class="btn btn-secondary" title="game shop">
+                      <i class="fa fa-shopping-cart"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-bottom text-center">
+                  <h5><?= $donnees['Titre'] ?></h5>
+                  <h5><?= $donnees['Prix'] ?> €</h5>
                 </div>
               </div>
-              <div class="product-bottom text-center">
-                <h3><?= $donnees['Titre'] ?></h3>
-                <h5><?= $donnees['Prix'] ?> €</h5>
-              </div>
+
+              <?php
+                }
+              ?>
+
             </div>
-            <?php
-    }
-     ?>
           </div>
-        </div>
+        </section>
 
-      </section>
-      <section class="new-product">
+        <section id="plateforme" class="">
 
+          <?php
+            if (!isset($_GET['plateformeSelect'])) {
+              $plateforme = 'PS4';
+            }
+            else {
+              $plateforme = htmlspecialchars($_GET['plateformeSelect']);
+            }
 
-        <div class="container">
-          <div class="title-box">
-            <h2>PS4</h2>
-          </div>
-          <div class="row">
+            $query = $bdd->query('SELECT * FROM jeux WHERE Plateforme LIKE "%' . $plateforme . '%"');
+          ?>
 
-            <?php
+          <div class="container">
+            <div class="title-box">
+              <h2><?= $plateforme ?></h2>
+            </div>
+            <div class="row">
 
+              <?php
+                while ($donnees = $query->fetch()) {
+              ?>
 
-$query = $bdd->query("SELECT * FROM jeux WHERE Plateforme LIKE '%PS4%'");
-while ($donnees = $query->fetch()) {
-
-?>
-            <div class="col-md-3">
-              <div class="product-top">
-                <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
-                <div class="overlay-right">
-                  <button type="button" class="btn btn-secondary" title="game shop">
-                    <i class="fa fa-eye"></i>
-                  </button>
-                  <button type="button" class="btn btn-secondary" title="Add to wishlist">
-                    <i class="fa fa-heart-o"></i>
-                  </button>
-                  <button type="button" class="btn btn-secondary" title="game shop">
-                    <i class="fa fa-shopping-cart"></i>
-                  </button>
+              <div class="col-md-3">
+                <div class="product-top">
+                  <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
+                  <div class="overlay-right">
+                    <button type="button" class="btn btn-secondary" title="game shop">
+                      <i class="fa fa-eye"></i>
+                    </button>
+                    <button type="button" class="btn btn-secondary" title="Add to wishlist">
+                      <i class="fa fa-heart-o"></i>
+                    </button>
+                    <button type="button" class="btn btn-secondary" title="game shop">
+                      <i class="fa fa-shopping-cart"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="product-bottom text-center">
+                  <h5><?= $donnees['Titre'] ?></h5>
+                  <h5><?= $donnees['Prix'] ?> €</h5>
                 </div>
               </div>
-              <div class="product-bottom text-center">
-                <h3><?= $donnees['Titre'] ?></h3>
-                <h5><?= $donnees['Prix'] ?> €</h5>
-              </div>
+
+              <?php
+                }
+              ?>
+
             </div>
-            <?php
-    }
-     ?>
           </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- <div class="col-4 border-2 bcolor sidebar">
-  <div class="w-100 text-center p-4">
-    <h5 class="p-2 border-bt text-danger"></h5> -->
-
-    <div class="col-4 border-2 bcolor sidebar">
-      <div class="w-100 text-center p-4">
-        <a href="#"></a>
-        <li  class="bg-secondary" data-toggle="" data-target="#products" class="">
-                  <a href="#"><strong>Plateforme</strong> <span class="arrow"></span></a>
-                </li>
-                <ul class="" id="products">
-                    <li class="active"><a href="#">Switch</a></li>
-                    <li><a class="text-secondary" href="#">Wii U</a></li>
-                    <li><a href="#">PS4</a></li>
-                    <li><a href="#">PC</a></li>
-                    <li><a href="#">Xbox one</a></li>
-                    <li><a href="#">NES</a></li>
-                    <li><a href="#">SNES</a></li>
-                    <li><a href="#">Xbox series X</a></li>
-
-                </ul>
-                <hr>
-
-        <li  class="bg-secondary" data-toggle="" data-target="#products" class="">
-                  <a href="#"><strong>Categorie</strong> <span class="arrow"></span></a>
-                </li>
-                <ul class="" id="products">
-                    <li class="active"><a href="#">Action</a></li>
-                    <li><a class="" href="#">Aventure</a></li>
-                    <li><a href="#">Plateforme</a></li>
-                    <li><a href="#">RPG</a></li>
-                    <li><a href="#">Survie</a></li>
-                    <li><a href="#">Combat</a></li>
-                </ul>
-                <hr>
-
-        <li  class="bg-secondary" data-toggle="" data-target="#products" class="">
-                  <a href="#"><strong>Special</strong> <span class="arrow"></span></a>
-                </li>
-                <ul class="" id="products">
-                    <li class="active"><a href="#">Exclu</a></li>
-                    <li><a class="" href="#">Retro</a></li>
-                    <li><a href="#">Nouveauté</a></li>
-                    <li><a href="#">à venir</a></li>
-                </ul>
-                <hr>
-        <!-- <h5 class="p-2 border-bt text-danger">Social</h5>
-        <div class="p-2">
-            <i></i>
-        </div> -->
-
+        </section>
       </div>
-    </div>
+
+      <div class="offset-1 col-3 bcolor sidebar rounded">
+        <div class="w-100 text-center px-2 py-4">
+          <li class="productsTitle">
+            <p>Plateforme</p>
+          </li>
+          <ul id="products">
+              <li><a href="/catalogueACS/index.php?plateformeSelect=Switch#plateforme">Switch</a></li>
+              <li><a href="/catalogueACS/index.php?plateformeSelect=Wii U#plateforme">Wii U</a></li>
+              <li><a href="/catalogueACS/index.php?plateformeSelect=PS4#plateforme">PS4</a></li>
+              <li><a href="/catalogueACS/index.php?plateformeSelect=PC#plateforme">PC</a></li>
+              <li><a href="/catalogueACS/index.php?plateformeSelect=Xbox One#plateforme">Xbox One</a></li>
+              <li><a href="/catalogueACS/index.php?plateformeSelect=Xbox Series X#plateforme">Xbox Series X</a></li>
+              <li><a href="/catalogueACS/index.php?plateformeSelect=NES#plateforme">NES</a></li>
+              <li><a href="/catalogueACS/index.php?plateformeSelect=SNES#plateforme">SNES</a></li>
+          </ul>
+          <hr>
+
+          <li class="productsTitle">
+            <p>Categorie</p>
+          </li>
+          <ul id="products">
+              <li><a href="/catalogueACS/index.php?categorieSelect=Action#categorie">Action</a></li>
+              <li><a href="/catalogueACS/index.php?categorieSelect=Aventure#categorie">Aventure</a></li>
+              <li><a href="/catalogueACS/index.php?categorieSelect=Plateforme#categorie">Plateforme</a></li>
+              <li><a href="/catalogueACS/index.php?categorieSelect=RPG#categorie">RPG</a></li>
+              <li><a href="/catalogueACS/index.php?categorieSelect=Survie#categorie">Survie</a></li>
+              <li><a href="/catalogueACS/index.php?categorieSelect=Combat#categorie">Combat</a></li>
+          </ul>
+          <hr>
+
+          <li class="productsTitle">
+            <p>Special</p>
+          </li>
+          <ul id="products">
+              <li><a href="/catalogueACS/index.php?specialSelect=Exclu">Exclu</a></li>
+              <li><a href="/catalogueACS/index.php?specialSelect=Retro">Retro</a></li>
+              <li><a href="/catalogueACS/index.php?specialSelect=Nouveauté">Nouveauté</a></li>
+              <li><a href="/catalogueACS/index.php?specialSelect=A venir">A venir</a></li>
+          </ul>
+          <hr>
+        </div>
+      </div>
 
     </div>
 
   </div>
-
-
-
-  <!-- website features -->
 
   <!-- website features -->
   <section class="website-features">
@@ -284,5 +288,7 @@ while ($donnees = $query->fetch()) {
       </div>
     </div>
   </section>
+
 </main>
+
 <?php include "footer.php" ?>
