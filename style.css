@@ -15,9 +15,16 @@ body {
   height: 100%;
 }
 
+section {
+  margin: 0rem;
+}
+
+#main{
+  padding-top: 5rem;
+}
+
 .container {
-  padding-top: 6rem;
-  padding-bottom: 3rem;
+  padding: 1rem;
 }
 
 .layer {
@@ -35,6 +42,7 @@ main {
   margin-top: 4rem;
   min-height: 100%;
 }
+
 .logo {
   height: 55px;
   width: auto;
@@ -140,6 +148,14 @@ main {
   color: white;
 }
 
+#plateforme {
+  padding-top: 6rem;
+}
+
+#categorie {
+  padding-top: 6rem;
+}
+
 .categorie {
   padding: 10px;
   display: flex;
@@ -151,6 +167,7 @@ main {
   text-align: center;
   border-radius: 20px;
 }
+
 .plateforme {
   padding: 10px;
   display: flex;
@@ -410,8 +427,6 @@ tr:hover {
   background-color: rgba(234, 213, 245, 0.8);
 }
 
-
-
 #slider{
   width: 100%;
   display: block;
@@ -566,10 +581,6 @@ tr:hover {
     margin: auto;
     order: 3;
   }
-}
-
-.new-product{
-  margin: 50px 0;
 }
 
 .website-features{

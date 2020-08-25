@@ -4,7 +4,7 @@ include "header.php";
 
 <!-- Le HTML -->
 
-<main class="container">
+<main id="main" class="container">
   <div class="slider">
     <div id="slider" class="carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
@@ -106,7 +106,7 @@ include "header.php";
         </section>
 
         <!-- deuxième row -->
-        <section class="new-product">
+        <section id="categorie" class="">
 
           <?php
             if (!isset($_GET['categorieSelect'])) {
@@ -157,7 +157,7 @@ include "header.php";
           </div>
         </section>
 
-        <section class="new-product">
+        <section id="plateforme" class="">
 
           <?php
             if (!isset($_GET['plateformeSelect'])) {
@@ -216,14 +216,14 @@ include "header.php";
             <p>Plateforme</p>
           </li>
           <ul id="products">
-              <li><a href="/catalogueACS/index.php?plateformeSelect=Switch">Switch</a></li>
-              <li><a href="/catalogueACS/index.php?plateformeSelect=Wii U">Wii U</a></li>
-              <li><a href="/catalogueACS/index.php?plateformeSelect=PS4">PS4</a></li>
-              <li><a href="/catalogueACS/index.php?plateformeSelect=PC">PC</a></li>
-              <li><a href="/catalogueACS/index.php?plateformeSelect=Xbox One">Xbox One</a></li>
-              <li><a href="/catalogueACS/index.php?plateformeSelect=Xbox Series X">Xbox Series X</a></li>
-              <li><a href="/catalogueACS/index.php?plateformeSelect=NES">NES</a></li>
-              <li><a href="/catalogueACS/index.php?plateformeSelect=SNES">SNES</a></li>
+              <li><a href="/catalogueACS/index.php?plateformeSelect=Switch#plateforme">Switch</a></li>
+              <li><a href="/catalogueACS/index.php?plateformeSelect=Wii U#plateforme">Wii U</a></li>
+              <li><a href="/catalogueACS/index.php?plateformeSelect=PS4#plateforme">PS4</a></li>
+              <li><a href="/catalogueACS/index.php?plateformeSelect=PC#plateforme">PC</a></li>
+              <li><a href="/catalogueACS/index.php?plateformeSelect=Xbox One#plateforme">Xbox One</a></li>
+              <li><a href="/catalogueACS/index.php?plateformeSelect=Xbox Series X#plateforme">Xbox Series X</a></li>
+              <li><a href="/catalogueACS/index.php?plateformeSelect=NES#plateforme">NES</a></li>
+              <li><a href="/catalogueACS/index.php?plateformeSelect=SNES#plateforme">SNES</a></li>
           </ul>
           <hr>
 
@@ -231,12 +231,12 @@ include "header.php";
             <p>Categorie</p>
           </li>
           <ul id="products">
-              <li><a href="/catalogueACS/index.php?categorieSelect=Action">Action</a></li>
-              <li><a href="/catalogueACS/index.php?categorieSelect=Aventure">Aventure</a></li>
-              <li><a href="/catalogueACS/index.php?categorieSelect=Plateforme">Plateforme</a></li>
-              <li><a href="/catalogueACS/index.php?categorieSelect=RPG">RPG</a></li>
-              <li><a href="/catalogueACS/index.php?categorieSelect=Survie">Survie</a></li>
-              <li><a href="/catalogueACS/index.php?categorieSelect=Combat">Combat</a></li>
+              <li><a href="/catalogueACS/index.php?categorieSelect=Action#categorie">Action</a></li>
+              <li><a href="/catalogueACS/index.php?categorieSelect=Aventure#categorie">Aventure</a></li>
+              <li><a href="/catalogueACS/index.php?categorieSelect=Plateforme#categorie">Plateforme</a></li>
+              <li><a href="/catalogueACS/index.php?categorieSelect=RPG#categorie">RPG</a></li>
+              <li><a href="/catalogueACS/index.php?categorieSelect=Survie#categorie">Survie</a></li>
+              <li><a href="/catalogueACS/index.php?categorieSelect=Combat#categorie">Combat</a></li>
           </ul>
           <hr>
 

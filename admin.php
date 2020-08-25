@@ -121,7 +121,7 @@
             <input type="text" name="Plateforme" value="" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
 
             <label for="DateSortie" class="col-sm-6 col-xl-2 text-xl-right">DateSortie :</label>
-            <input type="text" name="DateSortie" value="" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+            <input type="date" name="DateSortie" value="" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
 
             <label for="BestSeller" class="col-sm-6 col-xl-2 text-xl-right">BestSeller :</label>
             <input type="text" name="BestSeller" placeholder="0 = NON (par défaut) & 1 = OUI" value="" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
