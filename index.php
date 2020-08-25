@@ -239,19 +239,9 @@ include "header.php";
              <label for="Survie">Survie</label></li>
             <li><input class="sideBarCheckbox" type="checkbox" id="Combat" name="categorieSelect[]" value="Combat">
              <label for="Combat">Combat</label></li>
-              <input class="sideBarFiltre" type="Submit" name="filtre" value="Filtrer">
+
           </ul>
           <hr>
-
-          <li class="productsTitle">
-            <p>Special</p>
-          </li>
-          <ul id="products">
-              <li><a href="/catalogueACS/index.php?specialSelect=Exclu">Exclu</a></li>
-              <li><a href="/catalogueACS/index.php?specialSelect=Retro">Retro</a></li>
-              <li><a href="/catalogueACS/index.php?specialSelect=Nouveauté">Nouveauté</a></li>
-              <li><a href="/catalogueACS/index.php?specialSelect=A venir">A venir</a></li>
-            </ul>
           <li class="productsTitle">
             <p>Plateforme</p>
           </li>
@@ -273,8 +263,20 @@ include "header.php";
                <label for="NES">NES</label></li>
               <li><input class="sideBarCheckbox" type="checkbox" id="SNES" name="plateformeSelect[]" value="SNES">
                <label for="SNES">SNES</label></li>
+               <input class="sideBarFiltre" type="Submit" name="filtre" value="Filtrer">
           </ul>
-          <hr>
+            <hr>
+          <li class="productsTitle">
+            <p>Special</p>
+          </li>
+          <ul id="products">
+              <li><a href="/catalogueACS/index.php?specialSelect=Exclu">Exclu</a></li>
+              <li><a href="/catalogueACS/index.php?specialSelect=Retro">Retro</a></li>
+              <li><a href="/catalogueACS/index.php?specialSelect=Nouveauté">Nouveauté</a></li>
+              <li><a href="/catalogueACS/index.php?specialSelect=A venir">A venir</a></li>
+            </ul>
+
+
 
 
           </form>
