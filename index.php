@@ -227,7 +227,7 @@ include "header.php";
           <li class="productsTitle">
             <p>Categorie</p>
           </li>
-          <ul id="products">
+          <ul>
             <li><input class="sideBarCheckbox" type="checkbox" id="Action" name="categorieSelect[]" value="Action">
              <label for="Action">Action</label></li>
             <li><input class="sideBarCheckbox" type="checkbox" id="Aventure" name="categorieSelect[]" value="Aventure">
@@ -246,30 +246,30 @@ include "header.php";
           <li class="productsTitle">
             <p>Plateforme</p>
           </li>
-            <ul>
-              <li><input class="sideBarCheckbox" type="checkbox" id="switch" name="plateformeSelect[]" value="Swicth">
-               <label for="switch">Switch</label></li>
-              <li><input class="sideBarCheckbox" type="checkbox" id="wiiU" name="plateformeSelect[]" value="Wii U">
-               <label for="wiiU">Wii U</label></li>
-              <li><input class="sideBarCheckbox" type="checkbox" id="PS4" name="plateformeSelect[]" value="PS4">
-               <label for="PS4">PS4</label></li>
-              <li><input class="sideBarCheckbox" type="checkbox" id="PC" name="plateformeSelect[]" value="PC">
-               <label for="PC">PC</label></li>
-              <li><input class="sideBarCheckbox" type="checkbox" id="xboxOne" name="plateformeSelect[]" value="Xbox One">
-               <label for="xboxOne">Xbox One</label></li>
-              <li><input class="sideBarCheckbox" type="checkbox" id="xboxSeriesX" name="plateformeSelect[]" value="Xbox Series X">
-               <label for="xboxSeriesX">Xbox Series X</label></li>
-              <li><input class="sideBarCheckbox" type="checkbox" id="NES" name="plateformeSelect[]" value="NES">
-               <label for="NES">NES</label></li>
-              <li><input class="sideBarCheckbox" type="checkbox" id="SNES" name="plateformeSelect[]" value="SNES">
-               <label for="SNES">SNES</label></li>
-               <input class="sideBarFiltre" type="Submit" name="filtre" id="filtrer" value="Filtrer">
-          </ul>
-            <hr>
+          <ul>
+            <li><input class="sideBarCheckbox" type="checkbox" id="switch" name="plateformeSelect[]" value="Swicth">
+             <label for="switch">Switch</label></li>
+            <li><input class="sideBarCheckbox" type="checkbox" id="wiiU" name="plateformeSelect[]" value="Wii U">
+             <label for="wiiU">Wii U</label></li>
+            <li><input class="sideBarCheckbox" type="checkbox" id="PS4" name="plateformeSelect[]" value="PS4">
+             <label for="PS4">PS4</label></li>
+            <li><input class="sideBarCheckbox" type="checkbox" id="PC" name="plateformeSelect[]" value="PC">
+             <label for="PC">PC</label></li>
+            <li><input class="sideBarCheckbox" type="checkbox" id="xboxOne" name="plateformeSelect[]" value="Xbox One">
+             <label for="xboxOne">Xbox One</label></li>
+            <li><input class="sideBarCheckbox" type="checkbox" id="xboxSeriesX" name="plateformeSelect[]" value="Xbox Series X">
+             <label for="xboxSeriesX">Xbox Series X</label></li>
+            <li><input class="sideBarCheckbox" type="checkbox" id="NES" name="plateformeSelect[]" value="NES">
+             <label for="NES">NES</label></li>
+            <li><input class="sideBarCheckbox" type="checkbox" id="SNES" name="plateformeSelect[]" value="SNES">
+             <label for="SNES">SNES</label></li>
+             <input class="sideBarFiltre" type="Submit" name="filtre" id="filtrer" value="Filtrer">
+           </ul>
+          <hr>
           <li class="productsTitle">
             <p>Special</p>
           </li>
-          <ul id="special">
+          <ul class="text-center">
             <li><a href="/catalogueACS/index.php?specialSelect=Exclu">Exclu</a></li>
             <li><a href="/catalogueACS/index.php?specialSelect=Retro">Retro</a></li>
             <li><a href="/catalogueACS/index.php?specialSelect=Nouveauté">Nouveauté</a></li>
