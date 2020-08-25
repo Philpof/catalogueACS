@@ -112,7 +112,7 @@ include "header.php";
           $categorie = "";
           if (isset($_POST['categorieSelect'])) {
             $categorie = " WHERE ";
-            foreach($_POST["categorieSelect"] as $cs) $categorie .= ($categorie != " WHERE " ? " OR " : "") . 'Categorie LIKE "%' . htmlentities($cs) . '%"';
+            foreach($_POST["categorieSelect"] as $cs) $categorie .= ($categorie != " WHERE " ? " AND " : "") . 'Categorie LIKE "%' . htmlentities($cs) . '%"';
           }
             $query = $bdd->query('SELECT * FROM jeux' . $categorie);
           ?>
@@ -224,30 +224,6 @@ include "header.php";
       <div class="col-2 bcolor sidebar rounded">
         <div class="w-100 text-center px-2 py-4">
           <li class="productsTitle">
-            <p>Plateforme</p>
-          </li>
-          <form id="products" method="post" action="index.php">
-            <ul>
-              <li><input class="sideBarCheckbox" type="checkbox" id="switch" name="plateformeSelect[]" value="Swicth">
-               <label for="switch">Switch</label></li>
-              <li><input class="sideBarCheckbox" type="checkbox" id="wiiU" name="plateformeSelect[]" value="Wii U">
-               <label for="wiiU">Wii U</label></li>
-              <li><input class="sideBarCheckbox" type="checkbox" id="PS4" name="plateformeSelect[]" value="PS4">
-               <label for="PS4">PS4</label></li>
-              <li><input class="sideBarCheckbox" type="checkbox" id="PC" name="plateformeSelect[]" value="PC">
-               <label for="PC">PC</label></li>
-              <li><input class="sideBarCheckbox" type="checkbox" id="xboxOne" name="plateformeSelect[]" value="Xbox One">
-               <label for="xboxOne">Xbox One</label></li>
-              <li><input class="sideBarCheckbox" type="checkbox" id="xboxSeriesX" name="plateformeSelect[]" value="Xbox Series X">
-               <label for="xboxSeriesX">Xbox Series X</label></li>
-              <li><input class="sideBarCheckbox" type="checkbox" id="NES" name="plateformeSelect[]" value="NES">
-               <label for="NES">NES</label></li>
-              <li><input class="sideBarCheckbox" type="checkbox" id="SNES" name="plateformeSelect[]" value="SNES">
-               <label for="SNES">SNES</label></li>
-          </ul>
-          <hr>
-
-          <li class="productsTitle">
             <p>Categorie</p>
           </li>
           <ul id="products">
@@ -276,6 +252,31 @@ include "header.php";
               <li><a href="/catalogueACS/index.php?specialSelect=Nouveauté">Nouveauté</a></li>
               <li><a href="/catalogueACS/index.php?specialSelect=A venir">A venir</a></li>
             </ul>
+          <li class="productsTitle">
+            <p>Plateforme</p>
+          </li>
+          <form id="products" method="post" action="index.php">
+            <ul>
+              <li><input class="sideBarCheckbox" type="checkbox" id="switch" name="plateformeSelect[]" value="Swicth">
+               <label for="switch">Switch</label></li>
+              <li><input class="sideBarCheckbox" type="checkbox" id="wiiU" name="plateformeSelect[]" value="Wii U">
+               <label for="wiiU">Wii U</label></li>
+              <li><input class="sideBarCheckbox" type="checkbox" id="PS4" name="plateformeSelect[]" value="PS4">
+               <label for="PS4">PS4</label></li>
+              <li><input class="sideBarCheckbox" type="checkbox" id="PC" name="plateformeSelect[]" value="PC">
+               <label for="PC">PC</label></li>
+              <li><input class="sideBarCheckbox" type="checkbox" id="xboxOne" name="plateformeSelect[]" value="Xbox One">
+               <label for="xboxOne">Xbox One</label></li>
+              <li><input class="sideBarCheckbox" type="checkbox" id="xboxSeriesX" name="plateformeSelect[]" value="Xbox Series X">
+               <label for="xboxSeriesX">Xbox Series X</label></li>
+              <li><input class="sideBarCheckbox" type="checkbox" id="NES" name="plateformeSelect[]" value="NES">
+               <label for="NES">NES</label></li>
+              <li><input class="sideBarCheckbox" type="checkbox" id="SNES" name="plateformeSelect[]" value="SNES">
+               <label for="SNES">SNES</label></li>
+          </ul>
+          <hr>
+
+
           </form>
           <hr>
         </div>
