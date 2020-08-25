@@ -22,15 +22,16 @@
       <div class="cadreImage">
         <div class="sideImage">
           <?php
-            $a = 1;
-            $files = glob("img/" . $donnees['id'] . "/*.*");/* $files pour "lister" les fichiers - Mise en place de *.* pour dire que ce dossier contient une extension (par exemple .jpg, .php, etc... */
-            $compteur = count($files);/* Variable $compteur pour compter (count) les fichiers lister ($files) dans le dossier */
-            while ($a <= $compteur) {
+            $image = $bdd->query('SELECT lien
+                                  FROM background
+                                  WHERE id_jeu ="' . $donnees['id'] . '"
+                                  LIMIT 500
+                                  OFFSET 1');
+            while ($lien = $image->fetch()) {
               // code...
           ?>
-          <img class="apercu" src="img/<?= $donnees['id'] ?>/apercu<?= $a ?>.webp">
+          <img class="apercu" src="<?= $lien['lien'] ?>">
       <?php
-      $a++;
         }
       ?>
         </div>

@@ -18,11 +18,13 @@ $nbMax = $resultat['nbrId'];
 // Le random avec, en nombre max, le nombre d'entrée déterminée
 $numeroPre = 0;
 $idTest = 0;
+$idTest2 = 0;
 for ($cnt = 0; $cnt < 3; $cnt++) {
-  while ($idTest == $numeroPre) {
+  while ($idTest == $numeroPre || $idTest2 == $numeroPre) {
     $numero = rand(1, $nbMax);
     $testPoss = $bdd->query("SELECT id_jeu FROM background WHERE id='{$numero}'");
     $testRecup = $testPoss->fetch();
+    $idTest2 = $idTest;
     $idTest = $testRecup['id_jeu'];
   }
 
@@ -33,10 +35,19 @@ for ($cnt = 0; $cnt < 3; $cnt++) {
     $idJeu = $imageFinal['id_jeu'];
   }
 ?>
+<<<<<<< HEAD
         <div class="carousel-item <?php if($cnt < 1 ) echo "active";?>">
           <a href="/catalogueACS/produit.php?idSelect=<?= $idJeu ?>"><img src="<?= $lienImage ?>" class="d-block w-100"></a>
         </div>
         <?php
+=======
+      <div class="carousel-item <?php if($cnt < 1 ) echo "active";?>">
+        <a href="/catalogueACS/produit.php?idSelect=<?= $idJeu ?>">
+          <img src="<?= $lienImage ?>" class="d-block w-100">
+        </a>
+      </div>
+<?php
+>>>>>>> 67089da03143a5ba0c6a44fd2e292cf0b39af6d5
  $numeroPre = $idJeu;
 }
 

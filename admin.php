@@ -41,13 +41,20 @@
 
   <?php
     // Pour faire une entrée dans la base donnée
-    if (!isset($_GET['idSelect']) && !isset($row_idSelect) && !isset($_POST['Annuler']) && !empty($_POST['Titre']) && !empty($_POST['Description'])) {
-      // && !empty($_POST['Prix']) && !empty($_POST['LienCover'])
+    if (!isset($_GET['idSelect']) && !isset($row_idSelect) && !isset($_POST['Annuler']) && !empty($_POST['Titre'])) {
       try {
-        $nvl_Ent_Jeux = $bdd->prepare('INSERT INTO jeux (Titre, Description) VALUES (:Titre, :Description)');
+        $nvl_Ent_Jeux = $bdd->prepare('INSERT INTO jeux (Titre, Description, Prix, LienCover, Plateforme, DateSortie, BestSeller, NbrJoueur, Categorie, Special) VALUES (:Titre, :Description, :Prix, :LienCover, :Plateforme, :DateSortie, :BestSeller, :NbrJoueur, :Categorie, :Special)');
         $nvl_Ent_Jeux->execute(array(
           ':Titre' => $_POST['Titre'],
-          ':Description' => nl2br($_POST['Description'])
+          ':Description' => nl2br($_POST['Description']),
+          ':Prix' => $_POST['Prix'],
+          ':LienCover' => $_POST['LienCover'],
+          ':Plateforme' => $_POST['Plateforme'],
+          ':DateSortie' => $_POST['DateSortie'],
+          ':BestSeller' => $_POST['BestSeller'],
+          ':NbrJoueur' => $_POST['NbrJoueur'],
+          ':Categorie' => $_POST['Categorie'],
+          ':Special' => $_POST['Special']
         ));
         header('Location: admin.php');
         exit();
@@ -56,7 +63,7 @@
       }
     }
     // Pour valider la modification dans la base de donnée de l'entrée sélectionnée
-    elseif (isset($_GET['idSelect']) && isset($row_idSelect) && !isset($_POST['Annuler']) && !empty($_POST['Titre']) && !empty($_POST['Description'])) {
+    elseif (isset($_GET['idSelect']) && isset($row_idSelect) && !isset($_POST['Annuler']) && !empty($_POST['Titre'])) {
       try {
         $modif_Ent_Jeux = $bdd->prepare('UPDATE jeux SET Titre = :Titre, Description = :Description WHERE id = :idSelect');
         $modif_Ent_Jeux->execute(array(
@@ -78,27 +85,81 @@
   <!-- Formulaire de saisie d'une ... -->
   <form action="" method="post">
     <?php
+
+      $miseEnPage = '';
+
       // ... nouvelle entrée
       if (!isset($row_idSelect) || isset($_POST['Annuler'])) {
         echo $echo_nvl_Ent_Jeux;
-        echo '<label for="Titre" class="col-sm-2 col-lg-1 align-top">Titre</label>
-            <input type="text" name="Titre" value="" class="col-sm-4 align-top border border-info" required>
-            <br>
-            <label for="Description" class="col-sm-2 col-lg-1 align-top">Description</label>
-            <textarea name="Description" rows="10" class="col-sm-10 align-top border border-info"></textarea>
-            <input id="boutonEnvoi" type="submit" name="Creer" value="Créer la nvl entrée" class="offset-lg-1 col-sm-2 btn btn-outline-info mt-1">';
+        echo '<label for="Titre" class="col-sm-6 col-xl-2 text-xl-right">Titre :</label>
+            <input type="text" name="Titre" value="" class="col-sm-12 col-xl-9 align-top border border-info mb-3" required>
+
+            <label for="Description" class="col-sm-6 col-xl-2 text-xl-right">Description :</label>
+            <textarea name="Description" rows="10" class="col-sm-12 col-xl-9 align-top border border-info mb-3"></textarea>
+
+            <label for="Prix" class="col-sm-6 col-xl-2 text-xl-right">Prix :</label>
+            <input type="text" name="Prix" value="" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+
+            <label for="LienCover" class="col-sm-6 col-xl-2 text-xl-right">LienCover :</label>
+            <input type="text" name="LienCover" value="" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+
+            <label for="Plateforme" class="col-sm-6 col-xl-2 text-xl-right">Plateforme :</label>
+            <input type="text" name="Plateforme" value="" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+
+            <label for="DateSortie" class="col-sm-6 col-xl-2 text-xl-right">DateSortie :</label>
+            <input type="text" name="DateSortie" value="" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+
+            <label for="BestSeller" class="col-sm-6 col-xl-2 text-xl-right">BestSeller :</label>
+            <input type="text" name="BestSeller" placeholder="0 = NON (par défaut) & 1 = OUI" value="" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+
+            <label for="NbrJoueur" class="col-sm-6 col-xl-2 text-xl-right">NbrJoueur :</label>
+            <input type="text" name="NbrJoueur" value="" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+
+            <label for="Categorie" class="col-sm-6 col-xl-2 text-xl-right">Categorie :</label>
+            <input type="text" name="Categorie" value="" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+
+            <label for="Special" class="col-sm-6 col-xl-2 text-xl-right">Special :</label>
+            <input type="text" name="Special" value="" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+
+            <input type="submit" name="Creer" value="Créer la nouvelle entrée" class="offset-xl-2 col-sm-3 btn btn-info mt-2">';
       }
       else {
         // ... modification
         if (isset($row_idSelect)) {
         echo "<p>Compléter tous les champs suivants pour modifier l'entrée selectionnée :</p>";
-        echo '<label for="Titre" class="col-sm-2 col-lg-1 align-top">Titre</label>
-            <input type="text" name="Titre" value="' . $row_idSelect["Titre"] . '" class="col-sm-4 align-top border border-info" required>
-            <br>
-            <label for="Description" class="col-sm-2 col-lg-1 align-top">Description</label>
-            <textarea name="Description" rows="10" class="col-sm-10 align-top border border-info">' . $row_idSelect["Description"] . '</textarea>
-            <input type="submit" name="Modifier" value="Valider la modification" class="offset-lg-1 col-sm-2 btn btn-outline-success mt-1">
-            <input type="submit" name="Annuler" value="Annuler la modification" class="offset-lg-1 col-sm-2 btn btn-outline-danger mt-1" >';
+        echo '<label for="Titre" class="col-sm-6 col-xl-2 text-xl-right">Titre :</label>
+            <input type="text" name="Titre" value="' . $row_idSelect["Titre"] . '" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+
+            <label for="Description" class="col-sm-6 col-xl-2 text-xl-right">Description :</label>
+            <textarea name="Description" rows="10" class="col-sm-12 col-xl-9 align-top border border-info mb-3">' . $row_idSelect["Description"] . '</textarea>
+
+            <label for="Prix" class="col-sm-6 col-xl-2 text-xl-right">Prix :</label>
+            <input type="text" name="Prix" value="' . $row_idSelect["Prix"] . '" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+
+            <label for="LienCover" class="col-sm-6 col-xl-2 text-xl-right">LienCover :</label>
+            <input type="text" name="LienCover" value="' . $row_idSelect["LienCover"] . '" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+
+            <label for="Plateforme" class="col-sm-6 col-xl-2 text-xl-right">Plateforme :</label>
+            <input type="text" name="Plateforme" value="' . $row_idSelect["Plateforme"] . '" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+
+            <label for="DateSortie" class="col-sm-6 col-xl-2 text-xl-right">DateSortie :</label>
+            <input type="text" name="DateSortie" value="' . $row_idSelect["DateSortie"] . '" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+
+            <label for="BestSeller" class="col-sm-6 col-xl-2 text-xl-right">BestSeller :</label>
+            <input type="text" name="BestSeller" placeholder="0 = NON (par défaut) & 1 = OUI" value="' . $row_idSelect["BestSeller"] . '" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+
+            <label for="NbrJoueur" class="col-sm-6 col-xl-2 text-xl-right">NbrJoueur :</label>
+            <input type="text" name="NbrJoueur" value="' . $row_idSelect["NbrJoueur"] . '" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+
+            <label for="Categorie" class="col-sm-6 col-xl-2 text-xl-right">Categorie :</label>
+            <input type="text" name="Categorie" value="' . $row_idSelect["Categorie"] . '" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+
+            <label for="Special" class="col-sm-6 col-xl-2 text-xl-right">Special :</label>
+            <input type="text" name="Special" value="' . $row_idSelect["Special"] . '" class="col-sm-12 col-xl-9 align-top border border-info mb-3">
+
+            <input type="submit" name="Modifier" value="Valider la modification" class="offset-lg-1 col-sm-2 btn btn-success mt-1">
+
+            <input type="submit" name="Annuler" value="Annuler la modification" class="offset-lg-1 col-sm-2 btn btn-danger mt-1" >';
         } else {
           header('Location: admin.php');
           exit();
@@ -109,7 +170,7 @@
   <hr>
 
   <!-- Pour afficher toutes les entrées et les champs de la base de données -->
-  <h3 class="font-weight-bold text-center">Description de la table "jeux" non archivé :</h3>
+  <h3 class="font-weight-bold text-center">Contenu de la table "jeux" non archivé :</h3>
   <?php
     $sql = "SELECT * FROM jeux WHERE Archivage='0' ORDER BY id ASC";
     echo "<table class='table table-hover table-striped'>
@@ -159,7 +220,7 @@
   ?>
 
   <!-- Pour afficher toutes les entrées de la base de données archivées -->
-  <h3 class="font-weight-bold text-center">Description de la table "jeux" archivé :</h3>
+  <h3 class="font-weight-bold text-center">Contenu de la table "jeux" archivé :</h3>
   <?php
     $sql = "SELECT * FROM jeux WHERE Archivage='1' ORDER BY id ASC";
     echo "<table class='table table-hover table-striped'>
