@@ -223,7 +223,6 @@ include "header.php";
 
       <div class="col-2 bcolor sidebar rounded">
         <div class="w-100 text-center px-2 py-4">
-          <form id="products" method="post" action="index.php">
           <li class="productsTitle">
             <p>Categorie</p>
           </li>
@@ -240,12 +239,13 @@ include "header.php";
              <label for="Survie">Survie</label></li>
             <li><input class="sideBarCheckbox" type="checkbox" id="Combat" name="categorieSelect[]" value="Combat">
              <label for="Combat">Combat</label></li>
-
           </ul>
+
           <hr>
           <li class="productsTitle">
             <p>Plateforme</p>
           </li>
+          <form id="products" method="post" action="index.php">
             <ul>
               <li><input class="sideBarCheckbox" type="checkbox" id="switch" name="plateformeSelect[]" value="Swicth">
                <label for="switch">Switch</label></li>
@@ -263,21 +263,18 @@ include "header.php";
                <label for="NES">NES</label></li>
               <li><input class="sideBarCheckbox" type="checkbox" id="SNES" name="plateformeSelect[]" value="SNES">
                <label for="SNES">SNES</label></li>
-               <input class="sideBarFiltre" type="Submit" name="filtre" value="Filtrer">
+               <input class="sideBarFiltre" type="Submit" name="filtre" id="filtrer" value="Filtrer">
           </ul>
             <hr>
           <li class="productsTitle">
             <p>Special</p>
           </li>
-          <ul id="products">
-              <li><a href="/catalogueACS/index.php?specialSelect=Exclu">Exclu</a></li>
-              <li><a href="/catalogueACS/index.php?specialSelect=Retro">Retro</a></li>
-              <li><a href="/catalogueACS/index.php?specialSelect=Nouveauté">Nouveauté</a></li>
-              <li><a href="/catalogueACS/index.php?specialSelect=A venir">A venir</a></li>
-            </ul>
-
-
-
+          <ul id="special">
+            <li><a href="/catalogueACS/index.php?specialSelect=Exclu">Exclu</a></li>
+            <li><a href="/catalogueACS/index.php?specialSelect=Retro">Retro</a></li>
+            <li><a href="/catalogueACS/index.php?specialSelect=Nouveauté">Nouveauté</a></li>
+            <li><a href="/catalogueACS/index.php?specialSelect=A venir">A venir</a></li>
+          </ul>
 
           </form>
           <hr>

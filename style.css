@@ -90,7 +90,11 @@ main {
 }
 
 #products {
-  text-align:left;
+  text-align: left;
+}
+
+#special{
+  text-align: center;
 }
 
 #productsSection {
