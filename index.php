@@ -112,7 +112,7 @@ include "header.php";
           $categorie = "";
           if (isset($_POST['categorieSelect'])) {
             $categorie = " WHERE ";
-            foreach($_POST["categorieSelect"] as $cs) $categorie .= ($categorie != " WHERE " ? " AND " : "") . 'Categorie LIKE "%' . htmlentities($cs) . '%"';
+            foreach($_POST["categorieSelect"] as $cs) $categorie .= ($categorie != " WHERE " ? " AND " : "") . 'Categorie LIKE "' . htmlentities($cs) . '%"';
           }
             $query = $bdd->query('SELECT * FROM jeux' . $categorie);
           ?>
@@ -168,7 +168,7 @@ include "header.php";
           $plateforme = "";
           if (isset($_POST['plateformeSelect'])) {
             $plateforme = " WHERE ";
-            foreach($_POST["plateformeSelect"] as $ps) $plateforme .= ($plateforme != " WHERE " ? " OR " : "") . 'Plateforme LIKE "%' . htmlentities($ps) . '%"';
+            foreach($_POST["plateformeSelect"] as $ps) $plateforme .= ($plateforme != " WHERE " ? " OR " : "") . 'Plateforme LIKE "' . htmlentities($ps) . '%"';
           }
             $query = $bdd->query('SELECT * FROM jeux' . $plateforme);
 
