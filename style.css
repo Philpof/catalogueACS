@@ -89,6 +89,10 @@ main {
   text-decoration: none;
 }
 
+#products {
+  text-align:left;
+}
+
 #productsSection {
   width: 100%;
   height: 100%;
@@ -98,6 +102,10 @@ main {
   padding-left: 75px;
   padding-right: 75px;
   margin-bottom: 42px;
+}
+
+#filtrer {
+
 }
 
 .produit {

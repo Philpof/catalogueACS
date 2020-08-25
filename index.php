@@ -119,7 +119,7 @@ include "header.php";
 
           <div class="container">
             <div class="title-box">
-              <h2>Genre</h2>
+              <h2>Catégorie</h2>
             </div>
             <div class="row">
 
