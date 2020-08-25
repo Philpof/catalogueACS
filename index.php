@@ -109,18 +109,17 @@ include "header.php";
         <section id="categorie" class="">
 
           <?php
-            if (!isset($_GET['categorieSelect'])) {
-            $categorie = 'Action';
-            }
-            else {
-            $categorie = htmlspecialchars($_GET['categorieSelect']);
-            }
-            $query = $bdd->query("SELECT * FROM jeux WHERE Categorie LIKE '%" . $categorie ."%'");
+          $plateforme = "";
+          if (isset($_POST['categorieSelect'])) {
+            $categorie = " WHERE ";
+            foreach($_POST["categorieSelect"] as $cs) $categorie .= ($categorie != " WHERE " ? " OR " : "") . 'Categorie LIKE "%' . htmlentities($cs) . '%"';
+          }
+            $query = $bdd->query('SELECT * FROM jeux' . $categorie);
           ?>
 
           <div class="container">
             <div class="title-box">
-              <h2><?= $categorie ?></h2>
+              <h2>Genre</h2>
             </div>
             <div class="row">
 
@@ -166,19 +165,18 @@ include "header.php";
         <section id="plateforme" class="">
 
           <?php
-            if (!isset($_GET['plateformeSelect'])) {
-              $plateforme = 'PS4';
-            }
-            else {
-              $plateforme = htmlspecialchars($_GET['plateformeSelect']);
-            }
+          $plateforme = "";
+          if (isset($_POST['plateformeSelect'])) {
+            $plateforme = " WHERE ";
+            foreach($_POST["plateformeSelect"] as $ps) $plateforme .= ($plateforme != " WHERE " ? " OR " : "") . 'Plateforme LIKE "%' . htmlentities($ps) . '%"';
+          }
+            $query = $bdd->query('SELECT * FROM jeux' . $plateforme);
 
-            $query = $bdd->query('SELECT * FROM jeux WHERE Plateforme LIKE "%' . $plateforme . '%"');
           ?>
 
           <div class="container">
             <div class="title-box">
-              <h2><?= $plateforme ?></h2>
+              <h2>Plateforme</h2>
             </div>
             <div class="row">
 
@@ -220,7 +218,7 @@ include "header.php";
           <a id="haut" href="index.php">Retour en haut de la page</a>
         </div>
         <hr>
-        
+
       </div>
 
       <div class="col-2 bcolor sidebar rounded">
@@ -228,15 +226,24 @@ include "header.php";
           <li class="productsTitle">
             <p>Plateforme</p>
           </li>
-          <ul id="products">
-              <li><a href="/catalogueACS/index.php?plateformeSelect=Switch#plateforme">Switch</a></li>
-              <li><a href="/catalogueACS/index.php?plateformeSelect=Wii U#plateforme">Wii U</a></li>
-              <li><a href="/catalogueACS/index.php?plateformeSelect=PS4#plateforme">PS4</a></li>
-              <li><a href="/catalogueACS/index.php?plateformeSelect=PC#plateforme">PC</a></li>
-              <li><a href="/catalogueACS/index.php?plateformeSelect=Xbox One#plateforme">Xbox One</a></li>
-              <li><a href="/catalogueACS/index.php?plateformeSelect=Xbox Series X#plateforme">Xbox Series X</a></li>
-              <li><a href="/catalogueACS/index.php?plateformeSelect=NES#plateforme">NES</a></li>
-              <li><a href="/catalogueACS/index.php?plateformeSelect=SNES#plateforme">SNES</a></li>
+          <form id="products" method="post" action="index.php">
+            <ul>
+              <li><input class="sideBarCheckbox" type="checkbox" id="switch" name="plateformeSelect[]" value="Swicth">
+               <label for="switch">Switch</label></li>
+              <li><input class="sideBarCheckbox" type="checkbox" id="wiiU" name="plateformeSelect[]" value="Wii U">
+               <label for="wiiU">Wii U</label></li>
+              <li><input class="sideBarCheckbox" type="checkbox" id="PS4" name="plateformeSelect[]" value="PS4">
+               <label for="PS4">PS4</label></li>
+              <li><input class="sideBarCheckbox" type="checkbox" id="PC" name="plateformeSelect[]" value="PC">
+               <label for="PC">PC</label></li>
+              <li><input class="sideBarCheckbox" type="checkbox" id="xboxOne" name="plateformeSelect[]" value="Xbox One">
+               <label for="xboxOne">Xbox One</label></li>
+              <li><input class="sideBarCheckbox" type="checkbox" id="xboxSeriesX" name="plateformeSelect[]" value="Xbox Series X">
+               <label for="xboxSeriesX">Xbox Series X</label></li>
+              <li><input class="sideBarCheckbox" type="checkbox" id="NES" name="plateformeSelect[]" value="NES">
+               <label for="NES">NES</label></li>
+              <li><input class="sideBarCheckbox" type="checkbox" id="SNES" name="plateformeSelect[]" value="SNES">
+               <label for="SNES">SNES</label></li>
           </ul>
           <hr>
 
@@ -244,12 +251,19 @@ include "header.php";
             <p>Categorie</p>
           </li>
           <ul id="products">
-              <li><a href="/catalogueACS/index.php?categorieSelect=Action#categorie">Action</a></li>
-              <li><a href="/catalogueACS/index.php?categorieSelect=Aventure#categorie">Aventure</a></li>
-              <li><a href="/catalogueACS/index.php?categorieSelect=Plateforme#categorie">Plateforme</a></li>
-              <li><a href="/catalogueACS/index.php?categorieSelect=RPG#categorie">RPG</a></li>
-              <li><a href="/catalogueACS/index.php?categorieSelect=Survie#categorie">Survie</a></li>
-              <li><a href="/catalogueACS/index.php?categorieSelect=Combat#categorie">Combat</a></li>
+            <li><input class="sideBarCheckbox" type="checkbox" id="Action" name="categorieSelect[]" value="Action">
+             <label for="Action">Action</label></li>
+            <li><input class="sideBarCheckbox" type="checkbox" id="Aventure" name="categorieSelect[]" value="Aventure">
+             <label for="Aventure">Aventure</label></li>
+            <li><input class="sideBarCheckbox" type="checkbox" id="Plateforme" name="categorieSelect[]" value="Plateforme">
+             <label for="Plateforme">Plateforme</label></li>
+            <li><input class="sideBarCheckbox" type="checkbox" id="RPG" name="categorieSelect[]" value="RPG">
+             <label for="RPG">RPG</label></li>
+            <li><input class="sideBarCheckbox" type="checkbox" id="Survie" name="categorieSelect[]" value="Survie">
+             <label for="Survie">Survie</label></li>
+            <li><input class="sideBarCheckbox" type="checkbox" id="Combat" name="categorieSelect[]" value="Combat">
+             <label for="Combat">Combat</label></li>
+              <input class="sideBarFiltre" type="Submit" name="filtre" value="Filtrer">
           </ul>
           <hr>
 
@@ -261,15 +275,13 @@ include "header.php";
               <li><a href="/catalogueACS/index.php?specialSelect=Retro">Retro</a></li>
               <li><a href="/catalogueACS/index.php?specialSelect=Nouveauté">Nouveauté</a></li>
               <li><a href="/catalogueACS/index.php?specialSelect=A venir">A venir</a></li>
-          </ul>
+            </ul>
+          </form>
           <hr>
         </div>
       </div>
-
     </div>
-
-  </div>
-
+</div>
   <!-- website features -->
   <section class="website-features">
     <div class="container">
