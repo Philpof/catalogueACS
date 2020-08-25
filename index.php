@@ -223,6 +223,7 @@ include "header.php";
 
       <div class="col-2 bcolor sidebar rounded">
         <div class="w-100 text-center px-2 py-4">
+          <form id="products" method="post" action="index.php">
           <li class="productsTitle">
             <p>Categorie</p>
           </li>
@@ -245,7 +246,6 @@ include "header.php";
           <li class="productsTitle">
             <p>Plateforme</p>
           </li>
-          <form id="products" method="post" action="index.php">
             <ul>
               <li><input class="sideBarCheckbox" type="checkbox" id="switch" name="plateformeSelect[]" value="Swicth">
                <label for="switch">Switch</label></li>
