@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 25 août 2020 à 06:34
+-- Généré le :  mar. 25 août 2020 à 09:24
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `background` (
   `lien` varchar(255) NOT NULL,
   `id_jeu` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `background`
@@ -74,7 +74,10 @@ INSERT INTO `background` (`id`, `jeu`, `lien`, `id_jeu`) VALUES
 (28, 'Assassin’s Creed Odyssey', 'img/background/AC_Odyssey_4.webp', 10),
 (29, 'God_Of_War', 'img/background/God_Of_War_1.webp', 0),
 (30, 'Halo Infinite', 'img/background/Halo_Infinite_2.webp', 8),
-(31, 'Star Wars - Jedi : Fallen Order', 'img/background/SW_Jedi_Fallen_Order_4.webp', 5);
+(31, 'Star Wars - Jedi : Fallen Order', 'img/background/SW_Jedi_Fallen_Order_4.webp', 5),
+(32, 'Super Smash Bros. Ultimate\r\n', 'img/background/Super_Smash_Bros._Ultimate_2.webp\r\n', 9),
+(33, 'Super Smash Bros. Ultimate', 'img/background/Super_Smash_Bros._Ultimate_3.webp', 9),
+(38, 'Super Smash Bros Ultimate', 'img/background/Super_Smash_Bros._Ultimate_4.webp', 9);
 
 -- --------------------------------------------------------
 

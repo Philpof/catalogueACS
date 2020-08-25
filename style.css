@@ -127,7 +127,7 @@ main {
   height: auto;
   border-radius: 20px;
   padding: 10px;
-  background-color: purple;
+  background: linear-gradient(to left, #851DCB, #7E1697, #A71375);
   border: 1px solid black;
 }
 
