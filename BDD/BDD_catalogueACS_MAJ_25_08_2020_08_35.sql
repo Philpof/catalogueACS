@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 24 août 2020 à 14:18
+-- Généré le :  mar. 25 août 2020 à 06:34
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `background` (
   `lien` varchar(255) NOT NULL,
   `id_jeu` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `background`
@@ -65,12 +65,16 @@ INSERT INTO `background` (`id`, `jeu`, `lien`, `id_jeu`) VALUES
 (19, 'Assassin’s Creed Odyssey', 'img/background/AC_Odyssey_2.webp', 10),
 (20, 'The Legend of Zelda : A Link to the Past', 'img/background/Zelda_ALTTP_1.webp', 7),
 (21, 'Super Mario Bros', 'img/background/Super_Mario_Bros_1.webp', 2),
-(22, 'Halo Infinite', 'img/background/Halo_Infinite.webp', 8),
+(22, 'Halo Infinite', 'img/background/Halo_Infinite_1.webp', 8),
 (23, 'Assassin’s Creed Odyssey', 'img/background/AC_Odyssey_3.webp', 10),
 (24, 'Final Fantasy VII Remake', 'img/background/Final_Fantasy_VII_Remake_4.webp', 4),
 (25, 'Final Fantasy VII Remake', 'img/background/Final_Fantasy_VII_Remake_5.webp', 4),
 (26, 'The Legend of Zelda : Breath of the Wild', 'img/background/Zelda_BOTW_3.webp', 1),
-(27, 'The Legend of Zelda : Breath of the Wild', 'img/background/Zelda_BOTW_4.webp', 1);
+(27, 'The Legend of Zelda : Breath of the Wild', 'img/background/Zelda_BOTW_4.webp', 1),
+(28, 'Assassin’s Creed Odyssey', 'img/background/AC_Odyssey_4.webp', 10),
+(29, 'God_Of_War', 'img/background/God_Of_War_1.webp', 0),
+(30, 'Halo Infinite', 'img/background/Halo_Infinite_2.webp', 8),
+(31, 'Star Wars - Jedi : Fallen Order', 'img/background/SW_Jedi_Fallen_Order_4.webp', 5);
 
 -- --------------------------------------------------------
 

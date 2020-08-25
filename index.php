@@ -35,7 +35,9 @@ for ($cnt = 0; $cnt < 3; $cnt++) {
   }
 ?>
       <div class="carousel-item <?php if($cnt < 1 ) echo "active";?>">
-        <a href="/catalogueACS/produit.php?idSelect=<?= $idJeu ?>"><img src="<?= $lienImage ?>" class="d-block w-100"></a>
+        <a href="/catalogueACS/produit.php?idSelect=<?= $idJeu ?>">
+          <img src="<?= $lienImage ?>" class="d-block w-100">
+        </a>
       </div>
 <?php
  $numeroPre = $idJeu;

@@ -36,12 +36,30 @@ main {
   min-height: 100%;
 }
 
-#logo {
-  height: 60px;
+.logo {
+  height: 55px;
   width: auto;
-  margin-top: -5em;
-  margin-bottom: -5em;
+  margin-top: -6.5em;
+  margin-bottom: -6em;
   margin-right: -1.5em;
+}
+
+#clic:hover {
+  font-weight: bolder;
+  transition: all 0.3s ease;
+  text-shadow: 0px 0px 10px white;
+}
+
+#clic img:last-child {
+  display: none;
+}
+
+#clic:hover img:last-child {
+  display: inline;
+}
+
+#clic:hover img:first-child {
+  display: none;
 }
 
 #productsSection {
@@ -90,11 +108,12 @@ main {
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
-  background: linear-gradient(to left, #851DCB, #7E1697, #A71375);
   color: white;
   height: auto;
   border-radius: 20px;
   padding: 10px;
+  background-color: purple;
+  border: 1px solid black;
 }
 
 .subInfo {

@@ -43,7 +43,6 @@
 
 <!-- Pour afficher les informations de l'entrée de la table "jeux" séléctionnée par le bouton "Modifier" de la page "admin.php" (Début)-->
   <?php
-  //
   if (isset($_GET['idSelect'])) {
     $select_Ent_Jeux = $bdd->prepare('SELECT id, Titre, Description FROM jeux WHERE id = :idSelect');
     $select_Ent_Jeux->execute(array(':idSelect'=>$_GET['idSelect']));
@@ -143,8 +142,8 @@
     <div class="row justify-content-around py-3 align-items-center">
       <a class="" href="admin.php"><?php echo $admin ?></a>
 
-      <a class="font-weight-bold" href="index.php"><img id="logo" src="img\icones\GRAP.fr.png" alt="Logo"><span>GR</span>AP.fr</a>
-      
+      <a id="clic" class="font-weight-bold" href="index.php"><img class="logo" src="img/icones/GRAP.fr.png" alt="Logo"><img class="logo" src="img/icones/GRAP.fr_inverse.png" alt="Logo">GRAP.fr</a>
+
       <form method="post" action="recherche.php">
         <input class="pl-3 search-txt" type="search" name="jeux" placeholder="Indiquez le jeux recherché">
         <button type="submit" class="btn-search"><i id="loupe" class="fas fa-search"></i></button>
