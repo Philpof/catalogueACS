@@ -18,13 +18,11 @@ $nbMax = $resultat['nbrId'];
 // Le random avec, en nombre max, le nombre d'entrée déterminée
 $numeroPre = 0;
 $idTest = 0;
-$idTest2 = 0;
 for ($cnt = 0; $cnt < 3; $cnt++) {
-  while ($idTest == $numeroPre || $idTest2 == $numeroPre) {
+  while ($idTest == $numeroPre) {
     $numero = rand(1, $nbMax);
     $testPoss = $bdd->query("SELECT id_jeu FROM background WHERE id='{$numero}'");
     $testRecup = $testPoss->fetch();
-    $idTest2 = $idTest;
     $idTest = $testRecup['id_jeu'];
   }
 
@@ -35,19 +33,10 @@ for ($cnt = 0; $cnt < 3; $cnt++) {
     $idJeu = $imageFinal['id_jeu'];
   }
 ?>
-<<<<<<< HEAD
         <div class="carousel-item <?php if($cnt < 1 ) echo "active";?>">
           <a href="/catalogueACS/produit.php?idSelect=<?= $idJeu ?>"><img src="<?= $lienImage ?>" class="d-block w-100"></a>
         </div>
         <?php
-=======
-      <div class="carousel-item <?php if($cnt < 1 ) echo "active";?>">
-        <a href="/catalogueACS/produit.php?idSelect=<?= $idJeu ?>">
-          <img src="<?= $lienImage ?>" class="d-block w-100">
-        </a>
-      </div>
-<?php
->>>>>>> 67089da03143a5ba0c6a44fd2e292cf0b39af6d5
  $numeroPre = $idJeu;
 }
 
@@ -209,10 +198,10 @@ while ($donnees = $query->fetch()) {
     <div class="col-4 border-2 bcolor sidebar">
       <div class="w-100 text-center p-4">
         <a href="#"></a>
-        <li  class="bg-secondary" data-toggle="collapse" data-target="#products" class="collapsed active">
+        <li  class="bg-secondary" data-toggle="" data-target="#products" class="">
                   <a href="#"><strong>Plateforme</strong> <span class="arrow"></span></a>
                 </li>
-                <ul class="sub-menu collapse" id="products">
+                <ul class="" id="products">
                     <li class="active"><a href="#">Switch</a></li>
                     <li><a class="text-secondary" href="#">Wii U</a></li>
                     <li><a href="#">PS4</a></li>
@@ -225,10 +214,10 @@ while ($donnees = $query->fetch()) {
                 </ul>
                 <hr>
 
-        <li  class="bg-secondary" data-toggle="collapse" data-target="#products" class="collapsed active">
+        <li  class="bg-secondary" data-toggle="" data-target="#products" class="">
                   <a href="#"><strong>Categorie</strong> <span class="arrow"></span></a>
                 </li>
-                <ul class="sub-menu collapse" id="products">
+                <ul class="" id="products">
                     <li class="active"><a href="#">Action</a></li>
                     <li><a class="" href="#">Aventure</a></li>
                     <li><a href="#">Plateforme</a></li>
@@ -238,10 +227,10 @@ while ($donnees = $query->fetch()) {
                 </ul>
                 <hr>
 
-        <li  class="bg-secondary" data-toggle="collapse" data-target="#products" class="collapsed active">
+        <li  class="bg-secondary" data-toggle="" data-target="#products" class="">
                   <a href="#"><strong>Special</strong> <span class="arrow"></span></a>
                 </li>
-                <ul class="sub-menu collapse" id="products">
+                <ul class="" id="products">
                     <li class="active"><a href="#">Exclu</a></li>
                     <li><a class="" href="#">Retro</a></li>
                     <li><a href="#">Nouveauté</a></li>
