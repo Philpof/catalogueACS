@@ -108,20 +108,28 @@ for ($cnt = 0; $cnt < 3; $cnt++) {
 
       <!-- deuxième row -->
       <section class="new-product">
+        <?php
+
+        if (!isset($_GET['categorieSelect'])) {
+        $categorie = 'Action';
+        }
+        else {
+        $categorie = htmlspecialchars($_GET['categorieSelect']);
+        }
+        $query = $bdd->query("SELECT * FROM jeux WHERE Categorie LIKE '%" . $categorie ."%'");
+
+
+        ?>
 
         <div class="container">
           <div class="title-box">
-            <h2>Action</h2>
+            <h2><?= $categorie ?></h2>
           </div>
           <div class="row">
 
             <?php
-
-
-$query = $bdd->query("SELECT * FROM jeux WHERE Categorie LIKE '%Action%'");
-while ($donnees = $query->fetch()) {
-
-?>
+              while ($donnees = $query->fetch()) {
+            ?>
             <div class="col-md-3">
               <div class="product-top">
                 <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
@@ -150,21 +158,25 @@ while ($donnees = $query->fetch()) {
 
       </section>
       <section class="new-product">
+        <?php
+        if (!isset($_GET['plateformeSelect'])) {
+          $plateforme = 'PS4';
+        }
+        else {
+          $plateforme = htmlspecialchars($_GET['plateformeSelect']);
+        }
 
+        $query = $bdd->query('SELECT * FROM jeux WHERE Plateforme LIKE "%' . $plateforme . '%"');
+        ?>
 
         <div class="container">
           <div class="title-box">
-            <h2>PS4</h2>
+            <h2><?= $plateforme ?></h2>
           </div>
           <div class="row">
-
             <?php
-
-
-$query = $bdd->query("SELECT * FROM jeux WHERE Plateforme LIKE '%PS4%'");
-while ($donnees = $query->fetch()) {
-
-?>
+            while ($donnees = $query->fetch()) {
+            ?>
             <div class="col-md-3">
               <div class="product-top">
                 <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
@@ -193,6 +205,7 @@ while ($donnees = $query->fetch()) {
       </section>
     </div>
 
+<<<<<<< HEAD
     <div class="offset-1 col-3 bcolor sidebar">
       <div class="w-100 text-center px-2 py-4">
         <li class="productsTitle">
@@ -233,6 +246,57 @@ while ($donnees = $query->fetch()) {
           <li><a href="#">A venir</a></li>
         </ul>
         <hr>
+=======
+    <!-- <div class="col-4 border-2 bcolor sidebar">
+  <div class="w-100 text-center p-4">
+    <h5 class="p-2 border-bt text-danger"></h5> -->
+    <div class="col-4 border-2 bcolor sidebar">
+      <div class="w-100 text-center p-4">
+        <a href="#"></a>
+        <li class="bg-secondary" data-toggle="" data-target="#products" class="active">
+                  <strong>Plateforme</strong> <span class="arrow"></span>
+                </li>
+                <ul class="sub-menu" id="products">
+                    <li class="active"><a href="/catalogueACS/index.php?plateformeSelect=Switch">Switch</a></li>
+                    <li><a href="/catalogueACS/index.php?plateformeSelect=Wii U">Wii U</a></li>
+                    <li><a href="/catalogueACS/index.php?plateformeSelect=PS4">PS4</a></li>
+                    <li><a href="/catalogueACS/index.php?plateformeSelect=PC">PC</a></li>
+                    <li><a href="/catalogueACS/index.php?plateformeSelect=Xbox One">Xbox One</a></li>
+                    <li><a href="/catalogueACS/index.php?plateformeSelect=Xbox Series X">Xbox Series X</a></li>
+                    <li><a href="/catalogueACS/index.php?plateformeSelect=NES">NES</a></li>
+                    <li><a href="/catalogueACS/index.php?plateformeSelect=SNES">SNES</a></li>
+                </ul>
+                <hr>
+
+        <li  class="bg-secondary" data-toggle="" data-target="#products" class="active">
+                  <strong>Categorie</strong> <span class="arrow"></span>
+                </li>
+                <ul class="sub-menu" id="products">
+                    <li class="active"><a href="/catalogueACS/index.php?categorieSelect=Action">Action</a></li>
+                    <li><a class="" href="/catalogueACS/index.php?categorieSelect=Aventure">Aventure</a></li>
+                    <li><a href="/catalogueACS/index.php?categorieSelect=Plateforme">Plateforme</a></li>
+                    <li><a href="/catalogueACS/index.php?categorieSelect=RPG">RPG</a></li>
+                    <li><a href="/catalogueACS/index.php?categorieSelect=Survie">Survie</a></li>
+                    <li><a href="/catalogueACS/index.php?categorieSelect=Combat">Combat</a></li>
+                </ul>
+                <hr>
+
+        <li  class="bg-secondary" data-toggle="" data-target="#products" class="collapsed active">
+                  <strong>Special</strong> <span class="arrow"></span>
+                </li>
+                <ul class="sub-menu" id="products">
+                    <li class="active"><a href="/catalogueACS/index.php?specialSelect=Exclu">Exclu</a></li>
+                    <li><a class="" href="/catalogueACS/index.php?specialSelect=Retro">Retro</a></li>
+                    <li><a href="/catalogueACS/index.php?specialSelect=Nouveauté">Nouveauté</a></li>
+                    <li><a href="/catalogueACS/index.php?specialSelect=A venir">à venir</a></li>
+                </ul>
+                <hr>
+        <!-- <h5 class="p-2 border-bt text-danger">Social</h5>
+        <div class="p-2">
+            <i></i>
+        </div> -->
+
+>>>>>>> 5a765b470d4021824a91e84906e4a81b4eb32c08
       </div>
     </div>
 
