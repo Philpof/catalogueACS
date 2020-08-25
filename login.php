@@ -1,6 +1,12 @@
 <?php
-include "header.php";
 
+try {
+  $bdd = new PDO('mysql:host=localhost;dbname=catalogueacs;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+}
+  catch(PDOException $e)
+{
+  die('Ereur : '.$e->getMessage());
+}
 // Test champs vide du formulaire : login sinon instructions n°1
 if (!empty($_POST['nom_du_compte']))
 {
@@ -31,7 +37,7 @@ if (!empty($_POST['nom_du_compte']))
             $password_KO = "<div class='alert alert-danger mt-5 text-center' role='alert'>Le mot de passe saisi est incorrect.<br>Mot de passe oublié ? Cliquez <a id='ici' href='mdpoublie.php'>ici</a> !</div>";
           }
             // sinon, on ouvre la session
-            else
+          else
           {
           // On ouvre la session
           session_start();
@@ -65,6 +71,7 @@ else
 {
   $password_KO = "<div class='alert alert-info mt-5 text-center' role='alert'>Indiquez le nom du compte et le mot de passe pour accéder à votre espace privé ou cliquez sur \"créer mon compte privé\" pour créer un nouveau compte.</div>";;
 }
+include "header.php";
 ?>
 
 <!-- Le HTML -->
