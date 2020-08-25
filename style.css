@@ -8,6 +8,10 @@
   font-family: "Gill Sans", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   /* background-image: cf. header.php */
   background-attachment: fixed;
