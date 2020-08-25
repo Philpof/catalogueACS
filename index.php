@@ -205,59 +205,16 @@ for ($cnt = 0; $cnt < 3; $cnt++) {
       </section>
     </div>
 
-<<<<<<< HEAD
-    <div class="offset-1 col-3 bcolor sidebar">
-      <div class="w-100 text-center px-2 py-4">
-        <li class="productsTitle">
-          <p>Plateforme</p>
-        </li>
-        <ul id="products">
-          <li><a href="#">Switch</a></li>
-          <li><a href="#">Wii U</a></li>
-          <li><a href="#">PS4</a></li>
-          <li><a href="#">PC</a></li>
-          <li><a href="#">Xbox one</a></li>
-          <li><a href="#">NES</a></li>
-          <li><a href="#">SNES</a></li>
-          <li><a href="#">Xbox series X</a></li>
-        </ul>
-        <hr>
-
-        <li class="productsTitle">
-          <p>Categorie</p>
-        </li>
-        <ul id="products">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Aventure</a></li>
-            <li><a href="#">Plateforme</a></li>
-            <li><a href="#">RPG</a></li>
-            <li><a href="#">Survie</a></li>
-            <li><a href="#">Combat</a></li>
-        </ul>
-        <hr>
-
-        <li class="productsTitle">
-          <p>Special</p>
-        </li>
-        <ul id="products">
-          <li><a href="#">Exclu</a></li>
-          <li><a href="#">Retro</a></li>
-          <li><a href="#">Nouveauté</a></li>
-          <li><a href="#">A venir</a></li>
-        </ul>
-        <hr>
-=======
     <!-- <div class="col-4 border-2 bcolor sidebar">
   <div class="w-100 text-center p-4">
     <h5 class="p-2 border-bt text-danger"></h5> -->
-    <div class="col-4 border-2 bcolor sidebar">
-      <div class="w-100 text-center p-4">
-        <a href="#"></a>
-        <li class="bg-secondary" data-toggle="" data-target="#products" class="active">
-                  <strong>Plateforme</strong> <span class="arrow"></span>
-                </li>
-                <ul class="sub-menu" id="products">
-                    <li class="active"><a href="/catalogueACS/index.php?plateformeSelect=Switch">Switch</a></li>
+    <div class="offset-1 col-3 bcolor sidebar rounded">
+          <div class="w-100 text-center px-2 py-4">
+            <li class="productsTitle">
+              <p>Plateforme</p>
+            </li>
+                <ul id="products">
+                    <li><a href="/catalogueACS/index.php?plateformeSelect=Switch">Switch</a></li>
                     <li><a href="/catalogueACS/index.php?plateformeSelect=Wii U">Wii U</a></li>
                     <li><a href="/catalogueACS/index.php?plateformeSelect=PS4">PS4</a></li>
                     <li><a href="/catalogueACS/index.php?plateformeSelect=PC">PC</a></li>
@@ -268,12 +225,12 @@ for ($cnt = 0; $cnt < 3; $cnt++) {
                 </ul>
                 <hr>
 
-        <li  class="bg-secondary" data-toggle="" data-target="#products" class="active">
-                  <strong>Categorie</strong> <span class="arrow"></span>
+                <li class="productsTitle">
+                  <p>Categorie</p>
                 </li>
-                <ul class="sub-menu" id="products">
-                    <li class="active"><a href="/catalogueACS/index.php?categorieSelect=Action">Action</a></li>
-                    <li><a class="" href="/catalogueACS/index.php?categorieSelect=Aventure">Aventure</a></li>
+                <ul id="products">
+                    <li><a href="/catalogueACS/index.php?categorieSelect=Action">Action</a></li>
+                    <li><a href="/catalogueACS/index.php?categorieSelect=Aventure">Aventure</a></li>
                     <li><a href="/catalogueACS/index.php?categorieSelect=Plateforme">Plateforme</a></li>
                     <li><a href="/catalogueACS/index.php?categorieSelect=RPG">RPG</a></li>
                     <li><a href="/catalogueACS/index.php?categorieSelect=Survie">Survie</a></li>
@@ -281,22 +238,16 @@ for ($cnt = 0; $cnt < 3; $cnt++) {
                 </ul>
                 <hr>
 
-        <li  class="bg-secondary" data-toggle="" data-target="#products" class="collapsed active">
-                  <strong>Special</strong> <span class="arrow"></span>
+                <li class="productsTitle">
+                  <p>Special</p>
                 </li>
-                <ul class="sub-menu" id="products">
-                    <li class="active"><a href="/catalogueACS/index.php?specialSelect=Exclu">Exclu</a></li>
-                    <li><a class="" href="/catalogueACS/index.php?specialSelect=Retro">Retro</a></li>
+                <ul id="products">
+                    <li><a href="/catalogueACS/index.php?specialSelect=Exclu">Exclu</a></li>
+                    <li><a href="/catalogueACS/index.php?specialSelect=Retro">Retro</a></li>
                     <li><a href="/catalogueACS/index.php?specialSelect=Nouveauté">Nouveauté</a></li>
                     <li><a href="/catalogueACS/index.php?specialSelect=A venir">à venir</a></li>
                 </ul>
                 <hr>
-        <!-- <h5 class="p-2 border-bt text-danger">Social</h5>
-        <div class="p-2">
-            <i></i>
-        </div> -->
-
->>>>>>> 5a765b470d4021824a91e84906e4a81b4eb32c08
       </div>
     </div>
 
