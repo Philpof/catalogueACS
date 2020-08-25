@@ -109,10 +109,10 @@ include "header.php";
         <section id="categorie" class="">
 
           <?php
-          $plateforme = "";
+          $categorie = "";
           if (isset($_POST['categorieSelect'])) {
             $categorie = " WHERE ";
-            foreach($_POST["categorieSelect"] as $cs) $categorie .= ($categorie != " WHERE " ? " OR " : "") . 'Categorie LIKE "%' . htmlentities($cs) . '%"';
+            foreach($_POST["categorieSelect"] as $cs) $categorie .= ($categorie != " WHERE " ? " AND " : "") . 'Categorie LIKE "%' . htmlentities($cs) . '%"';
           }
             $query = $bdd->query('SELECT * FROM jeux' . $categorie);
           ?>
@@ -224,6 +224,25 @@ include "header.php";
       <div class="col-2 bcolor sidebar rounded">
         <div class="w-100 text-center px-2 py-4">
           <li class="productsTitle">
+            <p>Categorie</p>
+          </li>
+          <ul id="products">
+            <li><input class="sideBarCheckbox" type="checkbox" id="Action" name="categorieSelect[]" value="Action">
+             <label for="Action">Action</label></li>
+            <li><input class="sideBarCheckbox" type="checkbox" id="Aventure" name="categorieSelect[]" value="Aventure">
+             <label for="Aventure">Aventure</label></li>
+            <li><input class="sideBarCheckbox" type="checkbox" id="Plateforme" name="categorieSelect[]" value="Plateforme">
+             <label for="Plateforme">Plateforme</label></li>
+            <li><input class="sideBarCheckbox" type="checkbox" id="RPG" name="categorieSelect[]" value="RPG">
+             <label for="RPG">RPG</label></li>
+            <li><input class="sideBarCheckbox" type="checkbox" id="Survie" name="categorieSelect[]" value="Survie">
+             <label for="Survie">Survie</label></li>
+            <li><input class="sideBarCheckbox" type="checkbox" id="Combat" name="categorieSelect[]" value="Combat">
+             <label for="Combat">Combat</label></li>
+
+          </ul>
+          <hr>
+          <li class="productsTitle">
             <p>Plateforme</p>
           </li>
           <form id="products" method="post" action="index.php">
@@ -244,29 +263,9 @@ include "header.php";
                <label for="NES">NES</label></li>
               <li><input class="sideBarCheckbox" type="checkbox" id="SNES" name="plateformeSelect[]" value="SNES">
                <label for="SNES">SNES</label></li>
+               <input class="sideBarFiltre" type="Submit" name="filtre" value="Filtrer">
           </ul>
-          <hr>
-
-          <li class="productsTitle">
-            <p>Categorie</p>
-          </li>
-          <ul id="products">
-            <li><input class="sideBarCheckbox" type="checkbox" id="Action" name="categorieSelect[]" value="Action">
-             <label for="Action">Action</label></li>
-            <li><input class="sideBarCheckbox" type="checkbox" id="Aventure" name="categorieSelect[]" value="Aventure">
-             <label for="Aventure">Aventure</label></li>
-            <li><input class="sideBarCheckbox" type="checkbox" id="Plateforme" name="categorieSelect[]" value="Plateforme">
-             <label for="Plateforme">Plateforme</label></li>
-            <li><input class="sideBarCheckbox" type="checkbox" id="RPG" name="categorieSelect[]" value="RPG">
-             <label for="RPG">RPG</label></li>
-            <li><input class="sideBarCheckbox" type="checkbox" id="Survie" name="categorieSelect[]" value="Survie">
-             <label for="Survie">Survie</label></li>
-            <li><input class="sideBarCheckbox" type="checkbox" id="Combat" name="categorieSelect[]" value="Combat">
-             <label for="Combat">Combat</label></li>
-              <input class="sideBarFiltre" type="Submit" name="filtre" value="Filtrer">
-          </ul>
-          <hr>
-
+            <hr>
           <li class="productsTitle">
             <p>Special</p>
           </li>
@@ -276,6 +275,10 @@ include "header.php";
               <li><a href="/catalogueACS/index.php?specialSelect=Nouveauté">Nouveauté</a></li>
               <li><a href="/catalogueACS/index.php?specialSelect=A venir">A venir</a></li>
             </ul>
+
+
+
+
           </form>
           <hr>
         </div>
