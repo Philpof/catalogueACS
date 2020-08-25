@@ -57,7 +57,6 @@
   if (!stripos($_SERVER['PHP_SELF'], 'admin.php')) {
     session_start();
   }
-  else {}
 
   // On teste si la variable de session existe et contient une valeur
   if(!isset($_SESSION['login']))

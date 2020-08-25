@@ -24,7 +24,7 @@ if (!empty($_POST['nom_du_compte']))
         // Test champs vide du formulaire : mdp sinon instructions n°3
         if(!empty($_POST['mot_de_passe']))
         {
-          //Test si le mdp est incorrect si oui alors instructions n°4
+          // Test si le mdp est incorrect si oui alors instructions n°4
           if($_POST['mot_de_passe'] !== PASSWORD)
           {
             // Instructions n°4
@@ -42,7 +42,7 @@ if (!empty($_POST['nom_du_compte']))
           $_SESSION['prenom'] = PRENOM;
           $_SESSION['admin'] = ADMIN;
 
-          // On redirige vers le fichier admin.php
+          // On redirige vers le fichier index.php
           header('Location: index.php');
           exit();
         }
