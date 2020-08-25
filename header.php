@@ -44,7 +44,7 @@
 <!-- Pour afficher les informations de l'entrée de la table "jeux" séléctionnée par le bouton "Modifier" de la page "admin.php" (Début)-->
   <?php
   if (isset($_GET['idSelect'])) {
-    $select_Ent_Jeux = $bdd->prepare('SELECT id, Titre, Description FROM jeux WHERE id = :idSelect');
+    $select_Ent_Jeux = $bdd->prepare('SELECT id, Titre, Description, Prix, LienCover, Plateforme, DateSortie, BestSeller, NbrJoueur, Categorie, Special FROM jeux WHERE id = :idSelect');
     $select_Ent_Jeux->execute(array(':idSelect'=>$_GET['idSelect']));
     $row_idSelect = $select_Ent_Jeux->fetch();
   }

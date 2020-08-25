@@ -92,7 +92,7 @@ include "header.php";
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star-half-o"></i>
-                  <h3><?= $donnees['Titre'] ?></h3>
+                  <h5><?= $donnees['Titre'] ?></h5>
                   <h5><?= $donnees['Prix'] ?> €</h5>
                 </div>
               </div>
@@ -144,7 +144,7 @@ include "header.php";
                   </div>
                 </div>
                 <div class="product-bottom text-center">
-                  <h3><?= $donnees['Titre'] ?></h3>
+                  <h5><?= $donnees['Titre'] ?></h5>
                   <h5><?= $donnees['Prix'] ?> €</h5>
                 </div>
               </div>
@@ -196,7 +196,7 @@ include "header.php";
                   </div>
                 </div>
                 <div class="product-bottom text-center">
-                  <h3><?= $donnees['Titre'] ?></h3>
+                  <h5><?= $donnees['Titre'] ?></h5>
                   <h5><?= $donnees['Prix'] ?> €</h5>
                 </div>
               </div>

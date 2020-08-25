@@ -65,10 +65,19 @@
     // Pour valider la modification dans la base de donnée de l'entrée sélectionnée
     elseif (isset($_GET['idSelect']) && isset($row_idSelect) && !isset($_POST['Annuler']) && !empty($_POST['Titre'])) {
       try {
-        $modif_Ent_Jeux = $bdd->prepare('UPDATE jeux SET Titre = :Titre, Description = :Description WHERE id = :idSelect');
+        // $modif_Ent_Jeux = $bdd->prepare('UPDATE jeux SET Titre = :Titre, Description = :Description WHERE id = :idSelect');
+        $modif_Ent_Jeux = $bdd->prepare('UPDATE jeux SET Titre = :Titre, Description = :Description, Prix = :Prix, LienCover = :LienCover, Plateforme = :Plateforme, DateSortie = :DateSortie, BestSeller = :BestSeller, NbrJoueur = :NbrJoueur, Categorie = :Categorie, Special = :Special WHERE id = :idSelect');
         $modif_Ent_Jeux->execute(array(
           ':Titre' => $_POST['Titre'],
           ':Description' => nl2br($_POST['Description']),
+          ':Prix' => $_POST['Prix'],
+          ':LienCover' => $_POST['LienCover'],
+          ':Plateforme' => $_POST['Plateforme'],
+          ':DateSortie' => $_POST['DateSortie'],
+          ':BestSeller' => $_POST['BestSeller'],
+          ':NbrJoueur' => $_POST['NbrJoueur'],
+          ':Categorie' => $_POST['Categorie'],
+          ':Special' => $_POST['Special'],          
           ':idSelect'=>$_GET['idSelect']
         ));
         header('Location: admin.php');
