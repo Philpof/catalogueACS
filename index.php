@@ -60,8 +60,6 @@ for ($cnt = 0; $cnt < 3; $cnt++) {
   <div class="container main-content">
     <div class="row">
 
-
-
     <div class="col-8 games">
       <section class="on-sale">
 
@@ -195,61 +193,50 @@ while ($donnees = $query->fetch()) {
       </section>
     </div>
 
-    <!-- <div class="col-4 border-2 bcolor sidebar">
-  <div class="w-100 text-center p-4">
-    <h5 class="p-2 border-bt text-danger"></h5> -->
-
-    <div class="col-4 border-2 bcolor sidebar">
+    <div class="offset-1 col-3 border-2 bcolor sidebar">
       <div class="w-100 text-center p-4">
-        <a href="#"></a>
-        <li  class="bg-secondary" data-toggle="collapse" data-target="#products" class="collapsed active">
-                  <a href="#"><strong>Plateforme</strong> <span class="arrow"></span></a>
-                </li>
-                <ul class="sub-menu collapse" id="products">
-                    <li class="active"><a href="#">Switch</a></li>
-                    <li><a class="text-secondary" href="#">Wii U</a></li>
-                    <li><a href="#">PS4</a></li>
-                    <li><a href="#">PC</a></li>
-                    <li><a href="#">Xbox one</a></li>
-                    <li><a href="#">NES</a></li>
-                    <li><a href="#">SNES</a></li>
-                    <li><a href="#">Xbox series X</a></li>
+        <li class="productsTitle">
+          <p>Plateforme</p>
+        </li>
+        <ul id="products">
+          <li><a href="#">Switch</a></li>
+          <li><a href="#">Wii U</a></li>
+          <li><a href="#">PS4</a></li>
+          <li><a href="#">PC</a></li>
+          <li><a href="#">Xbox one</a></li>
+          <li><a href="#">NES</a></li>
+          <li><a href="#">SNES</a></li>
+          <li><a href="#">Xbox series X</a></li>
+        </ul>
+        <hr>
 
-                </ul>
-                <hr>
+        <li class="productsTitle">
+          <p>Categorie</p>
+        </li>
+        <ul id="products">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Aventure</a></li>
+            <li><a href="#">Plateforme</a></li>
+            <li><a href="#">RPG</a></li>
+            <li><a href="#">Survie</a></li>
+            <li><a href="#">Combat</a></li>
+        </ul>
+        <hr>
 
-        <li  class="bg-secondary" data-toggle="collapse" data-target="#products" class="collapsed active">
-                  <a href="#"><strong>Categorie</strong> <span class="arrow"></span></a>
-                </li>
-                <ul class="sub-menu collapse" id="products">
-                    <li class="active"><a href="#">Action</a></li>
-                    <li><a class="" href="#">Aventure</a></li>
-                    <li><a href="#">Plateforme</a></li>
-                    <li><a href="#">RPG</a></li>
-                    <li><a href="#">Survie</a></li>
-                    <li><a href="#">Combat</a></li>
-                </ul>
-                <hr>
-
-        <li  class="bg-secondary" data-toggle="collapse" data-target="#products" class="collapsed active">
-                  <a href="#"><strong>Special</strong> <span class="arrow"></span></a>
-                </li>
-                <ul class="sub-menu collapse" id="products">
-                    <li class="active"><a href="#">Exclu</a></li>
-                    <li><a class="" href="#">Retro</a></li>
-                    <li><a href="#">Nouveauté</a></li>
-                    <li><a href="#">à venir</a></li>
-                </ul>
-                <hr>
-        <!-- <h5 class="p-2 border-bt text-danger">Social</h5>
-        <div class="p-2">
-            <i></i>
-        </div> -->
-
+        <li class="productsTitle">
+          <p>Special</p>
+        </li>
+        <ul id="products">
+          <li><a href="#">Exclu</a></li>
+          <li><a href="#">Retro</a></li>
+          <li><a href="#">Nouveauté</a></li>
+          <li><a href="#">A venir</a></li>
+        </ul>
+        <hr>
       </div>
     </div>
 
-    </div>
+  </div>
 
   </div>
 
