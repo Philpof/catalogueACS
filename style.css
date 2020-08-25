@@ -267,6 +267,14 @@ a:hover {
   color: black;
 }
 
+#haut {
+  color:purple;
+}
+
+#haut:hover {
+  color:black;
+}
+
 #retour {
   color:purple;
   font-weight: bold;

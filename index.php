@@ -57,7 +57,7 @@ include "header.php";
 
   <div class="container main-content">
     <div class="row">
-      <div class="col-8">
+      <div class="col-10">
         <section class="">
           <div class="container">
             <div class="title-box">
@@ -71,7 +71,7 @@ include "header.php";
 
               ?>
 
-              <div class="col-md-4">
+              <div class="col-md-3">
                 <div class="product-top">
                   <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
                   <div class="overlay-right">
@@ -157,6 +157,12 @@ include "header.php";
           </div>
         </section>
 
+        <hr>
+        <div class="text-center">
+          <a id="haut" href="index.php">Retour en haut de la page</a>
+        </div>
+        <hr>
+
         <section id="plateforme" class="">
 
           <?php
@@ -208,9 +214,16 @@ include "header.php";
             </div>
           </div>
         </section>
+
+        <hr>
+        <div class="text-center">
+          <a id="haut" href="index.php">Retour en haut de la page</a>
+        </div>
+        <hr>
+        
       </div>
 
-      <div class="offset-1 col-3 bcolor sidebar rounded">
+      <div class="col-2 bcolor sidebar rounded">
         <div class="w-100 text-center px-2 py-4">
           <li class="productsTitle">
             <p>Plateforme</p>
