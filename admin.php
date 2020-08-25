@@ -77,7 +77,7 @@
           ':BestSeller' => $_POST['BestSeller'],
           ':NbrJoueur' => $_POST['NbrJoueur'],
           ':Categorie' => $_POST['Categorie'],
-          ':Special' => $_POST['Special'],          
+          ':Special' => $_POST['Special'],
           ':idSelect'=>$_GET['idSelect']
         ));
         header('Location: admin.php');
@@ -86,6 +86,11 @@
         echo $e->getMessage();
       }
     }
+    // Si annuler, alors refresh de la page admin.php et suppr le "idSelect"
+    elseif (isset($_POST['Annuler'])) {
+        header('Location: admin.php');
+        exit();
+      }
     else {
       $echo_nvl_Ent_Jeux = "<p>Compléter tous les champs suivants pour créer une nouvelle entrée :</p>";
     }
