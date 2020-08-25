@@ -109,7 +109,7 @@ include "header.php";
         <section id="categorie" class="">
 
           <?php
-          $plateforme = "";
+          $categorie = "";
           if (isset($_POST['categorieSelect'])) {
             $categorie = " WHERE ";
             foreach($_POST["categorieSelect"] as $cs) $categorie .= ($categorie != " WHERE " ? " OR " : "") . 'Categorie LIKE "%' . htmlentities($cs) . '%"';
