@@ -54,9 +54,7 @@ for ($cnt = 0; $cnt < 3; $cnt++) {
       </div>
     </div>
   </div>
-  <?php
 
-?>
   <div class="container main-content">
     <div class="row">
 
