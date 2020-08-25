@@ -74,7 +74,7 @@ for ($cnt = 0; $cnt < 3; $cnt++) {
   while ($donnees = $bestSeller->fetch()) {
 ?>
 
-            <div class="col-md-3">
+            <div class="col-md-4">
               <div class="product-top">
                 <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
                 <div class="overlay-right">
@@ -193,8 +193,8 @@ while ($donnees = $query->fetch()) {
       </section>
     </div>
 
-    <div class="offset-1 col-3 border-2 bcolor sidebar">
-      <div class="w-100 text-center p-4">
+    <div class="offset-1 col-3 bcolor sidebar">
+      <div class="w-100 text-center px-2 py-4">
         <li class="productsTitle">
           <p>Plateforme</p>
         </li>
