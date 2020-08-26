@@ -102,7 +102,7 @@ include "header.php";
 
   <div class="col-sm-12 text-center mt-4">
     <p>ou</p>
-    <a id="comptePrive" href="creation.php">>>> créer mon compte privé <<<</a>
+    <a id="comptePrive" href="creation.php">>>> créer mon compte <<<</a>
   </div>
 
   <!-- Liens pour retourner au site -->
