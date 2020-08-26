@@ -112,7 +112,7 @@ include "header.php";
           $categorie = "";
           if (isset($_POST['categorieSelect'])) {
             $categorie = " WHERE ";
-            foreach($_POST["categorieSelect"] as $cs) $categorie .= ($categorie != " WHERE " ? " AND " : "") . 'Categorie === "' . htmlentities($cs) . '%" OR Categorie LIKE "%' . htmlentities($cs) . '"';
+            foreach($_POST["categorieSelect"] as $cs) $categorie .= ($categorie != " WHERE " ? " AND " : "") . 'Categorie LIKE "' . htmlentities($cs) . '%" OR Categorie LIKE "%' . htmlentities($cs) . '"';
           }
 
             $query = $bdd->query('SELECT * FROM jeux' . $categorie);
