@@ -168,6 +168,7 @@ include "header.php";
           }
             $query = $bdd->query('SELECT * FROM jeux' . $plateforme);
 
+
           ?>
 
           <div class="container">
@@ -243,7 +244,7 @@ include "header.php";
             <p>Plateforme</p>
           </li>
           <ul>
-            <li><input class="sideBarCheckbox" type="checkbox" id="switch" name="plateformeSelect[]" value="Swicth">
+            <li><input class="sideBarCheckbox" type="checkbox" id="switch" name="plateformeSelect[]" value="Switch">
               <label for="switch">Switch</label></li>
             <li><input class="sideBarCheckbox" type="checkbox" id="wiiU" name="plateformeSelect[]" value="Wii U">
               <label for="wiiU">Wii U</label></li>
