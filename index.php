@@ -181,7 +181,7 @@ include "header.php";
                 while ($donnees = $query->fetch()) {
               ?>
 
-              <div class="col-md-3">
+              <div class="col-md-3"> 
                 <div class="product-top">
                   <a href="produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
                   <div class="overlay-right">
