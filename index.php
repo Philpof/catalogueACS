@@ -36,7 +36,7 @@ include "header.php";
         ?>
 
         <div class="carousel-item <?php if($cnt < 1 ) echo "active";?>">
-          <a href="/catalogueACS/produit.php?idSelect=<?= $idJeu ?>">
+          <a href="produit.php?idSelect=<?= $idJeu ?>">
             <img src="<?= $lienImage ?>" class="d-block w-100">
           </a>
         </div>
@@ -73,9 +73,9 @@ include "header.php";
 
               <div class="col-md-3">
                 <div class="product-top">
-                  <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
+                  <a href="produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
                   <div class="overlay-right">
-                    <a type="button" class="btn btn-secondary" title="Voir la page du jeu" href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>">
+                    <a type="button" class="btn btn-secondary" title="Voir la page du jeu" href="produit.php?idSelect=<?= $donnees['id'] ?>">
                       <i class="fa fa-eye"></i>
                     </a>
                     <a type="button" class="btn btn-secondary" title="Ajouter à la liste de souhait" href="404.php">
@@ -131,9 +131,9 @@ include "header.php";
 
               <div class="col-md-3">
                 <div class="product-top">
-                  <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
+                  <a href="produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
                   <div class="overlay-right">
-                    <a type="button" class="btn btn-secondary" title="Voir la page du jeu" href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>">
+                    <a type="button" class="btn btn-secondary" title="Voir la page du jeu" href="produit.php?idSelect=<?= $donnees['id'] ?>">
                       <i class="fa fa-eye"></i>
                     </a>
                     <a type="button" class="btn btn-secondary" title="Ajouter à la liste de souhait" href="404.php">
@@ -182,9 +182,9 @@ include "header.php";
 
               <div class="col-md-3">
                 <div class="product-top">
-                  <a href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
+                  <a href="produit.php?idSelect=<?= $donnees['id'] ?>"><img src="<?= $donnees['LienCover'] ?>"></a>
                   <div class="overlay-right">
-                    <a type="button" class="btn btn-secondary" title="Voir la page du jeu" href="/catalogueACS/produit.php?idSelect=<?= $donnees['id'] ?>">
+                    <a type="button" class="btn btn-secondary" title="Voir la page du jeu" href="produit.php?idSelect=<?= $donnees['id'] ?>">
                       <i class="fa fa-eye"></i>
                     </a>
                     <a type="button" class="btn btn-secondary" title="Ajouter à la liste de souhait" href="404.php">
